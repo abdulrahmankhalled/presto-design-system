@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [CommonModule],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss',
+  styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  // Navigation logic can be added here
+}

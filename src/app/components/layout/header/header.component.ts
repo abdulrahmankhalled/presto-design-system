@@ -1,17 +1,44 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { SearchBarComponent } from '../../shared/search-bar/search-bar.component';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule, AsyncPipe } from '@angular/common';
+import { ThemeService } from '../../../services/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, SearchBarComponent],
+  imports: [CommonModule, AsyncPipe],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  onSearch(searchTerm: string) {
-    // TODO: Implement search functionality
-    console.log('Search term:', searchTerm);
+export class HeaderComponent implements OnInit, OnDestroy {
+  theme$;
+  isMobileMenuOpen = false;
+  private subscription = new Subscription();
+
+  constructor(private themeService: ThemeService) {
+    this.theme$ = this.themeService.theme$;
+  }
+
+  ngOnInit(): void {
+    // Subscribe to theme changes if needed for additional logic
+    this.subscription.add(
+      this.themeService.theme$.subscribe()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
   }
 }

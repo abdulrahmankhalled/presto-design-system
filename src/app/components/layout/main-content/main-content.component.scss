@@ -1,0 +1,322 @@
+/* Main Content Component Styles */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-surface-primary) 0%, var(--color-surface-secondary) 50%, var(--color-surface-tertiary) 100%);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--color-primary-100) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, var(--color-accent-100) 0%, transparent 50%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Background Pattern */
+.background-pattern {
+  background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+  background-size: 24px 24px;
+  opacity: 0.05;
+}
+
+/* Persona Cards */
+.persona-card {
+  position: relative;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.persona-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.persona-image-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.persona-avatar {
+  position: relative;
+  z-index: 2;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.persona-background-shape {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.shape-orange {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.shape-purple {
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+.shape-blue {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.persona-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Persona Card Backgrounds */
+.persona-designers {
+  background: linear-gradient(135deg, #92400e, #7c2d12);
+}
+
+.persona-developers {
+  background: linear-gradient(135deg, #581c87, #4c1d95);
+}
+
+.persona-content-designers {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+/* Dark Mode Persona Cards */
+.dark .persona-designers {
+  background: linear-gradient(135deg, #a16207, #854d0e);
+}
+
+.dark .persona-developers {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.dark .persona-content-designers {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+/* Card Hover Effects */
+.card-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-interactive:hover .icon-container {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon Container Animations */
+.icon-container {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button Enhancements */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Section Enhancements */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 0;
+  }
+  
+  .text-display-1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .text-heading-1 {
+    font-size: 1.875rem;
+  }
+
+  .persona-card {
+    min-height: 240px;
+    padding: 1.5rem;
+  }
+
+  .persona-avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .persona-background-shape {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-responsive {
+    padding: 0 1rem;
+  }
+  
+  .grid-auto-fit {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-auto-fill {
+    grid-template-columns: 1fr;
+  }
+
+  .persona-card {
+    min-height: 220px;
+    padding: 1.25rem;
+  }
+}
+
+/* Dark Mode Enhancements */
+.dark .hero-section::before {
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--color-primary-900) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, var(--color-accent-900) 0%, transparent 50%);
+  opacity: 0.2;
+}
+
+.dark .card-interactive:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Focus States for Accessibility */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Carousel */
+.carousel-slide {
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  position: absolute;
+  inset: 0;
+}
+.carousel-dot {
+  background-color: rgba(255,255,255,.45);
+}
+.carousel-dot.active {
+  background-color: #ffffff;
+  width: 14px;
+  border-radius: 9999px;
+}
+/* Performance Optimizations */
+.card,
+.btn,
+.icon-container,
+.persona-card {
+  will-change: transform;
+}
+
+/* Print Styles */
+@media print {
+  .hero-section,
+  .cta-section {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card-interactive:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .persona-card {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ccc;
+  }
+}
