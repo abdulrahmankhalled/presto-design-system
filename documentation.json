@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "UiDropdownOption",
-            "id": "interface-UiDropdownOption-144576d62091dfcca2cc270a0c44335acba6edf9678b0ab633a1412e10a0dee73091726f5dd6934162657b8909c506a4e7d857b46cf2a71af7a38d82cfa16165",
+            "id": "interface-UiDropdownOption-172acb9f107138aafc8deb19f9df7dd03aad5ce89d41f04e52f9309e3067e134248e3fba3e9c247e93f7b4244d68468418bf7e295dd953c29ce823089eee1de3",
             "file": "src/app/ui-lib/components/ui-dropdown/ui-dropdown.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { FormsModule } from '@angular/forms';\n\nexport interface UiDropdownOption<T = unknown> {\n  label: string;\n  value: T;\n}\n\ntype UiDropdownSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-dropdown',\n  standalone: true,\n  imports: [CommonModule, FormsModule, DropdownModule],\n  template: `\n    <p-dropdown\n      [options]=\"options\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"wrapperClasses\"\n      [styleClass]=\"dropdownClasses\"\n      [placeholder]=\"placeholder\"\n      [showClear]=\"clearable\"\n      [filter]=\"filter\"\n      [filterPlaceholder]=\"filterPlaceholder\"\n      [(ngModel)]=\"model\"\n      (onChange)=\"onChange($event.value)\"\n    ></p-dropdown>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiDropdownComponent<T = unknown> {\n  @Input() options: UiDropdownOption<T>[] = [];\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() clearable = false;\n  @Input() filter = false;\n  @Input() filterPlaceholder = 'Search...';\n  @Input() size: UiDropdownSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n\n  get wrapperClasses(): string[] {\n    return ['w-full'];\n  }\n\n  get dropdownClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'text-gray-900',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:outline-none',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiDropdownSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizeClasses[this.size]].join(' ');\n  }\n\n  onChange(value: T | null): void {\n    this.modelChange.emit(value);\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { FormsModule } from '@angular/forms';\n\nexport interface UiDropdownOption<T = unknown> {\n  label: string;\n  value: T;\n}\n\ntype UiDropdownSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-dropdown',\n  standalone: true,\n  imports: [CommonModule, FormsModule, DropdownModule],\n  template: `\n    <p-dropdown\n      [options]=\"options\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"wrapperClasses\"\n      [styleClass]=\"dropdownClasses\"\n      [placeholder]=\"placeholder\"\n      [showClear]=\"clearable\"\n      [filter]=\"filter\"\n      [filterPlaceholder]=\"filterPlaceholder\"\n      [(ngModel)]=\"model\"\n      (onChange)=\"onChange($event.value)\"\n    ></p-dropdown>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiDropdownComponent<T = unknown> {\n  @Input() options: UiDropdownOption<T>[] = [];\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() clearable = false;\n  @Input() filter = false;\n  @Input() filterPlaceholder = 'Search...';\n  @Input() size: UiDropdownSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n\n  get wrapperClasses(): string[] {\n    return ['w-full'];\n  }\n\n  get dropdownClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-brand-md',\n      'border',\n      'border-blue',\n      'text-neutral-900',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:outline-none',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiDropdownSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizeClasses[this.size]].join(' ');\n  }\n\n  onChange(value: T | null): void {\n    this.modelChange.emit(value);\n  }\n}\n",
             "properties": [
                 {
                     "name": "label",
@@ -655,8 +655,149 @@
             "templateData": "<form class=\"md:w-80 lg:w-96\">\n  <span class=\"relative flex items-center group\">\n    <svg\n      aria-hidden=\"true\"\n      viewBox=\"0 0 20 20\"\n      class=\"absolute w-4 h-4 ml-3 fill-slate-400 group-hover:fill-slate-500 group-focus:fill-slate-500\"\n    >\n      <path\n        d=\"M16.293 17.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM9 14a5 5 0 0 1-5-5H2a7 7 0 0 0 7 7v-2ZM4 9a5 5 0 0 1 5-5V2a7 7 0 0 0-7 7h2Zm5-5a5 5 0 0 1 5 5h2a7 7 0 0 0-7-7v2Zm8.707 12.293-3.757-3.757-1.414 1.414 3.757 3.757 1.414-1.414ZM14 9a4.98 4.98 0 0 1-1.464 3.536l1.414 1.414A6.98 6.98 0 0 0 16 9h-2Zm-1.464 3.536A4.98 4.98 0 0 1 9 14v2a6.98 6.98 0 0 0 4.95-2.05l-1.414-1.414Z\"\n      ></path>\n    </svg>\n    <input\n      type=\"text\"\n      placeholder=\"Search docs…\"\n      class=\"w-full py-2 pl-10 pr-2 border rounded bg-slate-100 placeholder-slate-400 text-slate-800 border-slate-100 outline outline-offset-2 outline-2 outline-transparent hover:border-slate-200 focus:border-slate-200 focus:outline-slate-600\"\n      (input)=\"onSearch($event)\"\n    />\n  </span>\n</form>\n"
         },
         {
+            "name": "UiAutoCompleteComponent",
+            "id": "component-UiAutoCompleteComponent-8b58cee2ee0c266baaee9a2e2493c859f03c26a3e0f7ea611dad1254251762c2dc24cf8954ada695124a4671ecb3bbea19e867610cb64f3a46bf007affed241c",
+            "file": "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-autocomplete",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-autocomplete\n  [suggestions]=\"suggestions\"\n  (completeMethod)=\"completeMethod && completeMethod($event)\"\n  [placeholder]=\"placeholder\"\n  [dropdown]=\"dropdown\"\n  [forceSelection]=\"forceSelection\"\n  [disabled]=\"disabled\"\n  [(ngModel)]=\"model\"\n  [styleClass]=\"inputClasses\"\n></p-autocomplete>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "completeMethod",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "function",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "dropdown",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "forceSelection",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "T | null",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "UiSize",
+                    "decorators": []
+                },
+                {
+                    "name": "suggestions",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "T[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "AutoCompleteModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { AutoCompleteModule } from 'primeng/autocomplete';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-autocomplete',\n  standalone: true,\n  imports: [CommonModule, FormsModule, AutoCompleteModule],\n  template: `\n    <p-autocomplete\n      [suggestions]=\"suggestions\"\n      (completeMethod)=\"completeMethod && completeMethod($event)\"\n      [placeholder]=\"placeholder\"\n      [dropdown]=\"dropdown\"\n      [forceSelection]=\"forceSelection\"\n      [disabled]=\"disabled\"\n      [(ngModel)]=\"model\"\n      [styleClass]=\"inputClasses\"\n    ></p-autocomplete>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiAutoCompleteComponent<T = unknown> {\n  @Input() suggestions: T[] = [];\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() dropdown = false;\n  @Input() forceSelection = false;\n  @Input() size: UiSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n  @Input() completeMethod?: (event: { query: string }) => void;\n\n  get inputClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:outline-none',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 43
+                    }
+                }
+            }
+        },
+        {
             "name": "UiButtonComponent",
-            "id": "component-UiButtonComponent-517097f4b5973351508cc1d368121d7e4d19429bb8e9a7a569571ac908e625f0baf4a62f3d690187ddb97f357df67347649c10f66fb9956250136720004d381e",
+            "id": "component-UiButtonComponent-07a0dae50666996c1c0c66beb3be66955cd4ac20eca0c160e1b81467c749c79d4cc6205d12ecce5bbe8d446a3f6670ad4a9d5fdd54613568efe54dbde1962c12",
             "file": "src/app/ui-lib/components/ui-button/ui-button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -718,7 +859,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 103,
+                    "line": 98,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -741,7 +882,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from 'primeng/button';\n\ntype UiButtonVariant = 'primary' | 'secondary' | 'ghost' | 'success' | 'danger';\ntype UiButtonSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-button',\n  standalone: true,\n  imports: [CommonModule, ButtonModule],\n  template: `\n    <button\n      pButton\n      type=\"button\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"computedClasses\"\n      (click)=\"onClick()\"\n    >\n      <ng-content />\n    </button>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiButtonComponent {\n  @Input() variant: UiButtonVariant = 'primary';\n  @Input() size: UiButtonSize = 'md';\n  @Input() disabled = false;\n  @Output() clicked = new EventEmitter<void>();\n\n  get computedClasses(): string[] {\n    const base = [\n      'inline-flex',\n      'items-center',\n      'justify-center',\n      'rounded-md',\n      'font-medium',\n      'transition-colors',\n      'focus:outline-none',\n      'focus:ring-2',\n      'focus:ring-offset-2',\n    ];\n\n    const sizeClasses: Record<UiButtonSize, string[]> = {\n      sm: ['h-8', 'px-3', 'text-sm'],\n      md: ['h-10', 'px-4', 'text-sm'],\n      lg: ['h-12', 'px-6', 'text-base'],\n    };\n\n    const variantClasses: Record<UiButtonVariant, string[]> = {\n      primary: [\n        'bg-blue',\n        'text-white',\n        'hover:bg-blue-dark',\n        'focus:ring-blue',\n      ],\n      secondary: [\n        'bg-white',\n        'text-blue',\n        'border',\n        'border-blue',\n        'hover:bg-blue/10',\n        'focus:ring-blue',\n      ],\n      ghost: [\n        'bg-transparent',\n        'text-blue',\n        'hover:bg-blue/10',\n        'focus:ring-blue',\n      ],\n      success: [\n        'bg-green-primary',\n        'text-white',\n        'hover:bg-green-light',\n        'focus:ring-green-primary',\n      ],\n      danger: [\n        'bg-red-600',\n        'text-white',\n        'hover:bg-red-700',\n        'focus:ring-red-600',\n      ],\n    };\n\n    const disabledClasses = this.disabled\n      ? ['opacity-50', 'cursor-not-allowed', 'hover:none']\n      : [];\n\n    return [\n      ...base,\n      ...sizeClasses[this.size],\n      ...variantClasses[this.variant],\n      ...disabledClasses,\n    ];\n  }\n\n  onClick(): void {\n    if (!this.disabled) {\n      this.clicked.emit();\n    }\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonModule } from 'primeng/button';\n\ntype UiButtonVariant = 'primary' | 'secondary' | 'ghost' | 'success' | 'danger';\ntype UiButtonSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-button',\n  standalone: true,\n  imports: [CommonModule, ButtonModule],\n  template: `\n    <button\n      pButton\n      type=\"button\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"computedClasses\"\n      (click)=\"onClick()\"\n    >\n      <ng-content />\n    </button>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiButtonComponent {\n  @Input() variant: UiButtonVariant = 'primary';\n  @Input() size: UiButtonSize = 'md';\n  @Input() disabled = false;\n  @Output() clicked = new EventEmitter<void>();\n\n  get computedClasses(): string[] {\n    const base = [\n      'inline-flex',\n      'items-center',\n      'justify-center',\n      'rounded-brand-md',\n      'font-medium',\n      'transition-colors',\n      'focus:outline-none',\n      'focus:ring-2',\n      'focus:ring-offset-2',\n    ];\n\n    const sizeClasses: Record<UiButtonSize, string[]> = {\n      sm: ['h-8', 'px-3', 'text-sm'],\n      md: ['h-10', 'px-4', 'text-sm'],\n      lg: ['h-12', 'px-6', 'text-base'],\n    };\n\n    const variantClasses: Record<UiButtonVariant, string[]> = {\n      primary: ['bg-blue', 'text-white', 'hover:bg-blue-dark', 'focus:ring-blue'],\n      secondary: [\n        'bg-white',\n        'text-blue',\n        'border',\n        'border-blue',\n        'hover:bg-blue/10',\n        'focus:ring-blue',\n      ],\n      ghost: [\n        'bg-transparent',\n        'text-blue',\n        'hover:bg-blue/10',\n        'focus:ring-blue',\n      ],\n      success: [\n        'bg-green-primary',\n        'text-white',\n        'hover:bg-green-light',\n        'focus:ring-green-primary',\n      ],\n      danger: [\n        'bg-red-600',\n        'text-white',\n        'hover:bg-red-700',\n        'focus:ring-red-600',\n      ],\n    };\n\n    const disabledClasses = this.disabled\n      ? ['opacity-50', 'cursor-not-allowed', 'hover:none']\n      : [];\n\n    return [\n      ...base,\n      ...sizeClasses[this.size],\n      ...variantClasses[this.variant],\n      ...disabledClasses,\n    ];\n  }\n\n  onClick(): void {\n    if (!this.disabled) {\n      this.clicked.emit();\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -759,8 +900,381 @@
             }
         },
         {
+            "name": "UiCascadeSelectComponent",
+            "id": "component-UiCascadeSelectComponent-d91778ea78c4dc174b78f1a843e2ea425bcb11edc178924588bcf19bd5e43d8ba120ae23a203b32e7ebabc3a91d5a0aeb7cfe07dbb78413240efb219a776e716",
+            "file": "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-cascade-select",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-cascadeselect\n  [options]=\"options\"\n  [disabled]=\"disabled\"\n  [placeholder]=\"placeholder\"\n  [ngClass]=\"selectClasses\"\n  [(ngModel)]=\"model\"\n  (onChange)=\"modelChange.emit(model)\"\n></p-cascadeselect>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "T | null",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "UiSize",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CascadeSelectModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { CascadeSelectModule } from 'primeng/cascadeselect';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-cascade-select',\n  standalone: true,\n  imports: [CommonModule, FormsModule, CascadeSelectModule],\n  template: `\n    <p-cascadeselect\n      [options]=\"options\"\n      [disabled]=\"disabled\"\n      [placeholder]=\"placeholder\"\n      [ngClass]=\"selectClasses\"\n      [(ngModel)]=\"model\"\n      (onChange)=\"modelChange.emit(model)\"\n    ></p-cascadeselect>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiCascadeSelectComponent<T = unknown> {\n  @Input() options: any[] = [];\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() size: UiSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n\n  get selectClasses(): string[] {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "selectClasses": {
+                    "name": "selectClasses",
+                    "getSignature": {
+                        "name": "selectClasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 38
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiCheckboxComponent",
+            "id": "component-UiCheckboxComponent-408b501ca2faa9aabb02160d3bef165550e35973d58afa6129105a439e6184b8d000bffb9de05050b2afe920daa4d7e3585bd8267a7948432e25afeadcca68c1",
+            "file": "src/app/ui-lib/components/ui-checkbox/ui-checkbox.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-checkbox\n  [binary]=\"true\"\n  [inputId]=\"inputId\"\n  [disabled]=\"disabled\"\n  [ngModel]=\"checked\"\n  (onChange)=\"onChange($event.checked)\"\n  [styleClass]=\"boxClasses\"\n></p-checkbox>\n<label *ngIf=\"label\" class=\"ml-2 text-sm text-gray-800\" [for]=\"inputId\">{{\n  label\n}}</label>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "inputId",
+                    "defaultValue": "'checkbox-' + Math.random().toString(36).slice(2, 7)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "checkedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onChange",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CheckboxModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CheckboxModule } from 'primeng/checkbox';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  selector: 'ui-checkbox',\n  standalone: true,\n  imports: [CommonModule, FormsModule, CheckboxModule],\n  template: `\n    <p-checkbox\n      [binary]=\"true\"\n      [inputId]=\"inputId\"\n      [disabled]=\"disabled\"\n      [ngModel]=\"checked\"\n      (onChange)=\"onChange($event.checked)\"\n      [styleClass]=\"boxClasses\"\n    ></p-checkbox>\n    <label *ngIf=\"label\" class=\"ml-2 text-sm text-gray-800\" [for]=\"inputId\">{{\n      label\n    }}</label>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiCheckboxComponent {\n  @Input() checked = false;\n  @Input() disabled = false;\n  @Input() label?: string;\n  @Input() inputId = 'checkbox-' + Math.random().toString(36).slice(2, 7);\n  @Output() checkedChange = new EventEmitter<boolean>();\n\n  get boxClasses(): string {\n    return [\n      'rounded-brand-sm',\n      'border',\n      'border-blue',\n      'text-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ].join(' ');\n  }\n\n  onChange(value: boolean): void {\n    this.checkedChange.emit(value);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "boxClasses": {
+                    "name": "boxClasses",
+                    "getSignature": {
+                        "name": "boxClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 38
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiDatePickerComponent",
+            "id": "component-UiDatePickerComponent-0bd3f24d72cadba2716703016d44f98f50e0a04b4ee1459aee7eb2e677c87f090a1db32a41ab2f3a79e25f3e820ec3d7df3120c5aaa3a1b9dc7b3bd25177bac7",
+            "file": "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-date-picker",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-datepicker\n  [(ngModel)]=\"value\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [showIcon]=\"showIcon\"\n  [styleClass]=\"inputClasses\"\n  [dateFormat]=\"dateFormat\"\n></p-datepicker>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "dateFormat",
+                    "defaultValue": "'mm/dd/yy'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "showIcon",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "UiSize",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "Date | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<Date | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "DatePickerModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { DatePickerModule } from 'primeng/datepicker';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-date-picker',\n  standalone: true,\n  imports: [CommonModule, FormsModule, DatePickerModule],\n  template: `\n    <p-datepicker\n      [(ngModel)]=\"value\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [showIcon]=\"showIcon\"\n      [styleClass]=\"inputClasses\"\n      [dateFormat]=\"dateFormat\"\n    ></p-datepicker>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiDatePickerComponent {\n  @Input() value: Date | null = null;\n  @Output() valueChange = new EventEmitter<Date | null>();\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() showIcon = true;\n  @Input() dateFormat = 'mm/dd/yy';\n  @Input() size: UiSize = 'md';\n\n  get inputClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 39
+                    }
+                }
+            }
+        },
+        {
             "name": "UiDropdownComponent",
-            "id": "component-UiDropdownComponent-144576d62091dfcca2cc270a0c44335acba6edf9678b0ab633a1412e10a0dee73091726f5dd6934162657b8909c506a4e7d857b46cf2a71af7a38d82cfa16165",
+            "id": "component-UiDropdownComponent-172acb9f107138aafc8deb19f9df7dd03aad5ce89d41f04e52f9309e3067e134248e3fba3e9c247e93f7b4244d68468418bf7e295dd953c29ce823089eee1de3",
             "file": "src/app/ui-lib/components/ui-dropdown/ui-dropdown.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -912,7 +1426,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { FormsModule } from '@angular/forms';\n\nexport interface UiDropdownOption<T = unknown> {\n  label: string;\n  value: T;\n}\n\ntype UiDropdownSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-dropdown',\n  standalone: true,\n  imports: [CommonModule, FormsModule, DropdownModule],\n  template: `\n    <p-dropdown\n      [options]=\"options\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"wrapperClasses\"\n      [styleClass]=\"dropdownClasses\"\n      [placeholder]=\"placeholder\"\n      [showClear]=\"clearable\"\n      [filter]=\"filter\"\n      [filterPlaceholder]=\"filterPlaceholder\"\n      [(ngModel)]=\"model\"\n      (onChange)=\"onChange($event.value)\"\n    ></p-dropdown>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiDropdownComponent<T = unknown> {\n  @Input() options: UiDropdownOption<T>[] = [];\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() clearable = false;\n  @Input() filter = false;\n  @Input() filterPlaceholder = 'Search...';\n  @Input() size: UiDropdownSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n\n  get wrapperClasses(): string[] {\n    return ['w-full'];\n  }\n\n  get dropdownClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'text-gray-900',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:outline-none',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiDropdownSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizeClasses[this.size]].join(' ');\n  }\n\n  onChange(value: T | null): void {\n    this.modelChange.emit(value);\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DropdownModule } from 'primeng/dropdown';\nimport { FormsModule } from '@angular/forms';\n\nexport interface UiDropdownOption<T = unknown> {\n  label: string;\n  value: T;\n}\n\ntype UiDropdownSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-dropdown',\n  standalone: true,\n  imports: [CommonModule, FormsModule, DropdownModule],\n  template: `\n    <p-dropdown\n      [options]=\"options\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"wrapperClasses\"\n      [styleClass]=\"dropdownClasses\"\n      [placeholder]=\"placeholder\"\n      [showClear]=\"clearable\"\n      [filter]=\"filter\"\n      [filterPlaceholder]=\"filterPlaceholder\"\n      [(ngModel)]=\"model\"\n      (onChange)=\"onChange($event.value)\"\n    ></p-dropdown>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiDropdownComponent<T = unknown> {\n  @Input() options: UiDropdownOption<T>[] = [];\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() clearable = false;\n  @Input() filter = false;\n  @Input() filterPlaceholder = 'Search...';\n  @Input() size: UiDropdownSize = 'md';\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n\n  get wrapperClasses(): string[] {\n    return ['w-full'];\n  }\n\n  get dropdownClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-brand-md',\n      'border',\n      'border-blue',\n      'text-neutral-900',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:outline-none',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiDropdownSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizeClasses[this.size]].join(' ');\n  }\n\n  onChange(value: T | null): void {\n    this.modelChange.emit(value);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -939,19 +1453,181 @@
             }
         },
         {
-            "name": "UiInputTextComponent",
-            "id": "component-UiInputTextComponent-f451e01891863b94c197b469af0c7509946f86178cc6ebd0ded95293e1ba40a32937d1d0584ef4f3defcd58b768db63acda4a9fe71b4ad6abe6800abd4dbebd6",
-            "file": "src/app/ui-lib/components/ui-input-text/ui-input-text.component.ts",
+            "name": "UiFloatLabelComponent",
+            "id": "component-UiFloatLabelComponent-530e27d8cf2d5d9c3082f8004790e13b4a5b6b939b0fc7112723bd9af3067059395f7df6e15d04708ace109c77113d34f1f0b30c1769e998a03675360c49294c",
+            "file": "src/app/ui-lib/components/ui-float-label/ui-float-label.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "ui-input-text",
+            "selector": "ui-float-label",
             "styleUrls": [],
             "styles": [],
-            "template": "<input\n  pInputText\n  [type]=\"type\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"computedClasses\"\n  [value]=\"value\"\n  (input)=\"onInput($event)\"\n/>\n",
+            "template": "<span class=\"p-float-label block w-full\">\n  <ng-content />\n  <label *ngIf=\"label\" class=\"text-sm text-gray-600\">{{ label }}</label>\n</span>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'ui-float-label',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span class=\"p-float-label block w-full\">\n      <ng-content />\n      <label *ngIf=\"label\" class=\"text-sm text-gray-600\">{{ label }}</label>\n    </span>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiFloatLabelComponent {\n  @Input() label = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "UiIconFieldComponent",
+            "id": "component-UiIconFieldComponent-c6e7b9ed182acac9e205e06ca3f5d9c1733ccf8775d2e98cb73b1920a4566a18bd90c5589218d5527ac74f9936d3188d961080b75d60478885fe8726c7e8dcad",
+            "file": "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-icon-field",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<span [ngClass]=\"containerClasses\">\n  <i *ngIf=\"icon\" [ngClass]=\"icon\" class=\"text-gray-500\"></i>\n  <ng-content />\n</span>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "position",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "IconPosition",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\ntype IconPosition = 'left' | 'right';\n\n@Component({\n  selector: 'ui-icon-field',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <span [ngClass]=\"containerClasses\">\n      <i *ngIf=\"icon\" [ngClass]=\"icon\" class=\"text-gray-500\"></i>\n      <ng-content />\n    </span>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiIconFieldComponent {\n  @Input() icon?: string; // e.g., 'pi pi-search'\n  @Input() position: IconPosition = 'left';\n\n  get containerClasses(): string[] {\n    return [\n      'p-input-icon-' + this.position,\n      'inline-flex',\n      'items-center',\n      'w-full',\n    ];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "containerClasses": {
+                    "name": "containerClasses",
+                    "getSignature": {
+                        "name": "containerClasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 22
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiInputGroupComponent",
+            "id": "component-UiInputGroupComponent-dcf74ea800ed86e22288819ef72b06315a0f4625bff69b78a4aa2e4a2af39964484b449df8ab6f77ac821d93050f059df6bd70d27ece850d1da8099dd553d828",
+            "file": "src/app/ui-lib/components/ui-input-group/ui-input-group.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input-group",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div\n  class=\"flex items-stretch w-full border border-blue rounded-md overflow-hidden\"\n>\n  <ng-content />\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'ui-input-group',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <div\n      class=\"flex items-stretch w-full border border-blue rounded-md overflow-hidden\"\n    >\n      <ng-content />\n    </div>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputGroupComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "UiInputMaskComponent",
+            "id": "component-UiInputMaskComponent-7e3110440208db9084c0c42245272f4f54d98fbe4d60ae31c178410bd6d9829c860aaeca6c06180561c5dbc266acdacc04b82d1a5b707e8f009cda92b3c8f617",
+            "file": "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input-mask",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-inputMask\n  [mask]=\"mask\"\n  [(ngModel)]=\"value\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [styleClass]=\"inputClasses\"\n></p-inputMask>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -961,8 +1637,17 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 34,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "mask",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -979,17 +1664,164 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
-                    "type": "UiInputTextSize",
+                    "line": 35,
+                    "type": "UiSize",
                     "decorators": []
                 },
                 {
-                    "name": "type",
-                    "defaultValue": "'text'",
+                    "name": "value",
+                    "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
-                    "type": "\"text\" | \"email\" | \"password\" | \"search\"",
+                    "line": 30,
+                    "type": "string | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<string | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputMaskModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { InputMaskModule } from 'primeng/inputmask';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-input-mask',\n  standalone: true,\n  imports: [CommonModule, FormsModule, InputMaskModule],\n  template: `\n    <p-inputMask\n      [mask]=\"mask\"\n      [(ngModel)]=\"value\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [styleClass]=\"inputClasses\"\n    ></p-inputMask>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputMaskComponent {\n  @Input() value: string | null = null;\n  @Output() valueChange = new EventEmitter<string | null>();\n  @Input() mask = '';\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() size: UiSize = 'md';\n\n  get inputClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 37
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiInputNumberComponent",
+            "id": "component-UiInputNumberComponent-05640ecae86a183f1ae8a6dd25c01e1945cc5f16d5201a7caf096b4d6d4f6e68c22a438cd882b18026d537fb91faafbc75aa2b32414d52c89578ac6cc1a8fa05",
+            "file": "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input-number",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-inputNumber\n  [(ngModel)]=\"value\"\n  [min]=\"min\"\n  [max]=\"max\"\n  [step]=\"step\"\n  [mode]=\"mode\"\n  [suffix]=\"suffix\"\n  [prefix]=\"prefix\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [inputStyleClass]=\"inputClasses\"\n></p-inputNumber>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 44,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "max",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'decimal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "\"decimal\" | \"currency\"",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "prefix",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 45,
+                    "type": "UiSize",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "suffix",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -998,6 +1830,235 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 35,
+                    "type": "number | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<number | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputNumberModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { InputNumberModule } from 'primeng/inputnumber';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-input-number',\n  standalone: true,\n  imports: [CommonModule, FormsModule, InputNumberModule],\n  template: `\n    <p-inputNumber\n      [(ngModel)]=\"value\"\n      [min]=\"min\"\n      [max]=\"max\"\n      [step]=\"step\"\n      [mode]=\"mode\"\n      [suffix]=\"suffix\"\n      [prefix]=\"prefix\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [inputStyleClass]=\"inputClasses\"\n    ></p-inputNumber>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputNumberComponent {\n  @Input() value: number | null = null;\n  @Output() valueChange = new EventEmitter<number | null>();\n  @Input() min?: number;\n  @Input() max?: number;\n  @Input() step = 1;\n  @Input() mode: 'decimal' | 'currency' = 'decimal';\n  @Input() suffix?: string;\n  @Input() prefix?: string;\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() size: UiSize = 'md';\n\n  get inputClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 47
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiInputOtpComponent",
+            "id": "component-UiInputOtpComponent-e7411d7bc62094215c422f3467a6913b05528d1d8292d7666d31b1281644046d83be0567e44bdb64bdfcc4917473a56048d017cfc04402747c54201ae511b3c6",
+            "file": "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input-otp",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-inputOtp\n  [(ngModel)]=\"value\"\n  [length]=\"length\"\n  [disabled]=\"disabled\"\n  [styleClass]=\"inputClasses\"\n></p-inputOtp>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "length",
+                    "defaultValue": "6",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "UiSize",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<string | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputOtpModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { InputOtpModule } from 'primeng/inputotp';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-input-otp',\n  standalone: true,\n  imports: [CommonModule, FormsModule, InputOtpModule],\n  template: `\n    <p-inputOtp\n      [(ngModel)]=\"value\"\n      [length]=\"length\"\n      [disabled]=\"disabled\"\n      [styleClass]=\"inputClasses\"\n    ></p-inputOtp>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputOtpComponent {\n  @Input() value: string | null = null;\n  @Output() valueChange = new EventEmitter<string | null>();\n  @Input() length = 6;\n  @Input() disabled = false;\n  @Input() size: UiSize = 'md';\n\n  get inputClasses(): string {\n    const base = [\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'w-8', 'text-sm'],\n      md: ['h-10', 'w-10', 'text-sm'],\n      lg: ['h-12', 'w-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "inputClasses": {
+                    "name": "inputClasses",
+                    "getSignature": {
+                        "name": "inputClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 35
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiInputTextComponent",
+            "id": "component-UiInputTextComponent-7c9437ec8630f8c009ff140f7a3de9d6b1cacf68acc9453669ae9cd3fbf3e376ad62fda774d302a6038f4cbe94e8634ddd9aa341bd219f85a42d37041efd17b2",
+            "file": "src/app/ui-lib/components/ui-input-text/ui-input-text.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input-text",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<input\n  pInputText\n  [type]=\"type\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [pKeyFilter]=\"keyFilterPattern ? keyFilterPattern : null\"\n  [ngClass]=\"computedClasses\"\n  [value]=\"value\"\n  (input)=\"onInput($event)\"\n/>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "keyFilterPattern",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "string | RegExp",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "UiInputTextSize",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "\"text\" | \"email\" | \"password\" | \"search\"",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
                     "type": "string | null",
                     "decorators": []
                 }
@@ -1008,7 +2069,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 39,
                     "type": "EventEmitter"
                 }
             ],
@@ -1027,7 +2088,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 66,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1056,12 +2117,16 @@
                 {
                     "name": "InputTextModule",
                     "type": "module"
+                },
+                {
+                    "name": "KeyFilterModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { InputTextModule } from 'primeng/inputtext';\n\ntype UiInputTextSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-input-text',\n  standalone: true,\n  imports: [CommonModule, InputTextModule],\n  template: `\n    <input\n      pInputText\n      [type]=\"type\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"computedClasses\"\n      [value]=\"value\"\n      (input)=\"onInput($event)\"\n    />\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputTextComponent {\n  @Input() size: UiInputTextSize = 'md';\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() type: 'text' | 'email' | 'password' | 'search' = 'text';\n  @Input() value: string | null = null;\n  @Output() valueChange = new EventEmitter<string>();\n\n  get computedClasses(): string[] {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'text-gray-900',\n      'placeholder-gray-400',\n      'focus:outline-none',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:border-transparent',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiInputTextSize, string[]> = {\n      sm: ['h-8', 'px-3', 'text-sm'],\n      md: ['h-10', 'px-3', 'text-sm'],\n      lg: ['h-12', 'px-4', 'text-base'],\n    };\n\n    return [...base, ...sizeClasses[this.size]];\n  }\n\n  onInput(event: Event): void {\n    const target = event.target as HTMLInputElement;\n    this.valueChange.emit(target.value);\n  }\n}\n",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { KeyFilterModule } from 'primeng/keyfilter';\n\ntype UiInputTextSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-input-text',\n  standalone: true,\n  imports: [CommonModule, InputTextModule, KeyFilterModule],\n  template: `\n    <input\n      pInputText\n      [type]=\"type\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [pKeyFilter]=\"keyFilterPattern ? keyFilterPattern : null\"\n      [ngClass]=\"computedClasses\"\n      [value]=\"value\"\n      (input)=\"onInput($event)\"\n    />\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiInputTextComponent {\n  @Input() size: UiInputTextSize = 'md';\n  @Input() disabled = false;\n  @Input() placeholder = '';\n  @Input() type: 'text' | 'email' | 'password' | 'search' = 'text';\n  @Input() value: string | null = null;\n  @Input() keyFilterPattern?: string | RegExp;\n  @Output() valueChange = new EventEmitter<string>();\n\n  get computedClasses(): string[] {\n    const base = [\n      'w-full',\n      'rounded-brand-md',\n      'border',\n      'border-blue',\n      'text-neutral-900',\n      'placeholder-neutral-400',\n      'focus:outline-none',\n      'focus:ring-2',\n      'focus:ring-blue',\n      'focus:border-transparent',\n      'disabled:opacity-50',\n      'disabled:cursor-not-allowed',\n    ];\n\n    const sizeClasses: Record<UiInputTextSize, string[]> = {\n      sm: ['h-8', 'px-3', 'text-sm'],\n      md: ['h-10', 'px-3', 'text-sm'],\n      lg: ['h-12', 'px-4', 'text-base'],\n    };\n\n    return [...base, ...sizeClasses[this.size]];\n  }\n\n  onInput(event: Event): void {\n    const target = event.target as HTMLInputElement;\n    this.valueChange.emit(target.value);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1073,7 +2138,1138 @@
                         "name": "computedClasses",
                         "type": "[]",
                         "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiKnobComponent",
+            "id": "component-UiKnobComponent-df9d12fc8d03bc3232c49a1c79b68b94299533ff43e0f531f378fb5d8107ff779287a46cf4b134cfc3b4d5aced9220733479b41325bb652aba9997ff6f21d875",
+            "file": "src/app/ui-lib/components/ui-knob/ui-knob.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-knob",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-knob [(ngModel)]=\"value\" [min]=\"min\" [max]=\"max\" [step]=\"step\"></p-knob>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "max",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "KnobModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { KnobModule } from 'primeng/knob';\n\n@Component({\n  selector: 'ui-knob',\n  standalone: true,\n  imports: [CommonModule, FormsModule, KnobModule],\n  template: `\n    <p-knob [(ngModel)]=\"value\" [min]=\"min\" [max]=\"max\" [step]=\"step\"></p-knob>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiKnobComponent {\n  @Input() value = 0;\n  @Output() valueChange = new EventEmitter<number>();\n  @Input() min = 0;\n  @Input() max = 100;\n  @Input() step = 1;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "UiListboxComponent",
+            "id": "component-UiListboxComponent-8568897b623c3e3ad458403861391d9a0f62dbb5002ba7dc81ff2015d920b813f1e516f1912a74aa4464e3104fd2395e8bb550e4de905bfd31970d65106de3cc",
+            "file": "src/app/ui-lib/components/ui-listbox/ui-listbox.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-listbox",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-listbox\n  [options]=\"options\"\n  [(ngModel)]=\"model\"\n  [multiple]=\"multiple\"\n  [styleClass]=\"classes\"\n></p-listbox>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "model",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "T | T[]",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T | T[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ListboxModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { ListboxModule } from 'primeng/listbox';\n\n@Component({\n  selector: 'ui-listbox',\n  standalone: true,\n  imports: [CommonModule, FormsModule, ListboxModule],\n  template: `\n    <p-listbox\n      [options]=\"options\"\n      [(ngModel)]=\"model\"\n      [multiple]=\"multiple\"\n      [styleClass]=\"classes\"\n    ></p-listbox>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiListboxComponent<T = unknown> {\n  @Input() options: any[] = [];\n  @Input() model!: T | T[];\n  @Output() modelChange = new EventEmitter<T | T[]>();\n  @Input() multiple = false;\n\n  get classes(): string {\n    return [\n      'w-80',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 32
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiMultiSelectComponent",
+            "id": "component-UiMultiSelectComponent-5a96b6afca428bcfdbcdd0d0a57b2b935d0a586b5e65391f2f57f19170b46563db4482cc1204bb9e7f22723e4d3875e72eb2117e63a998c9dc3684055aaf033e",
+            "file": "src/app/ui-lib/components/ui-multi-select/ui-multi-select.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-multi-select",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-multiSelect\n  [options]=\"options\"\n  [(ngModel)]=\"model\"\n  [placeholder]=\"placeholder\"\n  [styleClass]=\"classes\"\n></p-multiSelect>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "model",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "T[]",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MultiSelectModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { MultiSelectModule } from 'primeng/multiselect';\n\n@Component({\n  selector: 'ui-multi-select',\n  standalone: true,\n  imports: [CommonModule, FormsModule, MultiSelectModule],\n  template: `\n    <p-multiSelect\n      [options]=\"options\"\n      [(ngModel)]=\"model\"\n      [placeholder]=\"placeholder\"\n      [styleClass]=\"classes\"\n    ></p-multiSelect>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiMultiSelectComponent<T = unknown> {\n  @Input() options: any[] = [];\n  @Input() model: T[] = [];\n  @Output() modelChange = new EventEmitter<T[]>();\n  @Input() placeholder = '';\n\n  get classes(): string {\n    return [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 32
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiRadioButtonComponent",
+            "id": "component-UiRadioButtonComponent-4db97c12636a191d8fe10bd2b3f39fd0cbb68ca902c8fd02f0efea487f836bb0f36dd2b5b660364e80a35a8272e82bfbba0c86b49560bb5525c698f8deba0e0c",
+            "file": "src/app/ui-lib/components/ui-radiobutton/ui-radiobutton.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-radiobutton",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"inline-flex items-center gap-2\">\n  <p-radioButton\n    [inputId]=\"inputId\"\n    [name]=\"name\"\n    [value]=\"value\"\n    [ngModel]=\"model\"\n    (onClick)=\"onSelect(value)\"\n    [styleClass]=\"radioClasses\"\n  ></p-radioButton>\n  <label *ngIf=\"label\" class=\"text-sm text-gray-800\" [for]=\"inputId\">{{\n    label\n  }}</label>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "inputId",
+                    "defaultValue": "'radio-' + Math.random().toString(36).slice(2, 7)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "T",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "'group'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "T",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "val",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "val",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "RadioButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RadioButtonModule } from 'primeng/radiobutton';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  selector: 'ui-radiobutton',\n  standalone: true,\n  imports: [CommonModule, FormsModule, RadioButtonModule],\n  template: `\n    <div class=\"inline-flex items-center gap-2\">\n      <p-radioButton\n        [inputId]=\"inputId\"\n        [name]=\"name\"\n        [value]=\"value\"\n        [ngModel]=\"model\"\n        (onClick)=\"onSelect(value)\"\n        [styleClass]=\"radioClasses\"\n      ></p-radioButton>\n      <label *ngIf=\"label\" class=\"text-sm text-gray-800\" [for]=\"inputId\">{{\n        label\n      }}</label>\n    </div>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiRadioButtonComponent<T = unknown> {\n  @Input() name = 'group';\n  @Input() label?: string;\n  @Input() value!: T;\n  @Input() model!: T;\n  @Output() modelChange = new EventEmitter<T>();\n  @Input() inputId = 'radio-' + Math.random().toString(36).slice(2, 7);\n\n  get radioClasses(): string {\n    return ['text-blue', 'focus:ring-blue'].join(' ');\n  }\n\n  onSelect(val: T): void {\n    this.modelChange.emit(val);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "radioClasses": {
+                    "name": "radioClasses",
+                    "getSignature": {
+                        "name": "radioClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 41
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiSelectButtonComponent",
+            "id": "component-UiSelectButtonComponent-7124813e9e208c9f95298f4651dbb7adde00a1b15ee6863907e7a8e6b77b59623f403b2f342e78d5b67938f74498c3d12bb2b5ba00decfdf2b24d7155b992ca8",
+            "file": "src/app/ui-lib/components/ui-select-button/ui-select-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-select-button",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-selectButton\n  [options]=\"options\"\n  [(ngModel)]=\"model\"\n  [multiple]=\"multiple\"\n  [disabled]=\"disabled\"\n  [ariaLabel]=\"ariaLabel\"\n  [unselectable]=\"unselectable\"\n  [styleClass]=\"classes\"\n></p-selectButton>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "T | T[]",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "unselectable",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T | T[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SelectButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { SelectButtonModule } from 'primeng/selectbutton';\n\n@Component({\n  selector: 'ui-select-button',\n  standalone: true,\n  imports: [CommonModule, FormsModule, SelectButtonModule],\n  template: `\n    <p-selectButton\n      [options]=\"options\"\n      [(ngModel)]=\"model\"\n      [multiple]=\"multiple\"\n      [disabled]=\"disabled\"\n      [ariaLabel]=\"ariaLabel\"\n      [unselectable]=\"unselectable\"\n      [styleClass]=\"classes\"\n    ></p-selectButton>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiSelectButtonComponent<T = unknown> {\n  @Input() options: { label: string; value: T }[] = [];\n  @Input() model!: T | T[];\n  @Output() modelChange = new EventEmitter<T | T[]>();\n  @Input() multiple = false;\n  @Input() disabled = false;\n  @Input() ariaLabel?: string;\n  @Input() unselectable = false;\n\n  get classes(): string {\n    return [\n      'rounded-brand-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "string",
+                        "returnType": "string",
                         "line": 38
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiSelectComponent",
+            "id": "component-UiSelectComponent-95d7a63c42b76a528cf23a7ea1377fe9c2b25c46c8d3d5acfaff116c0be620990ae49f461117dd09e60fa5bdf80de3a5a197cff8a35314d00d9b5e7b67f1153a",
+            "file": "src/app/ui-lib/components/ui-select/ui-select.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-select",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-select\n  [options]=\"options\"\n  [(ngModel)]=\"model\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [styleClass]=\"selectClasses\"\n></p-select>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "model",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "T | null",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "UiSize",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "modelChange",
+                    "defaultValue": "new EventEmitter<T | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SelectModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { SelectModule } from 'primeng/select';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-select',\n  standalone: true,\n  imports: [CommonModule, FormsModule, SelectModule],\n  template: `\n    <p-select\n      [options]=\"options\"\n      [(ngModel)]=\"model\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [styleClass]=\"selectClasses\"\n    ></p-select>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiSelectComponent<T = unknown> {\n  @Input() options: any[] = [];\n  @Input() model: T | null = null;\n  @Output() modelChange = new EventEmitter<T | null>();\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() size: UiSize = 'md';\n\n  get selectClasses(): string {\n    const base = [\n      'w-full',\n      'rounded-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['h-8', 'text-sm'],\n      md: ['h-10', 'text-sm'],\n      lg: ['h-12', 'text-base'],\n    };\n    return [...base, ...sizes[this.size]].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "selectClasses": {
+                    "name": "selectClasses",
+                    "getSignature": {
+                        "name": "selectClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 37
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiSliderComponent",
+            "id": "component-UiSliderComponent-506fbf68bfe8ed94672be86def0c6ae726b2b81b72067528c79b4eae6f99ab362a29cfc01d1f71e8a4a8fa6d887c0e3eb2641f287acda7b6ed4fc9a3ddd4a980",
+            "file": "src/app/ui-lib/components/ui-slider/ui-slider.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-slider",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"w-80\">\n  <p-slider\n    [(ngModel)]=\"value\"\n    [min]=\"min\"\n    [max]=\"max\"\n    [step]=\"step\"\n    [style]=\"{ width: '100%' }\"\n  ></p-slider>\n  <div class=\"mt-2 text-sm text-gray-700\">{{ value }}</div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "max",
+                    "defaultValue": "100",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SliderModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { SliderModule } from 'primeng/slider';\n\n@Component({\n  selector: 'ui-slider',\n  standalone: true,\n  imports: [CommonModule, FormsModule, SliderModule],\n  template: `\n    <div class=\"w-80\">\n      <p-slider\n        [(ngModel)]=\"value\"\n        [min]=\"min\"\n        [max]=\"max\"\n        [step]=\"step\"\n        [style]=\"{ width: '100%' }\"\n      ></p-slider>\n      <div class=\"mt-2 text-sm text-gray-700\">{{ value }}</div>\n    </div>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiSliderComponent {\n  @Input() value = 0;\n  @Output() valueChange = new EventEmitter<number>();\n  @Input() min = 0;\n  @Input() max = 100;\n  @Input() step = 1;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "UiSpeedDialComponent",
+            "id": "component-UiSpeedDialComponent-06f1986302918b668f0b8926282942a40a87cfe8e45cfc7a6c884f46bb22f28a33ef774bb4bc05fed94712b623bc579725a4a1350a4717c128f893bbf1591049",
+            "file": "src/app/ui-lib/components/ui-speed-dial/ui-speed-dial.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-speed-dial",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-speedDial\n  [model]=\"items\"\n  [direction]=\"direction\"\n  [transitionDelay]=\"50\"\n></p-speedDial>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "direction",
+                    "defaultValue": "'up'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "\"up\" | \"down\" | \"left\" | \"right\"",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "any[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SpeedDialModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SpeedDialModule } from 'primeng/speeddial';\n\n@Component({\n  selector: 'ui-speed-dial',\n  standalone: true,\n  imports: [CommonModule, SpeedDialModule],\n  template: `\n    <p-speedDial\n      [model]=\"items\"\n      [direction]=\"direction\"\n      [transitionDelay]=\"50\"\n    ></p-speedDial>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiSpeedDialComponent {\n  @Input() items: any[] = [];\n  @Input() direction: 'up' | 'down' | 'left' | 'right' = 'up';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "UiSplitButtonComponent",
+            "id": "component-UiSplitButtonComponent-4d254619c52c79636b109a97bff035f256f5947cdcac23c0e262867f961c80814fe7581b29449e8a2a977ce03d9b4e3d97926d1d7a2041cf6baa7eaf8c5b9b66",
+            "file": "src/app/ui-lib/components/ui-split-button/ui-split-button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-split-button",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-splitButton\n  [label]=\"label\"\n  [model]=\"items\"\n  [class]=\"buttonClasses\"\n></p-splitButton>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Actions'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SplitButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { SplitButtonModule } from 'primeng/splitbutton';\n\n@Component({\n  selector: 'ui-split-button',\n  standalone: true,\n  imports: [CommonModule, SplitButtonModule],\n  template: `\n    <p-splitButton\n      [label]=\"label\"\n      [model]=\"items\"\n      [class]=\"buttonClasses\"\n    ></p-splitButton>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiSplitButtonComponent {\n  @Input() label = 'Actions';\n  @Input() items: any[] = [];\n\n  get buttonClasses(): string {\n    return ['bg-blue', 'text-white', 'hover:bg-blue-dark', 'rounded-md'].join(\n      ' '\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "buttonClasses": {
+                    "name": "buttonClasses",
+                    "getSignature": {
+                        "name": "buttonClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 22
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiTextareaComponent",
+            "id": "component-UiTextareaComponent-95e5777f8e02ccbe2bbdb6ebf49e5d2217ccea292d8f984a889cf153deef0a72ddaed49e1d1be0b595987b8d2552f74e46d0f78b37b5045e4fc01780e5809f51",
+            "file": "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-textarea",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<textarea\n  pInputTextarea\n  [rows]=\"rows\"\n  [cols]=\"cols\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [value]=\"value\"\n  (input)=\"onInput($event)\"\n></textarea>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "cols",
+                    "defaultValue": "30",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "rows",
+                    "defaultValue": "4",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "UiSize",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<string | null>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onInput",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Textarea"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { Textarea } from 'primeng/inputtextarea';\nimport { FormsModule } from '@angular/forms';\n\ntype UiSize = 'sm' | 'md' | 'lg';\n\n@Component({\n  selector: 'ui-textarea',\n  standalone: true,\n  imports: [CommonModule, FormsModule, Textarea],\n  template: `\n    <textarea\n      pInputTextarea\n      [rows]=\"rows\"\n      [cols]=\"cols\"\n      [placeholder]=\"placeholder\"\n      [disabled]=\"disabled\"\n      [ngClass]=\"classes\"\n      [value]=\"value\"\n      (input)=\"onInput($event)\"\n    ></textarea>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiTextareaComponent {\n  @Input() value: string | null = null;\n  @Output() valueChange = new EventEmitter<string | null>();\n  @Input() placeholder = '';\n  @Input() disabled = false;\n  @Input() rows = 4;\n  @Input() cols = 30;\n  @Input() size: UiSize = 'md';\n\n  get classes(): string[] {\n    const base = [\n      'w-full',\n      'rounded-brand-md',\n      'border',\n      'border-blue',\n      'focus:ring-2',\n      'focus:ring-blue',\n    ];\n    const sizes: Record<UiSize, string[]> = {\n      sm: ['text-sm', 'p-sm'],\n      md: ['text-sm', 'p-md'],\n      lg: ['text-base', 'p-lg'],\n    };\n    return [...base, ...sizes[this.size]];\n  }\n\n  onInput(event: Event): void {\n    const target = event.target as HTMLTextAreaElement;\n    this.valueChange.emit(target.value);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            }
+        },
+        {
+            "name": "UiToggleSwitchComponent",
+            "id": "component-UiToggleSwitchComponent-97712df297428b1b68e21fa24e71f599aec08d58ae443edffb826ffb9c7396f8a5c7f0cea313a11afdb26787832afa09d80b2c80c47179a6a6a48fbbb8bf81ca",
+            "file": "src/app/ui-lib/components/ui-toggle-switch/ui-toggle-switch.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-toggle-switch",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-inputSwitch\n  [ngModel]=\"checked\"\n  (onChange)=\"checkedChange.emit($event.checked)\"\n  [styleClass]=\"classes\"\n></p-inputSwitch>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "checkedChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputSwitchModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Input,\n  Output,\n} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { InputSwitchModule } from 'primeng/inputswitch';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  selector: 'ui-toggle-switch',\n  standalone: true,\n  imports: [CommonModule, FormsModule, InputSwitchModule],\n  template: `\n    <p-inputSwitch\n      [ngModel]=\"checked\"\n      (onChange)=\"checkedChange.emit($event.checked)\"\n      [styleClass]=\"classes\"\n    ></p-inputSwitch>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class UiToggleSwitchComponent {\n  @Input() checked = false;\n  @Output() checkedChange = new EventEmitter<boolean>();\n\n  get classes(): string {\n    return ['text-blue', 'focus:ring-blue'].join(' ');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 29
                     }
                 }
             }
@@ -1134,6 +3330,17 @@
         "functions": [],
         "typealiases": [
             {
+                "name": "IconPosition",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"left\" | \"right\"",
+                "file": "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
                 "name": "UiButtonSize",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1176,6 +3383,94 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-select/ui-select.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "UiSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                "file": "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
             }
         ],
         "enumerations": [],
@@ -1196,6 +3491,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts": [
+                {
+                    "name": "IconPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"left\" | \"right\"",
+                    "file": "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
             "src/app/ui-lib/components/ui-button/ui-button.component.ts": [
                 {
                     "name": "UiButtonSize",
@@ -1240,6 +3548,110 @@
                     "subtype": "typealias",
                     "rawtype": "\"sm\" | \"md\" | \"lg\"",
                     "file": "src/app/ui-lib/components/ui-input-text/ui-input-text.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-select/ui-select.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-select/ui-select.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts": [
+                {
+                    "name": "UiSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm\" | \"md\" | \"lg\"",
+                    "file": "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1372,6 +3784,25 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiAutoCompleteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-autocomplete/ui-autocomplete.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/ui-lib/components/ui-button/ui-button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1396,6 +3827,53 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "UiButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiCascadeSelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-cascade-select/ui-cascade-select.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-checkbox/ui-checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiCheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiDatePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-date-picker/ui-date-picker.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1429,12 +3907,106 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/ui-lib/components/ui-float-label/ui-float-label.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiFloatLabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiIconFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-icon-field/ui-icon-field.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "IconPosition",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-group/ui-input-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiInputGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiInputMaskComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-mask/ui-input-mask.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiInputNumberComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-number/ui-input-number.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiInputOtpComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-input-otp/ui-input-otp.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/ui-lib/components/ui-input-text/ui-input-text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "UiInputTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -1445,6 +4017,125 @@
                 "name": "UiInputTextSize",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-knob/ui-knob.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiKnobComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-listbox/ui-listbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiListboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-multi-select/ui-multi-select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiMultiSelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-radiobutton/ui-radiobutton.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiRadioButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-select-button/ui-select-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSelectButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-select/ui-select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-select/ui-select.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-slider/ui-slider.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSliderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-speed-dial/ui-speed-dial.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSpeedDialComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-split-button/ui-split-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSplitButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiTextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-textarea/ui-textarea.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "UiSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-lib/components/ui-toggle-switch/ui-toggle-switch.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiToggleSwitchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             }
         ]
