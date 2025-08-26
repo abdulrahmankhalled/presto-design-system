@@ -39,7 +39,7 @@ export class UiButtonComponent {
       'inline-flex',
       'items-center',
       'justify-center',
-      'rounded-md',
+      'rounded-brand-md',
       'font-medium',
       'transition-colors',
       'focus:outline-none',

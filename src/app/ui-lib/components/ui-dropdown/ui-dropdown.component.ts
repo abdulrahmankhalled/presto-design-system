@@ -54,10 +54,10 @@ export class UiDropdownComponent<T = unknown> {
   get dropdownClasses(): string {
     const base = [
       'w-full',
-      'rounded-md',
+      'rounded-brand-md',
       'border',
       'border-blue',
-      'text-gray-900',
+      'text-neutral-900',
       'focus:ring-2',
       'focus:ring-blue',
       'focus:outline-none',

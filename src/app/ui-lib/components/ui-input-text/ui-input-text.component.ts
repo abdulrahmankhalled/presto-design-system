@@ -7,19 +7,21 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
+import { KeyFilterModule } from 'primeng/keyfilter';
 
 type UiInputTextSize = 'sm' | 'md' | 'lg';
 
 @Component({
   selector: 'ui-input-text',
   standalone: true,
-  imports: [CommonModule, InputTextModule],
+  imports: [CommonModule, InputTextModule, KeyFilterModule],
   template: `
     <input
       pInputText
       [type]="type"
       [placeholder]="placeholder"
       [disabled]="disabled"
+      [pKeyFilter]="keyFilterPattern ? keyFilterPattern : null"
       [ngClass]="computedClasses"
       [value]="value"
       (input)="onInput($event)"
@@ -33,16 +35,17 @@ export class UiInputTextComponent {
   @Input() placeholder = '';
   @Input() type: 'text' | 'email' | 'password' | 'search' = 'text';
   @Input() value: string | null = null;
+  @Input() keyFilterPattern?: string | RegExp;
   @Output() valueChange = new EventEmitter<string>();
 
   get computedClasses(): string[] {
     const base = [
       'w-full',
-      'rounded-md',
+      'rounded-brand-md',
       'border',
       'border-blue',
-      'text-gray-900',
-      'placeholder-gray-400',
+      'text-neutral-900',
+      'placeholder-neutral-400',
       'focus:outline-none',
       'focus:ring-2',
       'focus:ring-blue',
