@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primeng-red-theme-demo": {
+    "presto-design-system": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/primeng-red-theme-demo",
+            "outputPath": "dist/presto-design-system",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "primeng-red-theme-demo:build:production"
+              "buildTarget": "presto-design-system:build:production"
             },
             "development": {
-              "buildTarget": "primeng-red-theme-demo:build:development"
+              "buildTarget": "presto-design-system:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "primeng-red-theme-demo:build",
+            "browserTarget": "presto-design-system:build",
             "port": 6006,
             "compodoc": false
           }
@@ -84,7 +84,7 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "primeng-red-theme-demo:build",
+            "browserTarget": "presto-design-system:build",
             "outputDir": "storybook-static",
             "compodoc": false
           }

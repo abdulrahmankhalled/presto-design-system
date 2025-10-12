@@ -1,13 +1,13 @@
 {
-  "name": "primeng-red-theme-demo",
+  "name": "presto-design-system",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
-    "storybook": "ng run primeng-red-theme-demo:storybook",
-    "storybook:build": "ng run primeng-red-theme-demo:build-storybook"
+    "storybook": "ng run presto-design-system:storybook",
+    "storybook:build": "ng run presto-design-system:build-storybook"
   },
   "private": true,
   "dependencies": {
