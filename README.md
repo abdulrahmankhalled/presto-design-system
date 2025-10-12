@@ -1,27 +1,68 @@
-# NgDocumentation
+# PrimeNG Red Theme Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+A minimal Angular application showcasing a custom red theme for PrimeNG 20 with Tailwind CSS.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- ✅ **Custom Red Theme**: Complete red color palette for PrimeNG components
+- ✅ **Tailwind CSS**: Utility-first CSS framework
+- ✅ **PrimeNG 20**: Latest version with custom theming
+- ✅ **Minimal Setup**: Clean, simple project structure
+- ✅ **Storybook**: Component showcase (optional)
 
-## Code scaffolding
+## Quick Start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+# Install dependencies
+npm install
 
-## Build
+# Start development server
+npm start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Open Storybook (optional)
+npm run storybook
+```
 
-## Running unit tests
+## Project Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+src/
+├── app/
+│   ├── app.component.*          # Main demo component
+│   ├── app.config.ts           # App configuration
+│   └── app.routes.ts           # Routing (minimal)
+├── themes/
+│   └── red-theme.ts            # Custom red theme configuration
+└── styles.scss                 # Global styles with Tailwind
+```
 
-## Running end-to-end tests
+## Custom Theme
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The red theme is defined in `src/themes/red-theme.ts` using PrimeUIX's `definePreset()` function. It includes:
 
-## Further help
+- Complete red color palette (50-950 shades)
+- Light and dark mode support
+- All component states (hover, focus, active)
+- Form fields, navigation, overlays, and more
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Technologies
+
+- **Angular 20**: Latest Angular framework
+- **PrimeNG 20**: UI component library
+- **Tailwind CSS**: Utility-first CSS
+- **PrimeUIX Themes**: Advanced theming system
+- **Storybook**: Component development environment
+
+## Development
+
+```bash
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Storybook
+npm run storybook
+npm run storybook:build
+```

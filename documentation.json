@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-003ed0dc1b9c6810e3cd72fb75b18c8960d811e6fd9df3e48fac6cc5e796cd96da1ad5f31315f46f67a911694469a9dc6ff155734124494ac72ddf7a23c7a24a",
+            "id": "component-AppComponent-c0c0b58ef606c592eca46c51c156a7bb93a73c3dcefc39b02b4d71b02cab2f8b55a8d4f502de4d3999523a34904982ac3f4578511ce301de2f386d679aee6984",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -28,130 +28,39 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "dropdownOptions",
+                    "defaultValue": "[\n    { label: 'Option 1', value: 'option1' },\n    { label: 'Option 2', value: 'option2' },\n    { label: 'Option 3', value: 'option3' },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
                     "name": "title",
-                    "defaultValue": "'Documentation'",
+                    "defaultValue": "'PrimeNG Red Theme Demo'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 24
                 }
             ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "RouterOutlet"
-                },
-                {
-                    "name": "HeaderComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "NavigationComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "MainContentComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "ButtonModule",
-                    "type": "module"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { HeaderComponent } from './components/layout/header/header.component';\nimport { NavigationComponent } from './components/layout/navigation/navigation.component';\nimport { MainContentComponent } from './components/layout/main-content/main-content.component';\nimport { ButtonModule } from 'primeng/button';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    RouterOutlet,\n    HeaderComponent,\n    NavigationComponent,\n    MainContentComponent,\n    ButtonModule,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'Documentation';\n}\n",
-            "styleUrl": "./app.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<div class=\"min-h-screen bg-white\">\n  <app-header></app-header>\n\n  <div class=\"flex\">\n    <aside\n      class=\"w-64 xl:w-72 shrink-0 bg-slate-50 min-h-screen border-r border-slate-200\"\n    >\n      <app-navigation></app-navigation>\n    </aside>\n\n    <main class=\"flex-1\">\n      <app-main-content></app-main-content>\n    </main>\n  </div>\n</div>\n"
-        },
-        {
-            "name": "ArticleViewComponent",
-            "id": "component-ArticleViewComponent-65ab62bb561b222f36f0a5f09a8dba2e30a10b8a3dca383a5a1b24e383f8af576f4f050df1f0d4f595e9faeb9596d6f37babda228455c4dfa8dda51874eec60a",
-            "file": "src/app/components/shared/article-view/article-view.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-article-view",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./article-view.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "nextLink",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 17,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "nextTitle",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 18,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "previousLink",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "previousTitle",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 16,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "section",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "title",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -164,606 +73,36 @@
                     "type": "module"
                 },
                 {
-                    "name": "RouterLink"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { RouterLink } from '@angular/router';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'app-article-view',\n  standalone: true,\n  imports: [CommonModule, RouterLink],\n  templateUrl: './article-view.component.html',\n  styleUrl: './article-view.component.scss',\n})\nexport class ArticleViewComponent {\n  @Input() section: string = '';\n  @Input() title: string = '';\n  @Input() previousLink: string = '';\n  @Input() previousTitle: string = '';\n  @Input() nextLink: string = '';\n  @Input() nextTitle: string = '';\n}\n",
-            "styleUrl": "./article-view.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<article class=\"prose prose-slate max-w-none\">\n  <header>\n    <p class=\"text-base font-medium text-slate-500\">\n      {{ section }}\n    </p>\n\n    <h1 class=\"text-3xl font-bold tracking-tight text-slate-900\">\n      {{ title }}\n    </h1>\n  </header>\n\n  <div class=\"mt-2 text-xl text-slate-600\">\n    <ng-content></ng-content>\n  </div>\n\n  <dl class=\"flex pt-6 mt-6 border-t border-slate-200\">\n    <div *ngIf=\"previousLink\" class=\"mr-auto text-left\">\n      <dt class=\"text-sm font-normal tracking-tight text-slate-600\">\n        Previous\n      </dt>\n\n      <dd class=\"mt-1\">\n        <a\n          [routerLink]=\"previousLink\"\n          class=\"text-base font-semibold text-slate-900 hover:underline\"\n        >\n          {{ previousTitle }}\n        </a>\n      </dd>\n    </div>\n\n    <div *ngIf=\"nextLink\" class=\"ml-auto text-right\">\n      <dt class=\"text-sm font-normal tracking-tight text-slate-600\">Next</dt>\n\n      <dd class=\"mt-1\">\n        <a\n          [routerLink]=\"nextLink\"\n          class=\"text-base font-semibold text-slate-900 hover:underline\"\n        >\n          {{ nextTitle }}\n        </a>\n      </dd>\n    </div>\n  </dl>\n</article>\n"
-        },
-        {
-            "name": "ConfigurationComponent",
-            "id": "component-ConfigurationComponent-d60a0045bdeb37d8b040cc3ad91e0434274c7e50301c842d4d047e5ed032aa6352f6ec73ed44cfa8e0a15ba9baedea7f6f77b3cef662eee8f3502051df12cdd4",
-            "file": "src/app/pages/advanced/configuration/configuration.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-configuration",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./configuration.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-configuration',\n  standalone: true,\n  imports: [],\n  templateUrl: './configuration.component.html',\n  styleUrl: './configuration.component.scss'\n})\nexport class ConfigurationComponent {\n\n}\n",
-            "styleUrl": "./configuration.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<p>configuration works!</p>\n"
-        },
-        {
-            "name": "CustomizationComponent",
-            "id": "component-CustomizationComponent-bc435fe3ac449e6740ebbe558ab5d011180f4366af67a49596b474a681e2763bbdf0a8e0708830e9ed602d4abfa2e6d9076e61be66a32bf870f2f6d1e643550b",
-            "file": "src/app/pages/advanced/customization/customization.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-customization",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./customization.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-customization',\n  standalone: true,\n  imports: [],\n  templateUrl: './customization.component.html',\n  styleUrl: './customization.component.scss'\n})\nexport class CustomizationComponent {\n\n}\n",
-            "styleUrl": "./customization.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<p>customization works!</p>\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-858034d14a65f1753224c862e1248c21fa2951049aeb63e7e4fcf79a80e047873a8780bc17a7b7e02dd26c70db0cdf3109262bd3bee2269ad8b2c8cb6f560e3b",
-            "file": "src/app/components/layout/header/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-header",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./header.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "onSearch",
-                    "args": [
-                        {
-                            "name": "searchTerm",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 13,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "searchTerm",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "RouterLink"
+                    "name": "FormsModule",
+                    "type": "module"
                 },
-                {
-                    "name": "SearchBarComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterLink } from '@angular/router';\nimport { SearchBarComponent } from '../../shared/search-bar/search-bar.component';\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [RouterLink, SearchBarComponent],\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.scss',\n})\nexport class HeaderComponent {\n  onSearch(searchTerm: string) {\n    // TODO: Implement search functionality\n    console.log('Search term:', searchTerm);\n  }\n}\n",
-            "styleUrl": "./header.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<header\n  class=\"fixed w-full top-0 z-50 flex items-center justify-between px-3 py-2 border-b shadow-lg bg-white/90 backdrop-blur-sm border-slate-400/40\"\n>\n  <div class=\"flex items-center flex-grow basis-0\">\n    <a\n      routerLink=\"/\"\n      class=\"text-lg font-semibold tracking-tight text-slate-900\"\n    >\n      Documentation\n    </a>\n  </div>\n\n  <app-search-bar (search)=\"onSearch($event)\"></app-search-bar>\n\n  <div class=\"items-center justify-end flex-grow hidden basis-0 md:flex\">\n    <a\n      href=\"#\"\n      class=\"px-4 py-2 text-sm font-semibold rounded bg-slate-900 text-slate-50 transition ease-in-out delay-75 hover:scale-105 duration-200\"\n    >\n      Go to homepage\n    </a>\n  </div>\n</header>\n"
-        },
-        {
-            "name": "HowItWorksComponent",
-            "id": "component-HowItWorksComponent-873608883d29a42facfb09af043555c94c81ef33c398fc4630d1404be2f2281e61d4aee385a550132d42caec67d3a6b2485716400f98894a4bd87a7cacb2652a",
-            "file": "src/app/pages/getting-started/how-it-works/how-it-works.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-how-it-works",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./how-it-works.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-how-it-works',\n  standalone: true,\n  imports: [],\n  templateUrl: './how-it-works.component.html',\n  styleUrl: './how-it-works.component.scss'\n})\nexport class HowItWorksComponent {\n\n}\n",
-            "styleUrl": "./how-it-works.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<p>how-it-works works!</p>\n"
-        },
-        {
-            "name": "MainContentComponent",
-            "id": "component-MainContentComponent-87d3aba039f3e28b4b31c142480728bd4921ca2e0ca69532ed3fd667d52f663a2d8ae526ac2ad303a438b14e423e203560fb0b0ae1ac97417b470d3be5aca976",
-            "file": "src/app/components/layout/main-content/main-content.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-main-content",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./main-content.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "RouterOutlet"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'app-main-content',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './main-content.component.html',\n  styleUrl: './main-content.component.scss',\n})\nexport class MainContentComponent {}\n",
-            "styleUrl": "./main-content.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<div class=\"py-10 px-8 mt-[3.5rem]\">\n  <router-outlet></router-outlet>\n</div>\n"
-        },
-        {
-            "name": "NavigationComponent",
-            "id": "component-NavigationComponent-2ae9610e5ccac9b90f4cf1eb12c5491b47e38b5fed7619e90f05252d108018aea43a7450f143c868a64148da93d6a6b9e320b5ebcf9caf2247485e03423dc989",
-            "file": "src/app/components/layout/navigation/navigation.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-navigation",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./navigation.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "RouterLink"
-                },
-                {
-                    "name": "RouterLinkActive"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterLink, RouterLinkActive } from '@angular/router';\n\n@Component({\n  selector: 'app-navigation',\n  standalone: true,\n  imports: [RouterLink, RouterLinkActive],\n  templateUrl: './navigation.component.html',\n  styleUrl: './navigation.component.scss',\n})\nexport class NavigationComponent {}\n",
-            "styleUrl": "./navigation.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<nav\n  class=\"sticky top-[3.5rem] left-0 h-[calc(100vh-3.5rem)] overflow-y-auto py-5 pr-8 px-4\"\n>\n  <ul role=\"list\" class=\"space-y-8\">\n    <li>\n      <h3 class=\"font-semibold tracking-tight text-slate-900\">\n        Getting started\n      </h3>\n\n      <ul role=\"list\" class=\"pl-3 mt-3 space-y-2\">\n        <li>\n          <a\n            routerLink=\"/getting-started/quick-start\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            Quick start guide\n          </a>\n        </li>\n\n        <li>\n          <a\n            routerLink=\"/getting-started/how-it-works\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            How does it work?\n          </a>\n        </li>\n      </ul>\n    </li>\n\n    <li>\n      <h3 class=\"font-semibold tracking-tight text-slate-900\">Components</h3>\n\n      <ul role=\"list\" class=\"pl-3 mt-3 space-y-2\">\n        <li>\n          <a\n            routerLink=\"/components/overview\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            Overview\n          </a>\n        </li>\n\n        <li>\n          <a\n            routerLink=\"/components/usage\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            Usage Guide\n          </a>\n        </li>\n      </ul>\n    </li>\n\n    <li>\n      <h3 class=\"font-semibold tracking-tight text-slate-900\">Advanced</h3>\n\n      <ul role=\"list\" class=\"pl-3 mt-3 space-y-2\">\n        <li>\n          <a\n            routerLink=\"/advanced/configuration\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            Configuration\n          </a>\n        </li>\n\n        <li>\n          <a\n            routerLink=\"/advanced/customization\"\n            routerLinkActive=\"text-slate-900\"\n            class=\"text-slate-600 hover:text-slate-800\"\n          >\n            Customization\n          </a>\n        </li>\n      </ul>\n    </li>\n  </ul>\n</nav>\n\n<!-- Mobile menu button -->\n<div class=\"lg:hidden\">\n  <label\n    for=\"navigation\"\n    class=\"fixed bottom-0 left-0 z-50 flex items-center justify-center w-12 h-12 mb-4 ml-4 bg-white border rounded-full shadow-lg cursor-pointer text-slate-600 border-slate-300 transition duration-200 ease-in-out active:scale-95\"\n  >\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      class=\"w-6 h-6\"\n      fill=\"none\"\n      viewBox=\"0 0 24 24\"\n      stroke=\"currentColor\"\n      stroke-width=\"2\"\n    >\n      <path\n        stroke-linecap=\"round\"\n        stroke-linejoin=\"round\"\n        d=\"M4 8h16M4 16h16\"\n      />\n    </svg>\n  </label>\n  <input\n    type=\"checkbox\"\n    name=\"navigation\"\n    id=\"navigation\"\n    class=\"hidden peer\"\n  />\n</div>\n"
-        },
-        {
-            "name": "OverviewComponent",
-            "id": "component-OverviewComponent-5adddd28b5991253d133153850f4002ba436e7b2501f87de35a76a073a7da7935c78942ce652f88c251e063dc37aa69960ae8315f9e96c99306c6c32018697e8",
-            "file": "src/app/pages/components/overview/overview.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-overview",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./overview.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-overview',\n  standalone: true,\n  imports: [],\n  templateUrl: './overview.component.html',\n  styleUrl: './overview.component.scss'\n})\nexport class OverviewComponent {\n\n}\n",
-            "styleUrl": "./overview.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<p>overview works!</p>\n"
-        },
-        {
-            "name": "PrimengButtonComponent",
-            "id": "component-PrimengButtonComponent-7febf45cc50688ecf13b082f0167593e79eda5159fd820c0a4dfadf27522603f75152dd4a8540897db7c29a029ac68ce452194a5373065d5b5f058610a5da26a",
-            "file": "src/stories/primeng-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-primeng-button",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<p-button\n  [label]=\"label\"\n  [severity]=\"severity\"\n  [size]=\"size\"\n  [disabled]=\"disabled\"\n  [loading]=\"loading\"\n  [icon]=\"icon\"\n  [iconPos]=\"iconPos\"\n  (onClick)=\"onClick.emit($event)\"\n></p-button>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 25,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "icon",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 27,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "iconPos",
-                    "defaultValue": "'left'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 28,
-                    "type": "\"left\" | \"right\" | \"top\" | \"bottom\"",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 22,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "loading",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 26,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "severity",
-                    "defaultValue": "'primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 23,
-                    "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"help\" | \"danger\" | \"contrast\"",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'small'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 24,
-                    "type": "\"small\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<any>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 29,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
                 {
                     "name": "ButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputTextModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CheckboxModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CardModule",
                     "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { ButtonModule } from 'primeng/button';\n\n@Component({\n  selector: 'app-primeng-button',\n  standalone: true,\n  imports: [ButtonModule],\n  template: `\n    <p-button\n      [label]=\"label\"\n      [severity]=\"severity\"\n      [size]=\"size\"\n      [disabled]=\"disabled\"\n      [loading]=\"loading\"\n      [icon]=\"icon\"\n      [iconPos]=\"iconPos\"\n      (onClick)=\"onClick.emit($event)\"\n    ></p-button>\n  `,\n})\nexport class PrimengButtonComponent {\n  @Input() label: string = '';\n  @Input() severity: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'help' | 'danger' | 'contrast' = 'primary';\n  @Input() size: 'small' | 'large' = 'small';\n  @Input() disabled: boolean = false;\n  @Input() loading: boolean = false;\n  @Input() icon: string = '';\n  @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';\n  @Output() onClick = new EventEmitter<any>();\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": []
-        },
-        {
-            "name": "QuickStartComponent",
-            "id": "component-QuickStartComponent-e31c1605882f939c3114c1a82026f3c7e8024dc8dea3957952c9f884e7635f09588bf28a8e7f14d0650aa2a90c9f0ba0d0bf5cef53724514b0719fcb527da476",
-            "file": "src/app/pages/getting-started/quick-start/quick-start.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-quick-start",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./quick-start.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "RouterLink"
-                },
-                {
-                    "name": "ArticleViewComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterLink } from '@angular/router';\nimport { ArticleViewComponent } from '../../../components/shared/article-view/article-view.component';\n\n@Component({\n  selector: 'app-quick-start',\n  standalone: true,\n  imports: [RouterLink, ArticleViewComponent],\n  templateUrl: './quick-start.component.html',\n  styleUrl: './quick-start.component.scss',\n})\nexport class QuickStartComponent {}\n",
-            "styleUrl": "./quick-start.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\nimport { ButtonModule } from 'primeng/button';\nimport { InputTextModule } from 'primeng/inputtext';\nimport { CheckboxModule } from 'primeng/checkbox';\nimport { CardModule } from 'primeng/card';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    CommonModule,\n    FormsModule,\n    ButtonModule,\n    InputTextModule,\n    CheckboxModule,\n    CardModule,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n  title = 'PrimeNG Red Theme Demo';\n  checked = false;\n\n  dropdownOptions = [\n    { label: 'Option 1', value: 'option1' },\n    { label: 'Option 2', value: 'option2' },\n    { label: 'Option 3', value: 'option3' },\n  ];\n}\n",
+            "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-article-view\n  section=\"Getting started\"\n  title=\"Quick start guide\"\n  nextLink=\"/getting-started/how-it-works\"\n  nextTitle=\"How does it work?\"\n>\n  <p class=\"mt-2 text-xl text-slate-600\">\n    Get started quickly with our documentation system. You will learn all the\n    basics in just minutes.\n  </p>\n\n  <h3 class=\"mt-16 text-base font-bold tracking-tight text-slate-900\">\n    Get set up quickly\n  </h3>\n\n  <ul class=\"mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2\">\n    <li>\n      <a\n        routerLink=\"/components/overview\"\n        class=\"block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white\"\n      >\n        <h4 class=\"font-bold tracking-tight text-slate-900\">\n          Components Overview\n        </h4>\n\n        <p class=\"text-slate-600\">\n          Learn about the available components and their usage\n        </p>\n      </a>\n    </li>\n\n    <li>\n      <a\n        routerLink=\"/advanced/configuration\"\n        class=\"block px-6 py-4 border rounded bg-slate-50 border-slate-100 hover:bg-white\"\n      >\n        <h4 class=\"font-bold tracking-tight text-slate-900\">\n          Configuration Guide\n        </h4>\n\n        <p class=\"text-slate-600\">\n          Configure the documentation system to your needs\n        </p>\n      </a>\n    </li>\n  </ul>\n</app-article-view>\n"
-        },
-        {
-            "name": "SearchBarComponent",
-            "id": "component-SearchBarComponent-e0a2e21ce07538b214a8e30c94edbdb855889c8de019f556872ab0adcc75c34b1977ea81a5b7da6334f1e04fe1da0da632f312877d4fb17eca04b5f3586b8379",
-            "file": "src/app/components/shared/search-bar/search-bar.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-search-bar",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./search-bar.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [
-                {
-                    "name": "search",
-                    "defaultValue": "new EventEmitter<string>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "onSearch",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "Event",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-search-bar',\n  standalone: true,\n  templateUrl: './search-bar.component.html',\n  styleUrl: './search-bar.component.scss',\n})\nexport class SearchBarComponent {\n  @Output() search = new EventEmitter<string>();\n\n  onSearch(event: Event) {\n    const target = event.target as HTMLInputElement;\n    this.search.emit(target.value);\n  }\n}\n",
-            "styleUrl": "./search-bar.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<form class=\"md:w-80 lg:w-96\">\n  <span class=\"relative flex items-center group\">\n    <svg\n      aria-hidden=\"true\"\n      viewBox=\"0 0 20 20\"\n      class=\"absolute w-4 h-4 ml-3 fill-slate-400 group-hover:fill-slate-500 group-focus:fill-slate-500\"\n    >\n      <path\n        d=\"M16.293 17.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM9 14a5 5 0 0 1-5-5H2a7 7 0 0 0 7 7v-2ZM4 9a5 5 0 0 1 5-5V2a7 7 0 0 0-7 7h2Zm5-5a5 5 0 0 1 5 5h2a7 7 0 0 0-7-7v2Zm8.707 12.293-3.757-3.757-1.414 1.414 3.757 3.757 1.414-1.414ZM14 9a4.98 4.98 0 0 1-1.464 3.536l1.414 1.414A6.98 6.98 0 0 0 16 9h-2Zm-1.464 3.536A4.98 4.98 0 0 1 9 14v2a6.98 6.98 0 0 0 4.95-2.05l-1.414-1.414Z\"\n      ></path>\n    </svg>\n    <input\n      type=\"text\"\n      placeholder=\"Search docs…\"\n      class=\"w-full py-2 pl-10 pr-2 border rounded bg-slate-100 placeholder-slate-400 text-slate-800 border-slate-100 outline outline-offset-2 outline-2 outline-transparent hover:border-slate-200 focus:border-slate-200 focus:outline-slate-600\"\n      (input)=\"onSearch($event)\"\n    />\n  </span>\n</form>\n"
-        },
-        {
-            "name": "UsageComponent",
-            "id": "component-UsageComponent-a7d1209c3b7b1c91dee508bc8cfa292eccdb4b805950789dbc79bc93b38fdfcbe97b060bd2a05162fc571146953fc2d94f26ced339aa073e12c36a24ca3e3f0f",
-            "file": "src/app/pages/components/usage/usage.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-usage",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./usage.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-usage',\n  standalone: true,\n  imports: [],\n  templateUrl: './usage.component.html',\n  styleUrl: './usage.component.scss'\n})\nexport class UsageComponent {\n\n}\n",
-            "styleUrl": "./usage.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<p>usage works!</p>\n"
+            "templateData": "<div class=\"min-h-screen bg-gray-50 p-8\">\n  <div class=\"max-w-4xl mx-auto\">\n    <h1 class=\"text-3xl font-bold text-gray-900 mb-8\">\n      PrimeNG Red Theme Demo\n    </h1>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6\">\n      <!-- Buttons -->\n      <div class=\"bg-white p-6 rounded-lg shadow-sm border\">\n        <h2 class=\"text-lg font-semibold text-gray-900 mb-4\">Buttons</h2>\n        <div class=\"space-y-3\">\n          <p-button label=\"Primary\" severity=\"primary\"></p-button>\n          <p-button label=\"Secondary\" severity=\"secondary\"></p-button>\n          <p-button label=\"Success\" severity=\"success\"></p-button>\n          <p-button label=\"Info\" severity=\"info\"></p-button>\n          <p-button label=\"Warning\" severity=\"warning\"></p-button>\n          <p-button label=\"Help\" severity=\"help\"></p-button>\n          <p-button label=\"Danger\" severity=\"danger\"></p-button>\n        </div>\n      </div>\n\n      <!-- Input Fields -->\n      <div class=\"bg-white p-6 rounded-lg shadow-sm border\">\n        <h2 class=\"text-lg font-semibold text-gray-900 mb-4\">Input Fields</h2>\n        <div class=\"space-y-3\">\n          <input\n            type=\"text\"\n            pInputText\n            placeholder=\"Text Input\"\n            class=\"w-full\"\n          />\n          <p-dropdown\n            [options]=\"dropdownOptions\"\n            placeholder=\"Select an option\"\n            class=\"w-full\"\n          ></p-dropdown>\n          <p-checkbox [(ngModel)]=\"checked\" label=\"Checkbox\"></p-checkbox>\n        </div>\n      </div>\n\n      <!-- Cards -->\n      <div class=\"bg-white p-6 rounded-lg shadow-sm border\">\n        <h2 class=\"text-lg font-semibold text-gray-900 mb-4\">Cards</h2>\n        <p-card header=\"Sample Card\" styleClass=\"w-full\">\n          <p>This is a sample card with the red theme applied.</p>\n        </p-card>\n      </div>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [],
@@ -777,7 +116,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideAnimationsAsync(),\n    providePrimeNG({\n      theme: {\n        preset: Aura,\n      },\n    }),\n  ],\n}"
+                "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideAnimationsAsync(),\n    providePrimeNG({\n      theme: {\n        preset: redTheme,\n      },\n    }),\n  ],\n}"
+            },
+            {
+                "name": "redTheme",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/themes/red-theme.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "definePreset({\n  semantic: {\n    colorScheme: {\n      light: {\n        primary: {\n          color: '#ef4444',\n          contrastColor: '#ffffff',\n          hoverColor: '#dc2626',\n          activeColor: '#b91c1c',\n        },\n        surface: {\n          0: '#ffffff',\n          50: '#fefefe',\n          100: '#fef2f2',\n          200: '#fecaca',\n          300: '#fca5a5',\n          400: '#f87171',\n          500: '#ef4444',\n          600: '#dc2626',\n          700: '#b91c1c',\n          800: '#991b1b',\n          900: '#7f1d1d',\n          950: '#450a0a',\n        },\n        highlight: {\n          background: '#fef2f2',\n          focusBackground: '#fecaca',\n          color: '#b91c1c',\n          focusColor: '#991b1b',\n        },\n        formField: {\n          background: '#ffffff',\n          disabledBackground: '#fef2f2',\n          filledBackground: '#fefefe',\n          filledHoverBackground: '#fefefe',\n          filledFocusBackground: '#fefefe',\n          borderColor: '#fca5a5',\n          hoverBorderColor: '#f87171',\n          focusBorderColor: '#ef4444',\n          invalidBorderColor: '#dc2626',\n          color: '#1f2937',\n          disabledColor: '#f87171',\n          placeholderColor: '#f87171',\n          invalidPlaceholderColor: '#dc2626',\n          floatLabelColor: '#f87171',\n          floatLabelFocusColor: '#dc2626',\n          floatLabelActiveColor: '#f87171',\n          floatLabelInvalidColor: '#dc2626',\n          iconColor: '#fca5a5',\n          shadow: '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(239, 68, 68, 0.05)',\n        },\n        text: {\n          color: '#1f2937',\n          hoverColor: '#111827',\n          mutedColor: '#6b7280',\n          hoverMutedColor: '#374151',\n        },\n        content: {\n          background: '#ffffff',\n          hoverBackground: '#fef2f2',\n          borderColor: '#fecaca',\n          color: '#1f2937',\n          hoverColor: '#111827',\n        },\n        overlay: {\n          select: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n          popover: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n          modal: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n        },\n        list: {\n          option: {\n            focusBackground: '#fef2f2',\n            selectedBackground: '#fef2f2',\n            selectedFocusBackground: '#fecaca',\n            color: '#1f2937',\n            focusColor: '#111827',\n            selectedColor: '#b91c1c',\n            selectedFocusColor: '#991b1b',\n            icon: {\n              color: '#fca5a5',\n              focusColor: '#f87171',\n            },\n          },\n          optionGroup: {\n            background: 'transparent',\n            color: '#6b7280',\n          },\n        },\n        navigation: {\n          item: {\n            focusBackground: '#fef2f2',\n            activeBackground: '#fef2f2',\n            color: '#1f2937',\n            focusColor: '#111827',\n            activeColor: '#111827',\n            icon: {\n              color: '#fca5a5',\n              focusColor: '#f87171',\n              activeColor: '#f87171',\n            },\n          },\n          submenuLabel: {\n            background: 'transparent',\n            color: '#6b7280',\n          },\n          submenuIcon: {\n            color: '#fca5a5',\n            focusColor: '#f87171',\n            activeColor: '#f87171',\n          },\n        },\n      },\n      dark: {\n        primary: {\n          color: '#f87171',\n          contrastColor: '#450a0a',\n          hoverColor: '#fca5a5',\n          activeColor: '#fecaca',\n        },\n        surface: {\n          0: '#ffffff',\n          50: '#fefefe',\n          100: '#fef2f2',\n          200: '#fecaca',\n          300: '#fca5a5',\n          400: '#f87171',\n          500: '#ef4444',\n          600: '#dc2626',\n          700: '#b91c1c',\n          800: '#991b1b',\n          900: '#7f1d1d',\n          950: '#450a0a',\n        },\n        highlight: {\n          background: 'rgba(239, 68, 68, 0.16)',\n          focusBackground: 'rgba(239, 68, 68, 0.24)',\n          color: 'rgba(255,255,255,.87)',\n          focusColor: 'rgba(255,255,255,.87)',\n        },\n        formField: {\n          background: '#450a0a',\n          disabledBackground: '#7f1d1d',\n          filledBackground: '#991b1b',\n          filledHoverBackground: '#991b1b',\n          filledFocusBackground: '#991b1b',\n          borderColor: '#7f1d1d',\n          hoverBorderColor: '#991b1b',\n          focusBorderColor: '#f87171',\n          invalidBorderColor: '#fca5a5',\n          color: '#ffffff',\n          disabledColor: '#fca5a5',\n          placeholderColor: '#fca5a5',\n          invalidPlaceholderColor: '#fca5a5',\n          floatLabelColor: '#fca5a5',\n          floatLabelFocusColor: '#f87171',\n          floatLabelActiveColor: '#fca5a5',\n          floatLabelInvalidColor: '#fca5a5',\n          iconColor: '#fca5a5',\n          shadow: '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(18, 18, 23, 0.05)',\n        },\n        text: {\n          color: '#ffffff',\n          hoverColor: '#ffffff',\n          mutedColor: '#fca5a5',\n          hoverMutedColor: '#f87171',\n        },\n        content: {\n          background: '#7f1d1d',\n          hoverBackground: '#991b1b',\n          borderColor: '#7f1d1d',\n          color: '#ffffff',\n          hoverColor: '#ffffff',\n        },\n        overlay: {\n          select: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n          popover: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n          modal: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n        },\n        list: {\n          option: {\n            focusBackground: '#991b1b',\n            selectedBackground: 'rgba(239, 68, 68, 0.16)',\n            selectedFocusBackground: 'rgba(239, 68, 68, 0.24)',\n            color: '#ffffff',\n            focusColor: '#ffffff',\n            selectedColor: 'rgba(255,255,255,.87)',\n            selectedFocusColor: 'rgba(255,255,255,.87)',\n            icon: {\n              color: '#f87171',\n              focusColor: '#fca5a5',\n            },\n          },\n          optionGroup: {\n            background: 'transparent',\n            color: '#fca5a5',\n          },\n        },\n        navigation: {\n          item: {\n            focusBackground: '#991b1b',\n            activeBackground: '#991b1b',\n            color: '#ffffff',\n            focusColor: '#ffffff',\n            activeColor: '#ffffff',\n            icon: {\n              color: '#f87171',\n              focusColor: '#fca5a5',\n              activeColor: '#fca5a5',\n            },\n          },\n          submenuLabel: {\n            background: 'transparent',\n            color: '#fca5a5',\n          },\n          submenuIcon: {\n            color: '#f87171',\n            focusColor: '#fca5a5',\n            activeColor: '#fca5a5',\n          },\n        },\n      },\n    },\n  },\n})"
             },
             {
                 "name": "routes",
@@ -787,7 +136,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Routes",
-                "defaultValue": "[\n  {\n    path: '',\n    redirectTo: 'getting-started/quick-start',\n    pathMatch: 'full',\n  },\n  {\n    path: 'getting-started/quick-start',\n    loadComponent: () =>\n      \"import('./pages/getting-started/quick-start/quick-start.component').then(\\n\\\n        (m) => m.QuickStartComponent\\n\\\n      )\",\n  },\n  {\n    path: 'getting-started/how-it-works',\n    loadComponent: () =>\n      \"import(\\n\\\n        './pages/getting-started/how-it-works/how-it-works.component'\\n\\\n      ).then((m) => m.HowItWorksComponent)\",\n  },\n  {\n    path: 'components/overview',\n    loadComponent: () =>\n      \"import('./pages/components/overview/overview.component').then(\\n\\\n        (m) => m.OverviewComponent\\n\\\n      )\",\n  },\n  {\n    path: 'components/usage',\n    loadComponent: () =>\n      \"import('./pages/components/usage/usage.component').then(\\n\\\n        (m) => m.UsageComponent\\n\\\n      )\",\n  },\n  {\n    path: 'advanced/configuration',\n    loadComponent: () =>\n      \"import('./pages/advanced/configuration/configuration.component').then(\\n\\\n        (m) => m.ConfigurationComponent\\n\\\n      )\",\n  },\n  {\n    path: 'advanced/customization',\n    loadComponent: () =>\n      \"import('./pages/advanced/customization/customization.component').then(\\n\\\n        (m) => m.CustomizationComponent\\n\\\n      )\",\n  },\n]"
+                "defaultValue": "[\n  // Minimal routing - just the main component\n]"
             }
         ],
         "functions": [],
@@ -803,7 +152,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideAnimationsAsync(),\n    providePrimeNG({\n      theme: {\n        preset: Aura,\n      },\n    }),\n  ],\n}"
+                    "defaultValue": "{\n  providers: [\n    provideZoneChangeDetection({ eventCoalescing: true }),\n    provideRouter(routes),\n    provideAnimationsAsync(),\n    providePrimeNG({\n      theme: {\n        preset: redTheme,\n      },\n    }),\n  ],\n}"
+                }
+            ],
+            "src/themes/red-theme.ts": [
+                {
+                    "name": "redTheme",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/themes/red-theme.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "definePreset({\n  semantic: {\n    colorScheme: {\n      light: {\n        primary: {\n          color: '#ef4444',\n          contrastColor: '#ffffff',\n          hoverColor: '#dc2626',\n          activeColor: '#b91c1c',\n        },\n        surface: {\n          0: '#ffffff',\n          50: '#fefefe',\n          100: '#fef2f2',\n          200: '#fecaca',\n          300: '#fca5a5',\n          400: '#f87171',\n          500: '#ef4444',\n          600: '#dc2626',\n          700: '#b91c1c',\n          800: '#991b1b',\n          900: '#7f1d1d',\n          950: '#450a0a',\n        },\n        highlight: {\n          background: '#fef2f2',\n          focusBackground: '#fecaca',\n          color: '#b91c1c',\n          focusColor: '#991b1b',\n        },\n        formField: {\n          background: '#ffffff',\n          disabledBackground: '#fef2f2',\n          filledBackground: '#fefefe',\n          filledHoverBackground: '#fefefe',\n          filledFocusBackground: '#fefefe',\n          borderColor: '#fca5a5',\n          hoverBorderColor: '#f87171',\n          focusBorderColor: '#ef4444',\n          invalidBorderColor: '#dc2626',\n          color: '#1f2937',\n          disabledColor: '#f87171',\n          placeholderColor: '#f87171',\n          invalidPlaceholderColor: '#dc2626',\n          floatLabelColor: '#f87171',\n          floatLabelFocusColor: '#dc2626',\n          floatLabelActiveColor: '#f87171',\n          floatLabelInvalidColor: '#dc2626',\n          iconColor: '#fca5a5',\n          shadow: '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(239, 68, 68, 0.05)',\n        },\n        text: {\n          color: '#1f2937',\n          hoverColor: '#111827',\n          mutedColor: '#6b7280',\n          hoverMutedColor: '#374151',\n        },\n        content: {\n          background: '#ffffff',\n          hoverBackground: '#fef2f2',\n          borderColor: '#fecaca',\n          color: '#1f2937',\n          hoverColor: '#111827',\n        },\n        overlay: {\n          select: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n          popover: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n          modal: {\n            background: '#ffffff',\n            borderColor: '#fecaca',\n            color: '#1f2937',\n          },\n        },\n        list: {\n          option: {\n            focusBackground: '#fef2f2',\n            selectedBackground: '#fef2f2',\n            selectedFocusBackground: '#fecaca',\n            color: '#1f2937',\n            focusColor: '#111827',\n            selectedColor: '#b91c1c',\n            selectedFocusColor: '#991b1b',\n            icon: {\n              color: '#fca5a5',\n              focusColor: '#f87171',\n            },\n          },\n          optionGroup: {\n            background: 'transparent',\n            color: '#6b7280',\n          },\n        },\n        navigation: {\n          item: {\n            focusBackground: '#fef2f2',\n            activeBackground: '#fef2f2',\n            color: '#1f2937',\n            focusColor: '#111827',\n            activeColor: '#111827',\n            icon: {\n              color: '#fca5a5',\n              focusColor: '#f87171',\n              activeColor: '#f87171',\n            },\n          },\n          submenuLabel: {\n            background: 'transparent',\n            color: '#6b7280',\n          },\n          submenuIcon: {\n            color: '#fca5a5',\n            focusColor: '#f87171',\n            activeColor: '#f87171',\n          },\n        },\n      },\n      dark: {\n        primary: {\n          color: '#f87171',\n          contrastColor: '#450a0a',\n          hoverColor: '#fca5a5',\n          activeColor: '#fecaca',\n        },\n        surface: {\n          0: '#ffffff',\n          50: '#fefefe',\n          100: '#fef2f2',\n          200: '#fecaca',\n          300: '#fca5a5',\n          400: '#f87171',\n          500: '#ef4444',\n          600: '#dc2626',\n          700: '#b91c1c',\n          800: '#991b1b',\n          900: '#7f1d1d',\n          950: '#450a0a',\n        },\n        highlight: {\n          background: 'rgba(239, 68, 68, 0.16)',\n          focusBackground: 'rgba(239, 68, 68, 0.24)',\n          color: 'rgba(255,255,255,.87)',\n          focusColor: 'rgba(255,255,255,.87)',\n        },\n        formField: {\n          background: '#450a0a',\n          disabledBackground: '#7f1d1d',\n          filledBackground: '#991b1b',\n          filledHoverBackground: '#991b1b',\n          filledFocusBackground: '#991b1b',\n          borderColor: '#7f1d1d',\n          hoverBorderColor: '#991b1b',\n          focusBorderColor: '#f87171',\n          invalidBorderColor: '#fca5a5',\n          color: '#ffffff',\n          disabledColor: '#fca5a5',\n          placeholderColor: '#fca5a5',\n          invalidPlaceholderColor: '#fca5a5',\n          floatLabelColor: '#fca5a5',\n          floatLabelFocusColor: '#f87171',\n          floatLabelActiveColor: '#fca5a5',\n          floatLabelInvalidColor: '#fca5a5',\n          iconColor: '#fca5a5',\n          shadow: '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(18, 18, 23, 0.05)',\n        },\n        text: {\n          color: '#ffffff',\n          hoverColor: '#ffffff',\n          mutedColor: '#fca5a5',\n          hoverMutedColor: '#f87171',\n        },\n        content: {\n          background: '#7f1d1d',\n          hoverBackground: '#991b1b',\n          borderColor: '#7f1d1d',\n          color: '#ffffff',\n          hoverColor: '#ffffff',\n        },\n        overlay: {\n          select: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n          popover: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n          modal: {\n            background: '#7f1d1d',\n            borderColor: '#7f1d1d',\n            color: '#ffffff',\n          },\n        },\n        list: {\n          option: {\n            focusBackground: '#991b1b',\n            selectedBackground: 'rgba(239, 68, 68, 0.16)',\n            selectedFocusBackground: 'rgba(239, 68, 68, 0.24)',\n            color: '#ffffff',\n            focusColor: '#ffffff',\n            selectedColor: 'rgba(255,255,255,.87)',\n            selectedFocusColor: 'rgba(255,255,255,.87)',\n            icon: {\n              color: '#f87171',\n              focusColor: '#fca5a5',\n            },\n          },\n          optionGroup: {\n            background: 'transparent',\n            color: '#fca5a5',\n          },\n        },\n        navigation: {\n          item: {\n            focusBackground: '#991b1b',\n            activeBackground: '#991b1b',\n            color: '#ffffff',\n            focusColor: '#ffffff',\n            activeColor: '#ffffff',\n            icon: {\n              color: '#f87171',\n              focusColor: '#fca5a5',\n              activeColor: '#fca5a5',\n            },\n          },\n          submenuLabel: {\n            background: 'transparent',\n            color: '#fca5a5',\n          },\n          submenuIcon: {\n            color: '#f87171',\n            focusColor: '#fca5a5',\n            activeColor: '#fca5a5',\n          },\n        },\n      },\n    },\n  },\n})"
                 }
             ],
             "src/app/app.routes.ts": [
@@ -815,7 +176,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Routes",
-                    "defaultValue": "[\n  {\n    path: '',\n    redirectTo: 'getting-started/quick-start',\n    pathMatch: 'full',\n  },\n  {\n    path: 'getting-started/quick-start',\n    loadComponent: () =>\n      \"import('./pages/getting-started/quick-start/quick-start.component').then(\\n\\\n        (m) => m.QuickStartComponent\\n\\\n      )\",\n  },\n  {\n    path: 'getting-started/how-it-works',\n    loadComponent: () =>\n      \"import(\\n\\\n        './pages/getting-started/how-it-works/how-it-works.component'\\n\\\n      ).then((m) => m.HowItWorksComponent)\",\n  },\n  {\n    path: 'components/overview',\n    loadComponent: () =>\n      \"import('./pages/components/overview/overview.component').then(\\n\\\n        (m) => m.OverviewComponent\\n\\\n      )\",\n  },\n  {\n    path: 'components/usage',\n    loadComponent: () =>\n      \"import('./pages/components/usage/usage.component').then(\\n\\\n        (m) => m.UsageComponent\\n\\\n      )\",\n  },\n  {\n    path: 'advanced/configuration',\n    loadComponent: () =>\n      \"import('./pages/advanced/configuration/configuration.component').then(\\n\\\n        (m) => m.ConfigurationComponent\\n\\\n      )\",\n  },\n  {\n    path: 'advanced/customization',\n    loadComponent: () =>\n      \"import('./pages/advanced/customization/customization.component').then(\\n\\\n        (m) => m.CustomizationComponent\\n\\\n      )\",\n  },\n]"
+                    "defaultValue": "[\n  // Minimal routing - just the main component\n]"
                 }
             ]
         },
@@ -826,43 +187,7 @@
     "routes": {
         "name": "<root>",
         "kind": "module",
-        "children": [
-            {
-                "name": "getting-started/quick-start",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "getting-started/how-it-works",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "components/overview",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "components/usage",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "advanced/configuration",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "advanced/customization",
-                "kind": "route-path",
-                "filename": "src/app/app.routes.ts"
-            },
-            {
-                "name": "getting-started/quick-start",
-                "kind": "route-redirect",
-                "filename": "src/app/app.routes.ts"
-            }
-        ]
+        "children": []
     },
     "coverage": {
         "count": 0,
@@ -874,7 +199,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -898,111 +223,13 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/layout/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/layout/main-content/main-content.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "MainContentComponent",
+                "filePath": "src/themes/red-theme.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "redTheme",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/layout/navigation/navigation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/article-view/article-view.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ArticleViewComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/components/shared/search-bar/search-bar.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SearchBarComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/advanced/configuration/configuration.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ConfigurationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/advanced/customization/customization.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CustomizationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/components/overview/overview.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "OverviewComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/components/usage/usage.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UsageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/getting-started/how-it-works/how-it-works.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HowItWorksComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/pages/getting-started/quick-start/quick-start.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "QuickStartComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/primeng-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PrimengButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/9",
                 "status": "low"
             }
         ]

@@ -1,0 +1,123 @@
+/* PRESTO Design System - Light Mode Only */
+:root {
+  /* Brand Primary Colors */
+  --presto-primary-100: #ccddd8;
+  --presto-primary-200: #99bcb1;
+  --presto-primary-300: #669a8b;
+  --presto-primary-400: #337964;
+  --presto-primary-500: #00573d;
+  --presto-primary-600: #004631;
+  --presto-primary-700: #003425;
+  --presto-primary-800: #002318;
+  --presto-primary-900: #00110c;
+
+  /* Brand Secondary Colors */
+  --presto-secondary-100: #ccdbe8;
+  --presto-secondary-200: #004b8d;
+  --presto-secondary-300: #6693bb;
+  --presto-secondary-400: #336fa4;
+  --presto-secondary-500: #004b8d;
+  --presto-secondary-600: #003c71;
+  --presto-secondary-700: #002d55;
+  --presto-secondary-800: #001e38;
+  --presto-secondary-900: #000f1c;
+
+  /* Brand Gray Colors */
+  --presto-gray-100: #f5f8fa;
+  --presto-gray-200: #ebf1f6;
+  --presto-gray-300: #e0e9f1;
+  --presto-gray-400: #d6e2ed;
+  --presto-gray-500: #ccdbe8;
+  --presto-gray-600: #a3afba;
+  --presto-gray-700: #7a838b;
+  --presto-gray-800: #52585d;
+  --presto-gray-900: #292c2e;
+
+  /* Semantic Color Tokens */
+  --presto-primary: var(--presto-primary-500);
+  --presto-primary-contrast: #ffffff;
+  --presto-primary-hover: var(--presto-primary-600);
+  --presto-primary-active: var(--presto-primary-700);
+
+  --presto-secondary: var(--presto-secondary-500);
+  --presto-secondary-contrast: #ffffff;
+  --presto-secondary-hover: var(--presto-secondary-600);
+  --presto-secondary-active: var(--presto-secondary-700);
+
+  /* Focus Ring */
+  --presto-focus-ring-color: var(--presto-primary-500);
+
+  /* Highlight Colors */
+  --presto-highlight-background: var(--presto-primary-100);
+  --presto-highlight-focus-background: var(--presto-primary-200);
+  --presto-highlight-focus-color: var(--presto-primary-800);
+  --presto-highlight-color: var(--presto-primary-700);
+
+  /* Surface Colors */
+  --presto-surface-0: #ffffff;
+  --presto-surface-50: #fafafa;
+  --presto-surface-100: var(--presto-primary-100);
+  --presto-surface-200: var(--presto-primary-200);
+  --presto-surface-300: var(--presto-primary-300);
+  --presto-surface-400: var(--presto-primary-400);
+  --presto-surface-500: var(--presto-primary-500);
+  --presto-surface-600: var(--presto-primary-600);
+  --presto-surface-700: var(--presto-primary-700);
+  --presto-surface-800: var(--presto-primary-800);
+  --presto-surface-900: var(--presto-primary-900);
+  --presto-surface-950: #000000;
+
+  /* Text Colors */
+  --presto-text-primary: #1f2937;
+  --presto-text-secondary: #6b7280;
+  --presto-text-muted: #9ca3af;
+  --presto-text-inverse: #ffffff;
+
+  /* Border Colors */
+  --presto-border-light: var(--presto-primary-200);
+  --presto-border-medium: var(--presto-primary-300);
+  --presto-border-strong: var(--presto-primary-400);
+
+  /* Border Radius Tokens */
+  --presto-radius-none: 0px;
+  --presto-radius-xs: 4px;
+  --presto-radius-sm: 8px;
+  --presto-radius-md: 12px;
+  --presto-radius-lg: 24px;
+  --presto-radius-xl: 28px;
+  --presto-radius-xxl: 32px;
+
+  /* PrimeNG Button Variables - Primary & Secondary Only */
+  --p-button-primary-background: var(--presto-primary);
+  --p-button-primary-border-color: var(--presto-primary);
+  --p-button-primary-color: var(--presto-primary-contrast);
+  --p-button-primary-hover-background: var(--presto-primary-hover);
+  --p-button-primary-hover-border-color: var(--presto-primary-hover);
+  --p-button-primary-hover-color: var(--presto-primary-contrast);
+  --p-button-primary-active-background: var(--presto-primary-active);
+  --p-button-primary-active-border-color: var(--presto-primary-active);
+  --p-button-primary-active-color: var(--presto-primary-contrast);
+  --p-button-primary-focus-background: var(--presto-primary);
+  --p-button-primary-focus-border-color: var(--presto-primary);
+  --p-button-primary-focus-color: var(--presto-primary-contrast);
+  --p-button-primary-focus-ring-color: var(--presto-focus-ring-color);
+
+  --p-button-secondary-background: transparent;
+  --p-button-secondary-border-color: var(--presto-primary);
+  --p-button-secondary-color: var(--presto-primary);
+  --p-button-secondary-hover-background: var(--presto-highlight-background);
+  --p-button-secondary-hover-border-color: var(--presto-primary);
+  --p-button-secondary-hover-color: var(--presto-primary);
+  --p-button-secondary-active-background: var(
+    --presto-highlight-focus-background
+  );
+  --p-button-secondary-active-border-color: var(--presto-primary);
+  --p-button-secondary-active-color: var(--presto-primary);
+
+  /* PrimeNG Button Common Variables */
+  --p-button-padding-x: 1rem;
+  --p-button-padding-y: 0.5rem;
+  --p-button-border-radius: 0.375rem;
+  --p-button-gap: 0.5rem;
+  --p-button-transition-duration: 0.15s;
+}
