@@ -33,6 +33,23 @@
   --presto-gray-800: #52585d;
   --presto-gray-900: #292c2e;
 
+  /* Spacing Tokens */
+  --presto-normal-padding-x: 12px;
+  --presto-normal-padding-y: 8px;
+  --presto-small-padding-x: 8px;
+  --presto-small-padding-y: 4px;
+  --presto-large-padding-x: 14px;
+  --presto-large-padding-y: 12px;
+
+  /* Border Radius Tokens */
+  --presto-radius-none: 0px;
+  --presto-radius-xs: 4px;
+  --presto-radius-sm: 8px;
+  --presto-radius-md: 12px;
+  --presto-radius-lg: 24px;
+  --presto-radius-xl: 28px;
+  --presto-radius-xxl: 32px;
+
   /* Semantic Color Tokens */
   --presto-primary: var(--presto-primary-500);
   --presto-primary-contrast: #ffffff;
@@ -43,49 +60,6 @@
   --presto-secondary-contrast: #ffffff;
   --presto-secondary-hover: var(--presto-secondary-600);
   --presto-secondary-active: var(--presto-secondary-700);
-
-  /* Focus Ring */
-  --presto-focus-ring-color: var(--presto-primary-500);
-
-  /* Highlight Colors */
-  --presto-highlight-background: var(--presto-primary-100);
-  --presto-highlight-focus-background: var(--presto-primary-200);
-  --presto-highlight-focus-color: var(--presto-primary-800);
-  --presto-highlight-color: var(--presto-primary-700);
-
-  /* Surface Colors */
-  --presto-surface-0: #ffffff;
-  --presto-surface-50: #fafafa;
-  --presto-surface-100: var(--presto-primary-100);
-  --presto-surface-200: var(--presto-primary-200);
-  --presto-surface-300: var(--presto-primary-300);
-  --presto-surface-400: var(--presto-primary-400);
-  --presto-surface-500: var(--presto-primary-500);
-  --presto-surface-600: var(--presto-primary-600);
-  --presto-surface-700: var(--presto-primary-700);
-  --presto-surface-800: var(--presto-primary-800);
-  --presto-surface-900: var(--presto-primary-900);
-  --presto-surface-950: #000000;
-
-  /* Text Colors */
-  --presto-text-primary: #1f2937;
-  --presto-text-secondary: #6b7280;
-  --presto-text-muted: #9ca3af;
-  --presto-text-inverse: #ffffff;
-
-  /* Border Colors */
-  --presto-border-light: var(--presto-primary-200);
-  --presto-border-medium: var(--presto-primary-300);
-  --presto-border-strong: var(--presto-primary-400);
-
-  /* Border Radius Tokens */
-  --presto-radius-none: 0px;
-  --presto-radius-xs: 4px;
-  --presto-radius-sm: 8px;
-  --presto-radius-md: 12px;
-  --presto-radius-lg: 24px;
-  --presto-radius-xl: 28px;
-  --presto-radius-xxl: 32px;
 
   /* PrimeNG Button Variables - Primary & Secondary Only */
   --p-button-primary-background: var(--presto-primary);
@@ -102,12 +76,12 @@
   --p-button-primary-focus-color: var(--presto-primary-contrast);
   --p-button-primary-focus-ring-color: var(--presto-focus-ring-color);
 
-  --p-button-secondary-background: transparent;
-  --p-button-secondary-border-color: var(--presto-primary);
-  --p-button-secondary-color: var(--presto-primary);
-  --p-button-secondary-hover-background: var(--presto-highlight-background);
-  --p-button-secondary-hover-border-color: var(--presto-primary);
-  --p-button-secondary-hover-color: var(--presto-primary);
+  --p-button-secondary-background: var(--presto-secondary);
+  --p-button-secondary-border-color: var(--presto-secondary);
+  --p-button-secondary-color: #ffffff;
+  --p-button-secondary-hover-background: var(--presto-secondary-hover);
+  --p-button-secondary-hover-border-color: var(--presto-secondary);
+  --p-button-secondary-hover-color: #ffffff;
   --p-button-secondary-active-background: var(
     --presto-highlight-focus-background
   );
