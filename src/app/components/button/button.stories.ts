@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ButtonComponent } from './button.component';
+import { ButtonModule } from 'primeng/button';
 
-const meta: Meta<ButtonComponent> = {
+const meta: Meta = {
   title: 'PRESTO/Button',
-  component: ButtonComponent,
+  component: ButtonModule,
   parameters: {
     layout: 'centered',
     docs: {
@@ -69,56 +69,73 @@ type Story = StoryObj;
 
 // Basic variants
 export const Primary: Story = {
-  args: {
-    label: 'Primary Button',
-    severity: 'primary',
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button label="Primary Button" severity="primary"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 export const Secondary: Story = {
-  args: {
-    label: 'Secondary Button',
-    severity: 'secondary',
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button label="Secondary Button" severity="secondary"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 // Icon variants
 export const WithIcon: Story = {
-  args: {
-    label: 'Button with Icon',
-    severity: 'primary',
-    icon: 'pi pi-check',
-    iconPos: 'left',
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button label="Button with Icon" severity="primary" icon="pi pi-check" iconPos="left"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 export const IconOnly: Story = {
-  args: {
-    severity: 'primary',
-    icon: 'pi pi-star',
-    iconPos: 'left',
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button severity="primary" icon="pi pi-star"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 // State variants
 export const Loading: Story = {
-  args: {
-    label: 'Loading Button',
-    severity: 'primary',
-    loading: true,
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button label="Loading Button" severity="primary" [loading]="true"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 export const Disabled: Story = {
-  args: {
-    label: 'Disabled Button',
-    severity: 'primary',
-    disabled: true,
-  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button label="Disabled Button" severity="primary" [disabled]="true"></p-button>`,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
 };
 
 // All variants showcase
 export const AllVariants: Story = {
+  args: {
+    severity: "primary"
+  },
+
   render: () => ({
     template: `
       <div class="space-y-8 p-8">
@@ -126,8 +143,8 @@ export const AllVariants: Story = {
         <div>
           <h3 class="text-lg font-semibold mb-4">Basic Variants</h3>
           <div class="flex flex-wrap gap-4">
-            <app-button label="Primary" severity="primary"></app-button>
-            <app-button label="Secondary" severity="secondary"></app-button>
+            <p-button label="Primary" severity="primary"></p-button>
+            <p-button label="Secondary" severity="secondary"></p-button>
           </div>
         </div>
 
@@ -135,10 +152,10 @@ export const AllVariants: Story = {
         <div>
           <h3 class="text-lg font-semibold mb-4">Icon Variants</h3>
           <div class="flex flex-wrap gap-4">
-            <app-button label="Primary with Icon" severity="primary" icon="pi pi-check" iconPos="left"></app-button>
-            <app-button label="Secondary with Icon" severity="secondary" icon="pi pi-arrow-right" iconPos="right"></app-button>
-            <app-button severity="primary" icon="pi pi-star"></app-button>
-            <app-button severity="secondary" icon="pi pi-heart"></app-button>
+            <p-button label="Primary with Icon" severity="primary" icon="pi pi-check" iconPos="left"></p-button>
+            <p-button label="Secondary with Icon" severity="secondary" icon="pi pi-arrow-right" iconPos="right"></p-button>
+            <p-button severity="primary" icon="pi pi-star"></p-button>
+            <p-button severity="secondary" icon="pi pi-heart"></p-button>
           </div>
         </div>
 
@@ -146,18 +163,18 @@ export const AllVariants: Story = {
         <div>
           <h3 class="text-lg font-semibold mb-4">State Variants</h3>
           <div class="flex flex-wrap gap-4">
-            <app-button label="Normal Primary" severity="primary"></app-button>
-            <app-button label="Loading Primary" severity="primary" [loading]="true"></app-button>
-            <app-button label="Disabled Primary" severity="primary" [disabled]="true"></app-button>
-            <app-button label="Normal Secondary" severity="secondary"></app-button>
-            <app-button label="Loading Secondary" severity="secondary" [loading]="true"></app-button>
-            <app-button label="Disabled Secondary" severity="secondary" [disabled]="true"></app-button>
+            <p-button label="Normal Primary" severity="primary"></p-button>
+            <p-button label="Loading Primary" severity="primary" [loading]="true"></p-button>
+            <p-button label="Disabled Primary" severity="primary" [disabled]="true"></p-button>
+            <p-button label="Normal Secondary" severity="secondary"></p-button>
+            <p-button label="Loading Secondary" severity="secondary" [loading]="true"></p-button>
+            <p-button label="Disabled Secondary" severity="secondary" [disabled]="true"></p-button>
           </div>
         </div>
       </div>
     `,
     moduleMetadata: {
-      imports: [ButtonComponent],
+      imports: [ButtonModule],
     },
-  }),
+  })
 };

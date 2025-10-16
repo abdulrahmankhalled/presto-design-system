@@ -34,8 +34,11 @@ export class ButtonComponent {
   @Input() label: string = '';
   @Input() icon: string = '';
   @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';
-  @Input() severity: 'primary' | 'secondary' = 'primary';
+  @Input() severity: 'primary' | 'secondary' | 'success' | 'info' | 'warn' | 'help' | 'danger' = 'primary';
   @Input() disabled: boolean = false;
+  @Input() variant: 'filled' | 'outlined' | 'Text' = 'filled';
+  @Input() outlined: boolean = false;
+  @Input() text: boolean = false;
   @Input() loading: boolean = false;
   @Input() loadingIcon: string = 'pi pi-spinner pi-spin';
   @Input() badge: string = '';
