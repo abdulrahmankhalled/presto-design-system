@@ -57,15 +57,15 @@
   --presto-yellow-900: #2F2402;
 
   /* Brand Fuchsia Colors */
-  --presto-help-100: #F7DAFC;
-  --presto-help-200: #F0B5F9;
-  --presto-help-300: #E890F5;
-  --presto-help-400: #E16BF2;
-  --presto-help-500: #D946EF;
-  --presto-help-600: #AE38BF;
-  --presto-help-700: #822A8F;
-  --presto-help-800: #571C60;
-  --presto-help-900: #2B0E30;
+  --presto-fuchsia-100: #F7DAFC;
+  --presto-fuchsia-200: #F0B5F9;
+  --presto-fuchsia-300: #E890F5;
+  --presto-fuchsia-400: #E16BF2;
+  --presto-fuchsia-500: #D946EF;
+  --presto-fuchsia-600: #AE38BF;
+  --presto-fuchsia-700: #822A8F;
+  --presto-fuchsia-800: #571C60;
+  --presto-fuchsia-900: #2B0E30;
 
   /* Brand Purple Colors */
   --presto-purple-100: #EEDDFD;
@@ -79,15 +79,15 @@
   --presto-purple-900: #221131;
 
   /* Brand Rose Colors */
-  --presto-danger-100: #FDD9DF;
-  --presto-danger-200: #FBB2BF;
-  --presto-danger-300: #F88C9E;
-  --presto-danger-400: #F6657E;
-  --presto-danger-500: #F43F5E;
-  --presto-danger-600: #C3324B;
-  --presto-danger-700: #922638;
-  --presto-danger-800: #621926;
-  --presto-danger-900: #310D13;
+  --presto-rose-100: #FDD9DF;
+  --presto-rose-200: #FBB2BF;
+  --presto-rose-300: #F88C9E;
+  --presto-rose-400: #F6657E;
+  --presto-rose-500: #F43F5E;
+  --presto-rose-600: #C3324B;
+  --presto-rose-700: #922638;
+  --presto-rose-800: #621926;
+  --presto-rose-900: #310D13;
 
   /* Brand Pink Colors */
   --presto-pink-100: #FBDAEB;
@@ -101,16 +101,16 @@
   --presto-pink-900: #2F0E1F;
 
   /* Brand Sky Colors */
-  --presto-info-50: #D2F1F9/50%;
-  --presto-info-100: #D2F1F9;
-  --presto-info-200: #A5E2F2;
-  --presto-info-300: #77D4EC;
-  --presto-info-400: #4AC5E5;
-  --presto-info-500: #1DB7DF;
-  --presto-info-600: #1792B2;
-  --presto-info-700: #116E86;
-  --presto-info-800: #0C4959;
-  --presto-info-900: #06252D;
+  --presto-sky-50: #D2F1F9/50%;
+  --presto-sky-100: #D2F1F9;
+  --presto-sky-200: #A5E2F2;
+  --presto-sky-300: #77D4EC;
+  --presto-sky-400: #4AC5E5;
+  --presto-sky-500: #1DB7DF;
+  --presto-sky-600: #1792B2;
+  --presto-sky-700: #116E86;
+  --presto-sky-800: #0C4959;
+  --presto-sky-900: #06252D;
 
   /* Neutral Colors */
   --presto-neutral-100: #FCFCFC;
@@ -199,10 +199,10 @@
   --presto-green-hover: var(--presto-green-600);
   --presto-green-active: var(--presto-green-700);
 
-  --presto-info: var(--presto-info-500);
+  --presto-info: var(--presto-sky-500);
   --presto-info-contrast: #ffffff;
-  --presto-info-hover: var(--presto-info-600);
-  --presto-info-active: var(--presto-info-700);
+  --presto-info-hover: var(--presto-sky-600);
+  --presto-info-active: var(--presto-sky-700);
 
   --presto-warn: var(--presto-yellow-500);
   --presto-warn-contrast: #ffffff;
@@ -214,15 +214,15 @@
   --presto-yellow-hover: var(--presto-yellow-600);
   --presto-yellow-active: var(--presto-yellow-700);
 
-  --presto-help: var(--presto-help-500);
+  --presto-help: var(--presto-fuchsia-500);
   --presto-help-contrast: #ffffff;
-  --presto-help-hover: var(--presto-help-600);
-  --presto-help-active: var(--presto-help-700);
+  --presto-help-hover: var(--presto-fuchsia-600);
+  --presto-help-active: var(--presto-fuchsia-700);
 
-  --presto-danger: var(--presto-danger-500);
-  --presto-danger-contrast: #ffffff;
-  --presto-danger-hover: var(--presto-danger-600);
-  --presto-danger-active: var(--presto-danger-700);
+  --presto-rose: var(--presto-rose-500);
+  --presto-rose-contrast: #ffffff;
+  --presto-rose-hover: var(--presto-rose-600);
+  --presto-rose-active: var(--presto-rose-700);
 
   /* PrimeNG Button Variables - All Severities */
   
@@ -272,7 +272,7 @@
   --p-button-info-active-background: var(--presto-info-active);
   --p-button-info-active-border-color: var(--presto-info-active);
   --p-button-info-active-color: var(--presto-info-contrast);
-  --p-button-info-focus-ring-color: var(--presto-info-200);
+  --p-button-info-focus-ring-color: var(--presto-sky-200);
 
   /* Warn Button */
   --p-button-warn-background: var(--presto-yellow);
@@ -296,19 +296,19 @@
   --p-button-help-active-background: var(--presto-help-active);
   --p-button-help-active-border-color: var(--presto-help-active);
   --p-button-help-active-color: var(--presto-help-contrast);
-  --p-button-help-focus-ring-color: var(--presto-help-200);
+  --p-button-help-focus-ring-color: var(--presto-fuchsia-200);
 
   /* Danger Button */
-  --p-button-danger-background: var(--presto-danger);
-  --p-button-danger-border-color: var(--presto-danger);
-  --p-button-danger-color: var(--presto-danger-contrast);
-  --p-button-danger-hover-background: var(--presto-danger-hover);
-  --p-button-danger-hover-border-color: var(--presto-danger-hover);
-  --p-button-danger-hover-color: var(--presto-danger-contrast);
-  --p-button-danger-active-background: var(--presto-danger-active);
-  --p-button-danger-active-border-color: var(--presto-danger-active);
-  --p-button-danger-active-color: var(--presto-danger-contrast);
-  --p-button-danger-focus-ring-color: var(--presto-danger-200);
+  --p-button-danger-background: var(--presto-rose);
+  --p-button-danger-border-color: var(--presto-rose);
+  --p-button-danger-color: var(--presto-rose-contrast);
+  --p-button-danger-hover-background: var(--presto-rose-hover);
+  --p-button-danger-hover-border-color: var(--presto-rose-hover);
+  --p-button-danger-hover-color: var(--presto-rose-contrast);
+  --p-button-danger-active-background: var(--presto-rose-active);
+  --p-button-danger-active-border-color: var(--presto-rose-active);
+  --p-button-danger-active-color: var(--presto-rose-contrast);
+  --p-button-danger-focus-ring-color: var(--presto-rose-200);
 
   /* Contrast Light Button */
   --p-button-contrast-light-background: var(--presto-black);
@@ -359,7 +359,7 @@
   --p-button-outlined-info-background: transparent;
   --p-button-outlined-info-border-color: var(--presto-info);
   --p-button-outlined-info-color: var(--presto-info);
-  --p-button-outlined-info-hover-background: var(--presto-info-100);
+  --p-button-outlined-info-hover-background: var(--presto-sky-100);
   --p-button-outlined-info-hover-border-color: var(--presto-info);
   --p-button-outlined-info-hover-color: var(--presto-info);
 
@@ -373,16 +373,16 @@
   --p-button-outlined-help-background: transparent;
   --p-button-outlined-help-border-color: var(--presto-help);
   --p-button-outlined-help-color: var(--presto-help);
-  --p-button-outlined-help-hover-background: var(--presto-help-100);
+  --p-button-outlined-help-hover-background: var(--presto-fuchsia-100);
   --p-button-outlined-help-hover-border-color: var(--presto-help);
   --p-button-outlined-help-hover-color: var(--presto-help);
 
   --p-button-outlined-danger-background: transparent;
-  --p-button-outlined-danger-border-color: var(--presto-danger);
-  --p-button-outlined-danger-color: var(--presto-danger);
-  --p-button-outlined-danger-hover-background: var(--presto-danger-100);
-  --p-button-outlined-danger-hover-border-color: var(--presto-danger);
-  --p-button-outlined-danger-hover-color: var(--presto-danger);
+  --p-button-outlined-danger-border-color: var(--presto-rose);
+  --p-button-outlined-danger-color: var(--presto-rose);
+  --p-button-outlined-danger-hover-background: var(--presto-rose-100);
+  --p-button-outlined-danger-hover-border-color: var(--presto-rose);
+  --p-button-outlined-danger-hover-color: var(--presto-rose);
 
   --p-button-outlined-contrast-light-background: transparent;
   --p-button-outlined-contrast-light-border-color: var(--presto-black);
@@ -423,7 +423,7 @@
   --p-button-text-info-background: transparent;
   --p-button-text-info-border-color: transparent;
   --p-button-text-info-color: var(--presto-info);
-  --p-button-text-info-hover-background: var(--presto-info-100);
+  --p-button-text-info-hover-background: var(--presto-sky-100);
   --p-button-text-info-hover-border-color: transparent;
   --p-button-text-info-hover-color: var(--presto-info);
 
@@ -437,16 +437,16 @@
   --p-button-text-help-background: transparent;
   --p-button-text-help-border-color: transparent;
   --p-button-text-help-color: var(--presto-help);
-  --p-button-text-help-hover-background: var(--presto-help-100);
+  --p-button-text-help-hover-background: var(--presto-fuchsia-100);
   --p-button-text-help-hover-border-color: transparent;
   --p-button-text-help-hover-color: var(--presto-help);
 
   --p-button-text-danger-background: transparent;
   --p-button-text-danger-border-color: transparent;
-  --p-button-text-danger-color: var(--presto-danger);
-  --p-button-text-danger-hover-background: var(--presto-danger-100);
+  --p-button-text-danger-color: var(--presto-rose);
+  --p-button-text-danger-hover-background: var(--presto-rose-100);
   --p-button-text-danger-hover-border-color: transparent;
-  --p-button-text-danger-hover-color: var(--presto-danger);
+  --p-button-text-danger-hover-color: var(--presto-rose);
 
   --p-button-text-contrast-light-background: transparent;
   --p-button-text-contrast-light-border-color: transparent;
