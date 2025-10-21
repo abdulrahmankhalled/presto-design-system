@@ -1,17 +1,25 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { SplitButtonModule } from 'primeng/splitbutton';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, ButtonModule],
+  imports: [CommonModule, ButtonModule, SplitButtonModule],
   template: `
     <p-button
       [label]="label"
       [icon]="icon"
       [iconPos]="iconPos"
       [severity]="severity"
+      [outlined]="outlined"
+      [text]="text"
+      [raised]="raised"
+      [link]="link"
+      [rounded]="rounded"
+      [fluid]="fluid"
+      [size]="size"
       [disabled]="disabled"
       [loading]="loading"
       [loadingIcon]="loadingIcon"
@@ -36,9 +44,15 @@ export class ButtonComponent {
   @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';
   @Input() severity: 'primary' | 'secondary' | 'success' | 'info' | 'warn' | 'help' | 'danger' = 'primary';
   @Input() disabled: boolean = false;
-  @Input() variant: 'filled' | 'outlined' | 'Text' = 'filled';
   @Input() outlined: boolean = false;
   @Input() text: boolean = false;
+  @Input() styleClass: string = '';
+
+  @Input() raised: boolean = false;
+  @Input() link: boolean = false;
+  @Input() rounded: boolean = false;
+  @Input() fluid: boolean = false;
+  @Input() size: 'small' | 'large' = 'small';
   @Input() loading: boolean = false;
   @Input() loadingIcon: string = 'pi pi-spinner pi-spin';
   @Input() badge: string = '';

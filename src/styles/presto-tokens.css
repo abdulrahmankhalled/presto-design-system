@@ -33,6 +33,69 @@
   --presto-gray-800: #52585d;
   --presto-gray-900: #292c2e;
 
+  /* Brand Success Colors */
+  --presto-success-100: #d1f2eb;
+  --presto-success-200: #a3e4d7;
+  --presto-success-300: #75d6c3;
+  --presto-success-400: #47c8af;
+  --presto-success-500: #19ba9b;
+  --presto-success-600: #14957c;
+  --presto-success-700: #0f705d;
+  --presto-success-800: #0a4b3e;
+  --presto-success-900: #05261f;
+
+  /* Brand Info Colors */
+  --presto-info-100: #d1e7ff;
+  --presto-info-200: #a3cfff;
+  --presto-info-300: #75b7ff;
+  --presto-info-400: #479fff;
+  --presto-info-500: #1987ff;
+  --presto-info-600: #146ccc;
+  --presto-info-700: #0f5199;
+  --presto-info-800: #0a3666;
+  --presto-info-900: #051b33;
+
+  /* Brand Warn Colors */
+  --presto-warn-100: #fff2d1;
+  --presto-warn-200: #ffe5a3;
+  --presto-warn-300: #ffd875;
+  --presto-warn-400: #ffcb47;
+  --presto-warn-500: #ffbe19;
+  --presto-warn-600: #cc9814;
+  --presto-warn-700: #99720f;
+  --presto-warn-800: #664c0a;
+  --presto-warn-900: #332605;
+
+  /* Brand Help Colors */
+  --presto-help-100: #e8d1ff;
+  --presto-help-200: #d1a3ff;
+  --presto-help-300: #ba75ff;
+  --presto-help-400: #a347ff;
+  --presto-help-500: #8c19ff;
+  --presto-help-600: #7014cc;
+  --presto-help-700: #540f99;
+  --presto-help-800: #380a66;
+  --presto-help-900: #1c0533;
+
+  /* Brand Danger Colors */
+  --presto-danger-50: #f6d0da/50%;
+  --presto-danger-100: #f6d0da;
+  --presto-danger-200: #eda0b5;
+  --presto-danger-300: #e5718f;
+  --presto-danger-400: #dc416a;
+  --presto-danger-500: #d31245;
+  --presto-danger-600: #a90e37;
+  --presto-danger-700: #7f0b29;
+  --presto-danger-800: #54071c;
+  --presto-danger-900: #2a040e;
+
+  /* Contrast Light theme Colors */
+  --presto-contrast-light-100: #ffffff;
+  --presto-contrast-dark-200: #15181C;
+  
+  /* Contrast Dark theme Colors */
+  --presto-contrast-dark-100: #292c2e;
+  
   /* Spacing Tokens */
   --presto-normal-padding-x: 12px;
   --presto-normal-padding-y: 8px;
@@ -50,6 +113,31 @@
   --presto-radius-xl: 28px;
   --presto-radius-xxl: 32px;
 
+  /* Text Size Tokens */
+--presto-text-xs: 0.75rem;    /* 12px */
+--presto-text-sm: 0.875rem;   /* 14px */
+--presto-text-base: 1rem;     /* 16px */
+--presto-text-lg: 1.125rem;   /* 18px */
+--presto-text-xl: 1.25rem;    /* 20px */
+
+/* Button Text Size Tokens */
+--presto-button-text-small: var(--presto-text-sm);
+--presto-button-text-normal: var(--presto-text-base);
+--presto-button-text-large: var(--presto-text-lg);
+
+/* Button Size Tokens */
+--presto-button-small-padding-x: var(--presto-small-padding-x);
+--presto-button-small-padding-y: var(--presto-small-padding-y);
+--presto-button-small-font-size: var(--presto-button-text-small);
+
+--presto-button-normal-padding-x: var(--presto-normal-padding-x);
+--presto-button-normal-padding-y: var(--presto-normal-padding-y);
+--presto-button-normal-font-size: var(--presto-button-text-normal);
+
+--presto-button-large-padding-x: var(--presto-large-padding-x);
+--presto-button-large-padding-y: var(--presto-large-padding-y);
+--presto-button-large-font-size: var(--presto-button-text-large);
+
   /* Semantic Color Tokens */
   --presto-primary: var(--presto-primary-500);
   --presto-primary-contrast: #ffffff;
@@ -61,7 +149,34 @@
   --presto-secondary-hover: var(--presto-secondary-600);
   --presto-secondary-active: var(--presto-secondary-700);
 
-  /* PrimeNG Button Variables - Primary & Secondary Only */
+  --presto-success: var(--presto-success-500);
+  --presto-success-contrast: #ffffff;
+  --presto-success-hover: var(--presto-success-600);
+  --presto-success-active: var(--presto-success-700);
+
+  --presto-info: var(--presto-info-500);
+  --presto-info-contrast: #ffffff;
+  --presto-info-hover: var(--presto-info-600);
+  --presto-info-active: var(--presto-info-700);
+
+  --presto-warn: var(--presto-warn-500);
+  --presto-warn-contrast: #ffffff;
+  --presto-warn-hover: var(--presto-warn-600);
+  --presto-warn-active: var(--presto-warn-700);
+
+  --presto-help: var(--presto-help-500);
+  --presto-help-contrast: #ffffff;
+  --presto-help-hover: var(--presto-help-600);
+  --presto-help-active: var(--presto-help-700);
+
+  --presto-danger: var(--presto-danger-500);
+  --presto-danger-contrast: #ffffff;
+  --presto-danger-hover: var(--presto-danger-600);
+  --presto-danger-active: var(--presto-danger-700);
+
+  /* PrimeNG Button Variables - All Severities */
+  
+  /* Primary Button */
   --p-button-primary-background: var(--presto-primary);
   --p-button-primary-border-color: var(--presto-primary);
   --p-button-primary-color: var(--presto-primary-contrast);
@@ -71,27 +186,338 @@
   --p-button-primary-active-background: var(--presto-primary-active);
   --p-button-primary-active-border-color: var(--presto-primary-active);
   --p-button-primary-active-color: var(--presto-primary-contrast);
-  --p-button-primary-focus-background: var(--presto-primary);
-  --p-button-primary-focus-border-color: var(--presto-primary);
-  --p-button-primary-focus-color: var(--presto-primary-contrast);
-  --p-button-primary-focus-ring-color: var(--presto-focus-ring-color);
+  --p-button-primary-focus-ring-color: var(--presto-primary-200);
 
+  /* Secondary Button */
   --p-button-secondary-background: var(--presto-secondary);
   --p-button-secondary-border-color: var(--presto-secondary);
-  --p-button-secondary-color: #ffffff;
+  --p-button-secondary-color: var(--presto-secondary-contrast);
   --p-button-secondary-hover-background: var(--presto-secondary-hover);
-  --p-button-secondary-hover-border-color: var(--presto-secondary);
-  --p-button-secondary-hover-color: #ffffff;
-  --p-button-secondary-active-background: var(
-    --presto-highlight-focus-background
-  );
-  --p-button-secondary-active-border-color: var(--presto-primary);
-  --p-button-secondary-active-color: var(--presto-primary);
+  --p-button-secondary-hover-border-color: var(--presto-secondary-hover);
+  --p-button-secondary-hover-color: var(--presto-secondary-contrast);
+  --p-button-secondary-active-background: var(--presto-secondary-active);
+  --p-button-secondary-active-border-color: var(--presto-secondary-active);
+  --p-button-secondary-active-color: var(--presto-secondary-contrast);
+  --p-button-secondary-focus-ring-color: var(--presto-secondary-200);
+
+  /* Success Button */
+  --p-button-success-background: var(--presto-success);
+  --p-button-success-border-color: var(--presto-success);
+  --p-button-success-color: var(--presto-success-contrast);
+  --p-button-success-hover-background: var(--presto-success-hover);
+  --p-button-success-hover-border-color: var(--presto-success-hover);
+  --p-button-success-hover-color: var(--presto-success-contrast);
+  --p-button-success-active-background: var(--presto-success-active);
+  --p-button-success-active-border-color: var(--presto-success-active);
+  --p-button-success-active-color: var(--presto-success-contrast);
+  --p-button-success-focus-ring-color: var(--presto-success-200);
+
+  /* Info Button */
+  --p-button-info-background: var(--presto-info);
+  --p-button-info-border-color: var(--presto-info);
+  --p-button-info-color: var(--presto-info-contrast);
+  --p-button-info-hover-background: var(--presto-info-hover);
+  --p-button-info-hover-border-color: var(--presto-info-hover);
+  --p-button-info-hover-color: var(--presto-info-contrast);
+  --p-button-info-active-background: var(--presto-info-active);
+  --p-button-info-active-border-color: var(--presto-info-active);
+  --p-button-info-active-color: var(--presto-info-contrast);
+  --p-button-info-focus-ring-color: var(--presto-info-200);
+
+  /* Warn Button */
+  --p-button-warn-background: var(--presto-warn);
+  --p-button-warn-border-color: var(--presto-warn);
+  --p-button-warn-color: var(--presto-warn-contrast);
+  --p-button-warn-hover-background: var(--presto-warn-hover);
+  --p-button-warn-hover-border-color: var(--presto-warn-hover);
+  --p-button-warn-hover-color: var(--presto-warn-contrast);
+  --p-button-warn-active-background: var(--presto-warn-active);
+  --p-button-warn-active-border-color: var(--presto-warn-active);
+  --p-button-warn-active-color: var(--presto-warn-contrast);
+  --p-button-warn-focus-ring-color: var(--presto-warn-200);
+
+  /* Help Button */
+  --p-button-help-background: var(--presto-help);
+  --p-button-help-border-color: var(--presto-help);
+  --p-button-help-color: var(--presto-help-contrast);
+  --p-button-help-hover-background: var(--presto-help-hover);
+  --p-button-help-hover-border-color: var(--presto-help-hover);
+  --p-button-help-hover-color: var(--presto-help-contrast);
+  --p-button-help-active-background: var(--presto-help-active);
+  --p-button-help-active-border-color: var(--presto-help-active);
+  --p-button-help-active-color: var(--presto-help-contrast);
+  --p-button-help-focus-ring-color: var(--presto-help-200);
+
+  /* Danger Button */
+  --p-button-danger-background: var(--presto-danger);
+  --p-button-danger-border-color: var(--presto-danger);
+  --p-button-danger-color: var(--presto-danger-contrast);
+  --p-button-danger-hover-background: var(--presto-danger-hover);
+  --p-button-danger-hover-border-color: var(--presto-danger-hover);
+  --p-button-danger-hover-color: var(--presto-danger-contrast);
+  --p-button-danger-active-background: var(--presto-danger-active);
+  --p-button-danger-active-border-color: var(--presto-danger-active);
+  --p-button-danger-active-color: var(--presto-danger-contrast);
+  --p-button-danger-focus-ring-color: var(--presto-danger-200);
+
+  /* Contrast Light Button */
+  --p-button-contrast-light-background: var(--presto-contrast-dark-200);
+  --p-button-contrast-light-border-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-light-color: var(--presto-contrast-light-100);
+  --p-button-contrast-light-hover-background: var(--presto-gray-800);
+  --p-button-contrast-light-hover-border-color: var(--presto-gray-800);
+  --p-button-contrast-light-hover-color: var(--presto-contrast-light-100);
+  --p-button-contrast-light-active-background: var(--presto-gray-900);
+  --p-button-contrast-light-active-border-color: var(--presto-gray-900);
+  --p-button-contrast-light-active-color: var(--presto-contrast-light-100);
+  --p-button-contrast-light-focus-ring-color: var(--presto-gray-200);
+
+  /* Contrast Dark Button */
+  --p-button-contrast-dark-background: var(--presto-contrast-dark-100);
+  --p-button-contrast-dark-border-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-hover-background: var(--presto-gray-700);
+  --p-button-contrast-dark-hover-border-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-hover-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-active-background: var(--presto-gray-600);
+  --p-button-contrast-dark-active-border-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-active-color: var(--presto-contrast-dark-200);
+  --p-button-contrast-dark-focus-ring-color: var(--presto-gray-300);
+
+  /* Outlined Button Tokens */
+  --p-button-outlined-primary-background: transparent;
+  --p-button-outlined-primary-border-color: var(--presto-primary);
+  --p-button-outlined-primary-color: var(--presto-primary);
+  --p-button-outlined-primary-hover-background: var(--presto-primary-100);
+  --p-button-outlined-primary-hover-border-color: var(--presto-primary);
+  --p-button-outlined-primary-hover-color: var(--presto-primary);
+
+  --p-button-outlined-secondary-background: transparent;
+  --p-button-outlined-secondary-border-color: var(--presto-secondary);
+  --p-button-outlined-secondary-color: var(--presto-secondary);
+  --p-button-outlined-secondary-hover-background: var(--presto-secondary-100);
+  --p-button-outlined-secondary-hover-border-color: var(--presto-secondary);
+  --p-button-outlined-secondary-hover-color: var(--presto-secondary);
+
+  --p-button-outlined-success-background: transparent;
+  --p-button-outlined-success-border-color: var(--presto-success);
+  --p-button-outlined-success-color: var(--presto-success);
+  --p-button-outlined-success-hover-background: var(--presto-success-100);
+  --p-button-outlined-success-hover-border-color: var(--presto-success);
+  --p-button-outlined-success-hover-color: var(--presto-success);
+
+  --p-button-outlined-info-background: transparent;
+  --p-button-outlined-info-border-color: var(--presto-info);
+  --p-button-outlined-info-color: var(--presto-info);
+  --p-button-outlined-info-hover-background: var(--presto-info-100);
+  --p-button-outlined-info-hover-border-color: var(--presto-info);
+  --p-button-outlined-info-hover-color: var(--presto-info);
+
+  --p-button-outlined-warn-background: transparent;
+  --p-button-outlined-warn-border-color: var(--presto-warn);
+  --p-button-outlined-warn-color: var(--presto-warn);
+  --p-button-outlined-warn-hover-background: var(--presto-warn-100);
+  --p-button-outlined-warn-hover-border-color: var(--presto-warn);
+  --p-button-outlined-warn-hover-color: var(--presto-warn);
+
+  --p-button-outlined-help-background: transparent;
+  --p-button-outlined-help-border-color: var(--presto-help);
+  --p-button-outlined-help-color: var(--presto-help);
+  --p-button-outlined-help-hover-background: var(--presto-help-100);
+  --p-button-outlined-help-hover-border-color: var(--presto-help);
+  --p-button-outlined-help-hover-color: var(--presto-help);
+
+  --p-button-outlined-danger-background: transparent;
+  --p-button-outlined-danger-border-color: var(--presto-danger);
+  --p-button-outlined-danger-color: var(--presto-danger);
+  --p-button-outlined-danger-hover-background: var(--presto-danger-100);
+  --p-button-outlined-danger-hover-border-color: var(--presto-danger);
+  --p-button-outlined-danger-hover-color: var(--presto-danger);
+
+  --p-button-outlined-contrast-light-background: transparent;
+  --p-button-outlined-contrast-light-border-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-light-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-light-hover-background: var(--presto-gray-200);
+  --p-button-outlined-contrast-light-hover-border-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-light-hover-color: var(--presto-contrast-dark-200);
+
+  --p-button-outlined-contrast-dark-background: transparent;
+  --p-button-outlined-contrast-dark-border-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-dark-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-dark-hover-background: var(--presto-gray-600);
+  --p-button-outlined-contrast-dark-hover-border-color: var(--presto-contrast-dark-200);
+  --p-button-outlined-contrast-dark-hover-color: var(--presto-contrast-dark-200);
+
+  /* Text Button Tokens */
+  --p-button-text-primary-background: transparent;
+  --p-button-text-primary-border-color: transparent;
+  --p-button-text-primary-color: var(--presto-primary);
+  --p-button-text-primary-hover-background: var(--presto-primary-100);
+  --p-button-text-primary-hover-border-color: transparent;
+  --p-button-text-primary-hover-color: var(--presto-primary);
+
+  --p-button-text-secondary-background: transparent;
+  --p-button-text-secondary-border-color: transparent;
+  --p-button-text-secondary-color: var(--presto-secondary);
+  --p-button-text-secondary-hover-background: var(--presto-secondary-100);
+  --p-button-text-secondary-hover-border-color: transparent;
+  --p-button-text-secondary-hover-color: var(--presto-secondary);
+
+  --p-button-text-success-background: transparent;
+  --p-button-text-success-border-color: transparent;
+  --p-button-text-success-color: var(--presto-success);
+  --p-button-text-success-hover-background: var(--presto-success-100);
+  --p-button-text-success-hover-border-color: transparent;
+  --p-button-text-success-hover-color: var(--presto-success);
+
+  --p-button-text-info-background: transparent;
+  --p-button-text-info-border-color: transparent;
+  --p-button-text-info-color: var(--presto-info);
+  --p-button-text-info-hover-background: var(--presto-info-100);
+  --p-button-text-info-hover-border-color: transparent;
+  --p-button-text-info-hover-color: var(--presto-info);
+
+  --p-button-text-warn-background: transparent;
+  --p-button-text-warn-border-color: transparent;
+  --p-button-text-warn-color: var(--presto-warn);
+  --p-button-text-warn-hover-background: var(--presto-warn-100);
+  --p-button-text-warn-hover-border-color: transparent;
+  --p-button-text-warn-hover-color: var(--presto-warn);
+
+  --p-button-text-help-background: transparent;
+  --p-button-text-help-border-color: transparent;
+  --p-button-text-help-color: var(--presto-help);
+  --p-button-text-help-hover-background: var(--presto-help-100);
+  --p-button-text-help-hover-border-color: transparent;
+  --p-button-text-help-hover-color: var(--presto-help);
+
+  --p-button-text-danger-background: transparent;
+  --p-button-text-danger-border-color: transparent;
+  --p-button-text-danger-color: var(--presto-danger);
+  --p-button-text-danger-hover-background: var(--presto-danger-100);
+  --p-button-text-danger-hover-border-color: transparent;
+  --p-button-text-danger-hover-color: var(--presto-danger);
+
+  --p-button-text-contrast-light-background: transparent;
+  --p-button-text-contrast-light-border-color: transparent;
+  --p-button-text-contrast-light-color: var(--presto-contrast-dark-200);
+  --p-button-text-contrast-light-hover-background: var(--presto-gray-200);
+  --p-button-text-contrast-light-hover-border-color: transparent;
+  --p-button-text-contrast-light-hover-color: var(--presto-contrast-dark-200);
+
+  --p-button-text-contrast-dark-background: transparent;
+  --p-button-text-contrast-dark-border-color: transparent;
+  --p-button-text-contrast-dark-color: var(--presto-contrast-dark-200);
+  --p-button-text-contrast-dark-hover-background: var(--presto-gray-600);
+  --p-button-text-contrast-dark-hover-border-color: transparent;
+  --p-button-text-contrast-dark-hover-color: var(--presto-contrast-dark-200);
 
   /* PrimeNG Button Common Variables */
   --p-button-padding-x: 1rem;
   --p-button-padding-y: 0.5rem;
   --p-button-border-radius: 0.375rem;
+  --p-button-rounded-border-radius: 28px;
   --p-button-gap: 0.5rem;
   --p-button-transition-duration: 0.15s;
+  --p-button-box-shadow: 0px 4px 4px 0px #00000040;
 }
+
+/* Force override for any button with rounded attribute */
+.p-button[raised="true"],
+.p-button[ng-reflect-raised="true"] {
+  box-shadow: var(--p-button-box-shadow) !important;
+}
+.p-button[rounded] {
+  border-radius: var(--p-button-rounded-border-radius) !important;
+} 
+.p-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Contrast Light Theme Button Styles */
+.p-button[severity="contrast-light"] {
+  background: var(--p-button-contrast-light-background) !important;
+  border-color: var(--p-button-contrast-light-border-color) !important;
+  color: var(--p-button-contrast-light-color) !important;
+}
+
+.p-button[severity="contrast-light"]:hover {
+  background: var(--p-button-contrast-light-hover-background) !important;
+  border-color: var(--p-button-contrast-light-hover-border-color) !important;
+  color: var(--p-button-contrast-light-hover-color) !important;
+}
+
+.p-button[severity="contrast-light"]:active {
+  background: var(--p-button-contrast-light-active-background) !important;
+  border-color: var(--p-button-contrast-light-active-border-color) !important;
+  color: var(--p-button-contrast-light-active-color) !important;
+}
+
+.p-button[severity="contrast-light"].p-button-outlined {
+  background: var(--p-button-outlined-contrast-light-background) !important;
+  border-color: var(--p-button-outlined-contrast-light-border-color) !important;
+  color: var(--p-button-outlined-contrast-light-color) !important;
+}
+
+.p-button[severity="contrast-light"].p-button-outlined:hover {
+  background: var(--p-button-outlined-contrast-light-hover-background) !important;
+  border-color: var(--p-button-outlined-contrast-light-hover-border-color) !important;
+  color: var(--p-button-outlined-contrast-light-hover-color) !important;
+}
+
+.p-button[severity="contrast-light"].p-button-text {
+  background: var(--p-button-text-contrast-light-background) !important;
+  border-color: var(--p-button-text-contrast-light-border-color) !important;
+  color: var(--p-button-text-contrast-light-color) !important;
+}
+
+.p-button[severity="contrast-light"].p-button-text:hover {
+  background: var(--p-button-text-contrast-light-hover-background) !important;
+  border-color: var(--p-button-text-contrast-light-hover-border-color) !important;
+  color: var(--p-button-text-contrast-light-hover-color) !important;
+}
+
+/* Contrast Dark Theme Button Styles */
+.p-button[severity="contrast-dark"] {
+  background: var(--p-button-contrast-dark-background) !important;
+  border-color: var(--p-button-contrast-dark-border-color) !important;
+  color: var(--p-button-contrast-dark-color) !important;
+}
+
+.p-button[severity="contrast-dark"]:hover {
+  background: var(--p-button-contrast-dark-hover-background) !important;
+  border-color: var(--p-button-contrast-dark-hover-border-color) !important;
+  color: var(--p-button-contrast-dark-hover-color) !important;
+}
+
+.p-button[severity="contrast-dark"]:active {
+  background: var(--p-button-contrast-dark-active-background) !important;
+  border-color: var(--p-button-contrast-dark-active-border-color) !important;
+  color: var(--p-button-contrast-dark-active-color) !important;
+}
+
+.p-button[severity="contrast-dark"].p-button-outlined {
+  background: var(--p-button-outlined-contrast-dark-background) !important;
+  border-color: var(--p-button-outlined-contrast-dark-border-color) !important;
+  color: var(--p-button-outlined-contrast-dark-color) !important;
+}
+
+.p-button[severity="contrast-dark"].p-button-outlined:hover {
+  background: var(--p-button-outlined-contrast-dark-hover-background) !important;
+  border-color: var(--p-button-outlined-contrast-dark-hover-border-color) !important;
+  color: var(--p-button-outlined-contrast-dark-hover-color) !important;
+}
+
+.p-button[severity="contrast-dark"].p-button-text {
+  background: var(--p-button-text-contrast-dark-background) !important;
+  border-color: var(--p-button-text-contrast-dark-border-color) !important;
+  color: var(--p-button-text-contrast-dark-color) !important;
+}
+
+.p-button[severity="contrast-dark"].p-button-text:hover {
+  background: var(--p-button-text-contrast-dark-hover-background) !important;
+  border-color: var(--p-button-text-contrast-dark-hover-border-color) !important;
+  color: var(--p-button-text-contrast-dark-hover-color) !important;
+}
+
