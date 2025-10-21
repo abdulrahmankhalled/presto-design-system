@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonModule } from 'primeng/button';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { MenuItem } from 'primeng/api';
-import { MessageService } from 'primeng/api';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCheck, faInfo, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const meta: Meta = {
   title: 'PRESTO/Button',
@@ -38,7 +37,7 @@ A comprehensive button component showcasing PrimeNG's Button with PRESTO theme i
     },
     severity: {
       control: 'select',
-      options: ['primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger'],
+      options: ['primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger', 'contrast-light', 'contrast-dark'],
       description: 'Button severity/color variant',
     },
     outlined: {
@@ -126,7 +125,7 @@ export const Secondary: Story = {
   }),
 };
 
-export const Success: Story = {
+export const green: Story = {
   args: {
     label: 'Button Label',
     severity: 'success',
@@ -891,107 +890,50 @@ export const Disabled: Story = {
     },
   }),
 };
-export const SplitButton: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-light',
-    disabled: true,
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-    outlined: true,
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
-export const SplitButtonRounded: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-light',
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" [rounded]="true" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
 
-export const SplitButtonText: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-light',
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" [rounded]="true" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
-
-export const SplitButtonContrastDark: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-dark',
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" [rounded]="true" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
-export const SplitButtonContrastDarkRounded: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-dark',
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" [rounded]="true" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
-export const SplitButtonContrastDarkText: Story = {
-  args: {
-    label: 'Button Label',
-    severity: 'contrast-light',
-    model: ['Item 1', 'Item 2', 'Item 3'],
-    icon: 'fas fa-check',
-    iconPos: 'left',
-  },
-  render: (args) => ({
-    props: args,
-    template: `<p-splitbutton label="Primary" [model]="items" [rounded]="true" (onClick)="save('info')" outlined />`,
-    moduleMetadata: {
-      imports: [ButtonModule],
-    },
-  }),
-};
 // All variants showcase
+export const ContrastLight: Story = {
+  render: () => ({
+    template: `
+      <div class="p-4 space-y-4">
+        <h2 class="text-xl font-bold mb-4">Contrast Light Theme Buttons</h2>
+        <div class="flex flex-wrap gap-4">
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" styleClass="contrast-light"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [text]="true" styleClass="contrast-light-text"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" styleClass="contrast-light"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-light-text"></p-button>
+        </div>
+      </div>
+    `,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
+};
+
+export const ContrastDark: Story = {
+  render: () => ({
+    template: `
+      <div class="p-4 space-y-4 bg-gray-900">
+        <h2 class="text-xl font-bold mb-4 text-white">Contrast Dark Theme Buttons</h2>
+        <div class="flex flex-wrap gap-4">
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" styleClass="contrast-dark"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [text]="true" styleClass="contrast-dark-text"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" styleClass="contrast-dark"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
+          <p-button label="Button Label" icon="fas fa-check" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-dark-text"></p-button>
+        </div>
+      </div>
+    `,
+    moduleMetadata: {
+      imports: [ButtonModule],
+    },
+  }),
+};
+
 export const AllVariants: Story = {
   render: () => ({
     template: `
@@ -1032,7 +974,7 @@ export const AllVariants: Story = {
           </div>
           
           <!-- Success Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Success</div>
+            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">green</div>
           <div class="flex justify-center">
             <p-button label="Button Label" severity="success" icon="fas fa-check" iconPos="left"></p-button>
           </div>
@@ -1080,7 +1022,7 @@ export const AllVariants: Story = {
           </div>
           
           <!-- Danger Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
+          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
           <div class="flex justify-center">
             <p-button label="Button Label" severity="danger" icon="fas fa-check" iconPos="left"></p-button>
           </div>
@@ -1089,6 +1031,30 @@ export const AllVariants: Story = {
           </div>
           <div class="flex justify-center">
             <p-button label="Button Label" severity="danger" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          
+          <!-- Contrast Light Row -->
+          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-light" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-light" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-light" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          
+          <!-- Contrast Dark Row -->
+          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-dark" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-dark" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" severity="contrast-dark" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
           </div>
         </div>
          <!-- Grid Layout: 3 columns (Filled, Outlined, Text Only) -->
@@ -1182,135 +1148,35 @@ export const AllVariants: Story = {
           <div class="flex justify-center">
             <p-button label="Button Label" [rounded]="true" severity="danger" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
           </div>
-        </div>
-      
-          <!-- Split Button Grid: 4 columns (Label, Filled, Outlined, Text Only) -->
-          <div class="grid grid-cols-4 gap-4 max-w-4xl text-gray-500 py-4">
-            <!-- Empty cell for alignment -->
-            <div></div>
-            <!-- Column Headers -->
-            <div class="font-semibold text-center bg-gray-200 p-2">Filled</div>
-            <div class="font-semibold text-center bg-gray-200 p-2">Outlined</div>
-            <div class="font-semibold text-center bg-gray-200 p-2">Text Only</div>
-            
-            <!-- Primary Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Primary</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Secondary Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Secondary</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="secondary" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="secondary" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="secondary" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Success Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Success</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="success" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="success" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="success" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Info Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">info</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="info" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="info" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="info" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Warn Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Warn</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="warn" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="warn" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="warn" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Help Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Help</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="help" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="help" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="help" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            
-            <!-- Danger Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" severity="danger" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" outlined severity="danger" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
-            <div class="flex justify-center">
-              <p-splitbutton label="Button Label" [model]="items" (onClick)="save('info')" [text]="true" severity="danger" icon="fas fa-check" iconPos="left"></p-splitbutton>
-            </div>
+          
+          <!-- Contrast Light Row -->
+          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-light" icon="fas fa-check" iconPos="left"></p-button>
           </div>
-           <!-- Split Button Grid: 3 columns (Filled, Outlined, Text Only) -->
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-light" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-light" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          
+          <!-- Contrast Dark Row -->
+          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-dark" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-dark" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+          <div class="flex justify-center">
+            <p-button label="Button Label" [rounded]="true" severity="contrast-dark" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+          </div>
+        </div>
         
     `,
     moduleMetadata: {
-      imports: [ButtonModule, SplitButtonModule],
-      providers: [MessageService],
+      imports: [ButtonModule],
     },
-    props: {
-      items: [
-        {
-          label: 'Update',
-          command: () => {
-            console.log('Update clicked');
-          }
-        },
-        {
-          label: 'Delete',
-          command: () => {
-            console.log('Delete clicked');
-          }
-        },
-        { label: 'Angular.dev', url: 'https://angular.dev' },
-        { separator: true },
-        { label: 'Upload', routerLink: ['/fileupload'] }
-      ],
-      save: (severity: string) => {
-        console.log(`Split button clicked with severity: ${severity}`);
-      },
-      update: () => {
-        console.log('Data Updated');
-      },
-      delete: () => {
-        console.log('Data Deleted');
-      }
-    }
   }),
 };

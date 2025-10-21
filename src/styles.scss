@@ -1,28 +1,8 @@
 @import "./styles/presto-tokens.css";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
-
+@import "./styles/button";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Your custom styles below */
-
-.p-button-icon-only {
-    padding: 1rem !important; /* 16px padding */
-  }
-.rounded {
-    border-radius: 28px !important;
-  }
-/* Button Size Classes */
-/* Force override for any button with rounded attribute */
-.p-button[raised] {
-  box-shadow: var(--p-button-box-shadow) !important;
-}
-.p-button[rounded] {
-  border-radius: var(--p-button-rounded-border-radius) !important;
-} 
-.p-button[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}

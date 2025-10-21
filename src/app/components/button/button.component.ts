@@ -1,12 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { SplitButtonModule } from 'primeng/splitbutton';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, ButtonModule, SplitButtonModule],
+  imports: [CommonModule, ButtonModule],
   template: `
     <p-button
       [label]="label"
@@ -16,15 +15,12 @@ import { SplitButtonModule } from 'primeng/splitbutton';
       [outlined]="outlined"
       [text]="text"
       [raised]="raised"
-      [link]="link"
       [rounded]="rounded"
-      [fluid]="fluid"
       [size]="size"
       [disabled]="disabled"
       [loading]="loading"
       [loadingIcon]="loadingIcon"
       [badge]="badge"
-      [badgeClass]="badgeClass"
       (onClick)="onClick.emit($event)"
       (onFocus)="onFocus.emit($event)"
       (onBlur)="onBlur.emit($event)"
@@ -61,4 +57,5 @@ export class ButtonComponent {
   @Output() onClick = new EventEmitter<any>();
   @Output() onFocus = new EventEmitter<any>();
   @Output() onBlur = new EventEmitter<any>();
+
 }
