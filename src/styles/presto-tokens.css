@@ -852,3 +852,77 @@
   --p-button-transition-duration: 0.15s;
   --p-button-box-shadow: 0px 4px 4px 0px #00000040;
 }
+
+/* Contrast Light Button CSS Classes - Using presto button state variant tokens */
+.contrast-light {
+  --p-button-primary-background: var(--presto-button-contrast-white-theme-filled-background-default);
+  --p-button-primary-border-color: var(--presto-button-contrast-white-theme-filled-background-default);
+  --p-button-primary-color: var(--presto-button-contrast-white-theme-filled-text-default);
+  --p-button-primary-hover-background: var(--presto-button-contrast-white-theme-filled-background-hover);
+  --p-button-primary-hover-border-color: var(--presto-button-contrast-white-theme-filled-background-hover);
+  --p-button-primary-hover-color: var(--presto-button-contrast-white-theme-filled-text-hover);
+  --p-button-primary-active-background: var(--presto-button-contrast-white-theme-filled-background-active);
+  --p-button-primary-active-border-color: var(--presto-button-contrast-white-theme-filled-background-active);
+  --p-button-primary-active-color: var(--presto-button-contrast-white-theme-filled-text-active);
+}
+
+.contrast-light-outlined {
+  --p-button-outlined-primary-background: var(--presto-button-contrast-white-theme-outlined-background-default);
+  --p-button-outlined-primary-border-color: var(--presto-button-contrast-white-theme-outlined-border-default);
+  --p-button-outlined-primary-color: var(--presto-button-contrast-white-theme-outlined-text-default);
+  --p-button-outlined-primary-hover-background: var(--presto-button-contrast-white-theme-outlined-background-hover);
+  --p-button-outlined-primary-hover-border-color: var(--presto-button-contrast-white-theme-outlined-border-hover);
+  --p-button-outlined-primary-hover-color: var(--presto-button-contrast-white-theme-outlined-text-hover);
+  --p-button-outlined-primary-active-background: var(--presto-button-contrast-white-theme-outlined-background-active);
+  --p-button-outlined-primary-active-border-color: var(--presto-button-contrast-white-theme-outlined-border-active);
+  --p-button-outlined-primary-active-color: var(--presto-button-contrast-white-theme-outlined-text-active);
+}
+
+.contrast-light-text {
+  --p-button-text-primary-background: var(--presto-button-contrast-white-theme-text-only-background-default);
+  --p-button-text-primary-border-color: transparent;
+  --p-button-text-primary-color: var(--presto-button-contrast-white-theme-text-only-text-default);
+  --p-button-text-primary-hover-background: var(--presto-button-contrast-white-theme-text-only-background-hover);
+  --p-button-text-primary-hover-border-color: transparent;
+  --p-button-text-primary-hover-color: var(--presto-button-contrast-white-theme-text-only-text-hover);
+  --p-button-text-primary-active-background: var(--presto-button-contrast-white-theme-text-only-background-active);
+  --p-button-text-primary-active-border-color: transparent;
+  --p-button-text-primary-active-color: var(--presto-button-contrast-white-theme-text-only-text-active);
+}
+
+/* Contrast Dark Button CSS Classes - Using presto button state variant tokens */
+.contrast-dark {
+  --p-button-primary-background: var(--presto-button-contrast-black-theme-filled-background-default);
+  --p-button-primary-border-color: var(--presto-button-contrast-black-theme-filled-background-default);
+  --p-button-primary-color: var(--presto-button-contrast-black-theme-filled-text-default);
+  --p-button-primary-hover-background: var(--presto-button-contrast-black-theme-filled-background-hover);
+  --p-button-primary-hover-border-color: var(--presto-button-contrast-black-theme-filled-background-hover);
+  --p-button-primary-hover-color: var(--presto-button-contrast-black-theme-filled-text-hover);
+  --p-button-primary-active-background: var(--presto-button-contrast-black-theme-filled-background-active);
+  --p-button-primary-active-border-color: var(--presto-button-contrast-black-theme-filled-background-active);
+  --p-button-primary-active-color: var(--presto-button-contrast-black-theme-filled-text-active);
+}
+
+.contrast-dark-outlined {
+  --p-button-outlined-primary-background: var(--presto-button-contrast-black-theme-outlined-background-default);
+  --p-button-outlined-primary-border-color: var(--presto-button-contrast-black-theme-outlined-border-default);
+  --p-button-outlined-primary-color: var(--presto-button-contrast-black-theme-outlined-text-default);
+  --p-button-outlined-primary-hover-background: var(--presto-button-contrast-black-theme-outlined-background-hover);
+  --p-button-outlined-primary-hover-border-color: var(--presto-button-contrast-black-theme-outlined-border-hover);
+  --p-button-outlined-primary-hover-color: var(--presto-button-contrast-black-theme-outlined-text-hover);
+  --p-button-outlined-primary-active-background: var(--presto-button-contrast-black-theme-outlined-background-active);
+  --p-button-outlined-primary-active-border-color: var(--presto-button-contrast-black-theme-outlined-border-active);
+  --p-button-outlined-primary-active-color: var(--presto-button-contrast-black-theme-outlined-text-active);
+}
+
+.contrast-dark-text {
+  --p-button-text-primary-background: var(--presto-button-contrast-black-theme-text-only-background-default);
+  --p-button-text-primary-border-color: transparent;
+  --p-button-text-primary-color: var(--presto-button-contrast-black-theme-text-only-text-default);
+  --p-button-text-primary-hover-background: var(--presto-button-contrast-black-theme-text-only-background-hover);
+  --p-button-text-primary-hover-border-color: transparent;
+  --p-button-text-primary-hover-color: var(--presto-button-contrast-black-theme-text-only-text-hover);
+  --p-button-text-primary-active-background: var(--presto-button-contrast-black-theme-text-only-background-active);
+  --p-button-text-primary-active-border-color: transparent;
+  --p-button-text-primary-active-color: var(--presto-button-contrast-black-theme-text-only-text-active);
+}

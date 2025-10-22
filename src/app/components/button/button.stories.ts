@@ -3,6 +3,9 @@ import { ButtonModule } from 'primeng/button';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCheck, faInfo, faStar } from '@fortawesome/free-solid-svg-icons';
 
+// Icon constants
+const DEFAULT_ICON = 'fas fa-check';
+
 const meta: Meta = {
   title: 'PRESTO/Button',
   component: ButtonModule,
@@ -102,7 +105,7 @@ export const Primary: Story = {
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" icon="fas fa-check" [iconPos]="iconPos"></p-button>`,
+    template: `<p-button [label]="label" [severity]="severity" [icon]="defaultIcon" [iconPos]="iconPos"></p-button>`,
     moduleMetadata: {
       imports: [ButtonModule, FontAwesomeModule],
       providers: [
@@ -1368,12 +1371,12 @@ export const ContrastLight: Story = {
       <div class="p-4 space-y-4">
         <h2 class="text-xl font-bold mb-4">Contrast Light Theme Buttons</h2>
         <div class="flex flex-wrap gap-4">
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" styleClass="contrast-light"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [text]="true" styleClass="contrast-light-text"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" styleClass="contrast-light"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-light-text"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [text]="true" styleClass="contrast-light-text"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" styleClass="contrast-light"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-light-text"></p-button>
         </div>
       </div>
     `,
@@ -1399,12 +1402,12 @@ export const ContrastDark: Story = {
       <div class="p-4 space-y-4 bg-gray-900">
         <h2 class="text-xl font-bold mb-4 text-white">Contrast Dark Theme Buttons</h2>
         <div class="flex flex-wrap gap-4">
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" styleClass="contrast-dark"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [text]="true" styleClass="contrast-dark-text"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" styleClass="contrast-dark"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
-          <p-button label="Button label" icon="fas fa-check" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-dark-text"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [text]="true" styleClass="contrast-dark-text"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" styleClass="contrast-dark"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
+          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-dark-text"></p-button>
         </div>
       </div>
     `,
@@ -1426,6 +1429,9 @@ export const ContrastDark: Story = {
 
 export const AllVariants: Story = {
   render: () => ({
+    props: {
+      defaultIcon: DEFAULT_ICON
+    },
     template: `
       <div class="p-4">
         <h2 class="text-xl font-bold mb-6 text-black">P02.1.1 Core Component(s)</h2>
@@ -1442,110 +1448,111 @@ export const AllVariants: Story = {
           <!-- Primary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Primary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Secondary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Secondary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Success Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">green</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Info Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Info</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Warn Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Warn</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Help Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Help</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Danger Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Contrast Light Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-light" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-light" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-outlined"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-light" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-text"></p-button>
           </div>
           
           <!-- Contrast Dark Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-dark" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-dark" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-outlined"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="contrast-dark" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-text"></p-button>
           </div>
+          
         </div>
          <!-- Grid Layout: 3 columns (Filled, Outlined, Text Only) -->
         <div class="grid grid-cols-4 gap-4 max-w-4xl text-gray-500">
@@ -1558,111 +1565,110 @@ export const AllVariants: Story = {
           <!-- Primary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Primary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Secondary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Secondary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Success Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Success</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Info Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Info</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Warn Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center bg-gray-200 p-2">Warn</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Help Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Help</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Danger Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
           </div>
           
           <!-- Contrast Light Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-light" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-light" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-outlined"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-light" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-text"></p-button>
           </div>
           
           <!-- Contrast Dark Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-dark" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-dark" [outlined]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-outlined"></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="contrast-dark" [text]="true" icon="fas fa-check" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-text"></p-button>
           </div>
-        </div>
         
     `,
     moduleMetadata: {
