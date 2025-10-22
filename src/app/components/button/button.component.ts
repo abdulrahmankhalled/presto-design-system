@@ -12,11 +12,15 @@ import { ButtonModule } from 'primeng/button';
       [icon]="icon"
       [iconPos]="iconPos"
       [severity]="severity"
+      [outlined]="outlined"
+      [text]="text"
+      [raised]="raised"
+      [rounded]="rounded"
+      [size]="size"
       [disabled]="disabled"
       [loading]="loading"
       [loadingIcon]="loadingIcon"
       [badge]="badge"
-      [badgeClass]="badgeClass"
       (onClick)="onClick.emit($event)"
       (onFocus)="onFocus.emit($event)"
       (onBlur)="onBlur.emit($event)"
@@ -34,8 +38,17 @@ export class ButtonComponent {
   @Input() label: string = '';
   @Input() icon: string = '';
   @Input() iconPos: 'left' | 'right' | 'top' | 'bottom' = 'left';
-  @Input() severity: 'primary' | 'secondary' = 'primary';
+  @Input() severity: 'primary' | 'secondary' | 'success' | 'info' | 'warn' | 'help' | 'danger' = 'primary';
   @Input() disabled: boolean = false;
+  @Input() outlined: boolean = false;
+  @Input() text: boolean = false;
+  @Input() styleClass: string = '';
+
+  @Input() raised: boolean = false;
+  @Input() link: boolean = false;
+  @Input() rounded: boolean = false;
+  @Input() fluid: boolean = false;
+  @Input() size: 'small' | 'large' = 'small';
   @Input() loading: boolean = false;
   @Input() loadingIcon: string = 'pi pi-spinner pi-spin';
   @Input() badge: string = '';
@@ -44,4 +57,5 @@ export class ButtonComponent {
   @Output() onClick = new EventEmitter<any>();
   @Output() onFocus = new EventEmitter<any>();
   @Output() onBlur = new EventEmitter<any>();
+
 }
