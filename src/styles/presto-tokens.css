@@ -176,6 +176,7 @@
   --presto-black: #000000;
   --presto-black-50: #00000080;
   
+<<<<<<< HEAD
  
   --presto-green-50: #D3F3DF/50%;
   --presto-green-100: #D3F3DF;
@@ -319,6 +320,8 @@
   --presto-black: #000000;
   --presto-black-50: #00000080;
   
+=======
+>>>>>>> 3efc81c (DS fixes)
   /* Spacing Tokens */
   --presto-normal-padding-x: 12px;
   --presto-normal-padding-y: 8px;
@@ -403,7 +406,11 @@
   /* PrimeNG Button Variables - All Severities */
   
   /* Primary Button */
+<<<<<<< HEAD
   --p-button-primary-background: var(--presto-button-primary-filled-background-default);
+=======
+  --p-button-primary-background: var(--presto-primary);
+>>>>>>> 3efc81c (DS fixes)
   --p-button-primary-border-color: var(--presto-primary);
   --p-button-primary-color: var(--presto-primary-contrast);
   --p-button-primary-hover-background: var(--presto-primary-hover);
