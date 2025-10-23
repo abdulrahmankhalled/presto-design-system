@@ -1292,10 +1292,18 @@ export const NormalButton: Story = {
   args: {
     label: 'Normal Button',
     severity: 'primary',
+<<<<<<< HEAD
   },
   render: (args) => ({
     props: args,
     template: `<p-button [label]="label" [severity]="severity"></p-button>`,
+=======
+    size: 'normal',
+  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button [label]="label" [severity]="severity" [size]="size"></p-button>`,
+>>>>>>> 3efc81c (DS fixes)
     moduleMetadata: {
       imports: [ButtonModule, FontAwesomeModule],
       providers: [

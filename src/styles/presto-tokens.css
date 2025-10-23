@@ -176,6 +176,149 @@
   --presto-black: #000000;
   --presto-black-50: #00000080;
   
+ 
+  --presto-green-50: #D3F3DF/50%;
+  --presto-green-100: #D3F3DF;
+  --presto-green-200: #A7E8BF;
+  --presto-green-300: #7ADC9E;
+  --presto-green-400: #4ED17E;
+  --presto-green-500: #22C55E;
+  --presto-green-600: #1B9E4B;
+  --presto-green-700: #147638;
+  --presto-green-800: #0E4F26;
+  --presto-green-900: #072713;
+
+  /* Brand Yellow Colors */
+  --presto-yellow-100: #FBF0CE;
+  --presto-yellow-200: #F7E19C;
+  --presto-yellow-300: #F2D16B;
+  --presto-yellow-400: #EEC239;
+  --presto-yellow-500: #EAB308;
+  --presto-yellow-600: #BB8F06;
+  --presto-yellow-700: #8C6B05;
+  --presto-yellow-800: #5E4803;
+  --presto-yellow-900: #2F2402;
+
+  /* Brand Fuchsia Colors */
+  --presto-fuchsia-100: #F7DAFC;
+  --presto-fuchsia-200: #F0B5F9;
+  --presto-fuchsia-300: #E890F5;
+  --presto-fuchsia-400: #E16BF2;
+  --presto-fuchsia-500: #D946EF;
+  --presto-fuchsia-600: #AE38BF;
+  --presto-fuchsia-700: #822A8F;
+  --presto-fuchsia-800: #571C60;
+  --presto-fuchsia-900: #2B0E30;
+
+  /* Brand Purple Colors */
+  --presto-purple-100: #EEDDFD;
+  --presto-purple-200: #DCBBFC;
+  --presto-purple-300: #CB99FA;
+  --presto-purple-400: #B977F9;
+  --presto-purple-500: #A855F7;
+  --presto-purple-600: #8644C6;
+  --presto-purple-700: #653394;
+  --presto-purple-800: #432263;
+  --presto-purple-900: #221131;
+
+  /* Brand Rose Colors */
+  --presto-rose-100: #FDD9DF;
+  --presto-rose-200: #FBB2BF;
+  --presto-rose-300: #F88C9E;
+  --presto-rose-400: #F6657E;
+  --presto-rose-500: #F43F5E;
+  --presto-rose-600: #C3324B;
+  --presto-rose-700: #922638;
+  --presto-rose-800: #621926;
+  --presto-rose-900: #310D13;
+
+  /* Brand Pink Colors */
+  --presto-pink-100: #FBDAEB;
+  --presto-pink-200: #F7B6D6;
+  --presto-pink-300: #F491C2;
+  --presto-pink-400: #F06DAD;
+  --presto-pink-500: #EC4899;
+  --presto-pink-600: #BD3A7A;
+  --presto-pink-700: #8E2B5C;
+  --presto-pink-800: #5E1D3D;
+  --presto-pink-900: #2F0E1F;
+
+  /* Brand Sky Colors */
+  --presto-sky-50: #D2F1F9/50%;
+  --presto-sky-100: #D2F1F9;
+  --presto-sky-200: #A5E2F2;
+  --presto-sky-300: #77D4EC;
+  --presto-sky-400: #4AC5E5;
+  --presto-sky-500: #1DB7DF;
+  --presto-sky-600: #1792B2;
+  --presto-sky-700: #116E86;
+  --presto-sky-800: #0C4959;
+  --presto-sky-900: #06252D;
+
+  /* Brand Blue Colors */
+  --presto-blue-100: #DBE6FD;
+  --presto-blue-200: #B1CDFB;
+  --presto-blue-300: #8984FA;
+  --presto-blue-400: #629BFB;
+  --presto-blue-500: #3882F6;
+  --presto-blue-600: #2F68C5;
+  --presto-blue-700: #234E94;
+  --presto-blue-800: #183462;
+  --presto-blue-900: #0C1A31;
+
+  /* Brand Amber Colors */
+  --presto-amber-50: #FDECEB;
+  --presto-amber-100: #FDECCE;
+  --presto-amber-200: #FBD890;
+  --presto-amber-300: #F9C56D;
+  --presto-amber-400: #F7B13C;
+  --presto-amber-500: #F59E0B;
+  --presto-amber-600: #C47E09;
+  --presto-amber-700: #935F07;
+  --presto-amber-800: #623F04;
+  --presto-amber-900: #312002;
+
+  /* Neutral Colors */
+  --presto-neutral-100: #FCFCFC;
+  --presto-neutral-200: #F8F8F8;
+  --presto-neutral-300: #F5F5F5;
+  --presto-neutral-400: #F1F1F1;
+  --presto-neutral-500: #EEEEEE;
+  --presto-neutral-600: #BEBEBE;
+  --presto-neutral-700: #8F8F8F;
+  --presto-neutral-800: #5F5F5F;
+  --presto-neutral-900: #303030;
+
+  /* Slate Colors */
+  --presto-slate-100: #E1E4E8;
+  --presto-slate-200: #C3C9D0;
+  --presto-slate-300: #A6ADB9;
+  --presto-slate-400: #8892A1;
+  --presto-slate-500: #6A778A;
+  --presto-slate-600: #555F6E;
+  --presto-slate-700: #404753;
+  --presto-slate-800: #2A3037;
+  --presto-slate-900: #15181C;
+
+  /* Indigo Colors */
+  --presto-indigo-100: #E0E0FC;
+  --presto-indigo-200: #C1C2FB;
+  --presto-indigo-300: #A1A3F7;
+  --presto-indigo-400: #B295F4;
+  --presto-indigo-500: #6366F1;
+  --presto-indigo-600: #4F52C1;
+  --presto-indigo-700: #383D91;
+  --presto-indigo-800: #282960;
+  --presto-indigo-900: #141430;
+
+  /* Primary Colors */
+  --presto-white: #FFFFFF;
+  --presto-white-50: #FFFFFF80;
+  --presto-white-10: #FFFFFF1A;
+  --presto-white-0: #FFFFFF00;
+  --presto-black: #000000;
+  --presto-black-50: #00000080;
+  
   /* Spacing Tokens */
   --presto-normal-padding-x: 12px;
   --presto-normal-padding-y: 8px;
