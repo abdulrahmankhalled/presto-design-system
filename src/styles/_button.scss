@@ -1,0 +1,81 @@
+
+.p-button[rounded] {
+  border-radius: var(--p-button-rounded-border-radius);
+}
+.p-button-icon-only {
+  padding: var(--p-button-padding-x);
+}
+
+.p-button.contrast-light {
+  background: var(--p-button-contrast-light-background);
+  border-color: var(--p-button-contrast-light-border-color);
+  color: var(--p-button-contrast-light-color);
+}
+
+.p-button.contrast-light:hover {
+  background: var(--p-button-contrast-light-hover-background);
+  border-color: var(--p-button-contrast-light-hover-border-color);
+  color: var(--p-button-contrast-light-hover-color);
+}
+
+.p-button.contrast-light-outlined {
+  background: var(--p-button-outlined-contrast-light-background);
+  border-color: var(--p-button-outlined-contrast-light-border-color);
+  color: var(--p-button-outlined-contrast-light-color);
+}
+
+.p-button.contrast-light-outlined:hover {
+  background: var(--p-button-outlined-contrast-light-hover-background);
+  border-color: var(--p-button-outlined-contrast-light-hover-border-color);
+  color: var(--p-button-outlined-contrast-light-hover-color);
+}
+
+.p-button.contrast-light-text {
+  background: var(--p-button-text-contrast-light-background);
+  border-color: var(--p-button-text-contrast-light-border-color);
+  color: var(--p-button-text-contrast-light-color);
+}
+
+.p-button.contrast-light-text:hover {
+  background: var(--p-button-text-contrast-light-hover-background);
+  border-color: var(--p-button-text-contrast-light-hover-border-color);
+  color: var(--p-button-text-contrast-light-hover-color);
+}
+
+/* Contrast Dark Button Styles */
+.p-button.contrast-dark {
+  background: var(--p-button-contrast-dark-background);
+  border-color: var(--p-button-contrast-dark-border-color);
+  color: var(--p-button-contrast-dark-color);
+}
+
+.p-button.contrast-dark:hover {
+  background: var(--p-button-contrast-dark-hover-background);
+  border-color: var(--p-button-contrast-dark-hover-border-color);
+  color: var(--p-button-contrast-dark-hover-color);
+}
+
+.p-button.contrast-dark-outlined {
+  background: var(--p-button-outlined-contrast-dark-background);
+  border-color: var(--p-button-outlined-contrast-dark-border-color);
+  color: var(--p-button-outlined-contrast-dark-color);
+}
+
+.p-button.contrast-dark-outlined:hover {
+  background: var(--p-button-outlined-contrast-dark-hover-background);
+  border-color: var(--p-button-outlined-contrast-dark-hover-border-color);
+  color: var(--p-button-outlined-contrast-dark-hover-color);
+}
+
+.p-button.contrast-dark-text {
+  background: var(--p-button-text-contrast-dark-background);
+  border-color: var(--p-button-text-contrast-dark-border-color);
+  color: var(--p-button-text-contrast-dark-color);
+}
+
+.p-button.contrast-dark-text:hover {
+  background: var(--p-button-text-contrast-dark-hover-background);
+  border-color: var(--p-button-text-contrast-dark-hover-border-color);
+  color: var(--p-button-text-contrast-dark-hover-color);
+}
+
