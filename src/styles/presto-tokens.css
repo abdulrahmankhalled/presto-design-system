@@ -260,7 +260,7 @@
   /* PrimeNG Button Variables - All Severities */
   
   /* Primary Button */
-  --p-button-primary-background: var(--presto-primary);
+  --p-button-primary-background: var(--presto-button-primary-filled-background-default);
   --p-button-primary-border-color: var(--presto-primary);
   --p-button-primary-color: var(--presto-primary-contrast);
   --p-button-primary-hover-background: var(--presto-primary-hover);

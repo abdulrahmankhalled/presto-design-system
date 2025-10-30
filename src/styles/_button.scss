@@ -5,6 +5,20 @@
   .p-button-icon-only {
     padding: var(--p-button-padding-x);
   }
+
+  /* Button Size Padding */
+  .p-button.p-button-sm {
+    padding: var(--presto-button-small-padding-y) var(--presto-button-small-padding-x);
+  }
+
+  .p-button.p-button-lg {
+    padding: var(--presto-button-large-padding-y) var(--presto-button-large-padding-x);
+  }
+
+  /* Default size uses normal padding */
+  .p-button:not(.p-button-sm):not(.p-button-lg) {
+    padding: var(--presto-button-normal-padding-y) var(--presto-button-normal-padding-x);
+  }
   
   .p-button.contrast-light {
     background: var(--p-button-contrast-light-background);
