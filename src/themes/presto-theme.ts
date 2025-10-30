@@ -25,6 +25,7 @@ export const prestoTheme = definePreset({
       900: 'var(--presto-secondary-900)',
     },
     green: {
+      50: 'var(--presto-green-50',
       100: 'var(--presto-green-100)',
       200: 'var(--presto-green-200)',
       300: 'var(--presto-green-300)',

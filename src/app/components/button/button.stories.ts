@@ -1,14 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonModule } from 'primeng/button';
+import { moduleMetadata } from '@storybook/angular';  
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCheck, faInfo, faStar } from '@fortawesome/free-solid-svg-icons';
 
+const fontAwesomeFactory = () => {
+  const library = new FaIconLibrary();
+  library.addIcons(faCheck, faInfo, faStar);
+  return library;
+};
 // Icon constants
 const DEFAULT_ICON = 'fas fa-check';
 
 const meta: Meta = {
   title: 'PRESTO/Button',
   component: ButtonModule,
+  decorators: [
+    moduleMetadata({
+      imports: [ButtonModule, FontAwesomeModule],
+      providers: [{ provide: FaIconLibrary, useFactory: fontAwesomeFactory }],
+    }),
+  ],
   parameters: {
     layout: 'centered',
     docs: {
@@ -40,7 +52,7 @@ A comprehensive button component showcasing PrimeNG's Button with PRESTO theme i
     },
     severity: {
       control: 'select',
-      options: ['primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger', 'contrast-light', 'contrast-dark'],
+      options: ['primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger', 'contrast'],
       description: 'Button severity/color variant',
     },
     outlined: {
@@ -100,25 +112,13 @@ export const Primary: Story = {
   args: {
     label: 'Button label',
     severity: 'primary',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="defaultIcon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -126,25 +126,12 @@ export const Secondary: Story = {
   args: {
     label: 'Button label',
     severity: 'secondary',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -152,25 +139,13 @@ export const green: Story = {
   args: {
     label: 'Button label',
     severity: 'success',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -178,25 +153,12 @@ export const Info: Story = {
   args: {
     label: 'Button label',
     severity: 'info',
-    icon: 'fas fa-info',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -204,25 +166,12 @@ export const Warn: Story = {
   args: {
     label: 'Button label',
     severity: 'warn',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -230,25 +179,12 @@ export const Help: Story = {
   args: {
     label: 'Button label',
     severity: 'help',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -256,25 +192,12 @@ export const Danger: Story = {
   args: {
     label: 'Button label',
     severity: 'danger',
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -284,25 +207,12 @@ export const OutlinedPrimary: Story = {
     label: 'Button label',
     severity: 'primary',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -311,25 +221,12 @@ export const OutlinedSecondary: Story = {
     label: 'Button label',
     severity: 'secondary',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -338,25 +235,13 @@ export const OutlinedSuccess: Story = {
     label: 'Button label',
     severity: 'success',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -365,25 +250,13 @@ export const OutlinedInfo: Story = {
     label: 'Button label',
     severity: 'info',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -392,25 +265,14 @@ export const OutlinedWarn: Story = {
     label: 'Button label',
     severity: 'warn',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -419,25 +281,14 @@ export const OutlinedHelp: Story = {
     label: 'Button label',
     severity: 'help',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -446,25 +297,14 @@ export const OutlinedDanger: Story = {
     label: 'Button label',
     severity: 'danger',
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -474,25 +314,14 @@ export const TextPrimary: Story = {
     label: 'Button label',
     severity: 'primary',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -501,106 +330,60 @@ export const TextSecondary: Story = {
     label: 'Button label',
     severity: 'secondary',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
 export const TextSuccess: Story = {
   args: {
-    label: 'Text Success',
+    label: 'Button Label',
     severity: 'success',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
 export const TextInfo: Story = {
   args: {
-    label: 'Text Info',
+    label: 'Button Label',
     severity: 'info',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
 export const TextWarn: Story = {
   args: {
-    label: 'Text Warn',
+    label: 'Button Label',
     severity: 'warn',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -609,25 +392,13 @@ export const TextHelp: Story = {
     label: 'Text Help',
     severity: 'help',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -636,25 +407,13 @@ export const TextDanger: Story = {
     label: 'Text Danger',
     severity: 'danger',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -664,25 +423,13 @@ export const RaisedPrimary: Story = {
     label: 'Raised Primary',
     severity: 'primary',
     raised: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [raised]="raised"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [raised]="raised"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -693,25 +440,13 @@ export const RoundedPrimary: Story = {
     label: 'Button Label',
     severity: 'primary',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -720,25 +455,13 @@ export const RoundedSecondary: Story = {
     label: 'Button Label',
     severity: 'secondary',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -747,25 +470,13 @@ export const RoundedSuccess: Story = {
     label: 'Button Label',
     severity: 'success',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -774,25 +485,13 @@ export const RoundedInfo: Story = {
     label: 'Button Label',
     severity: 'info',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -801,25 +500,13 @@ export const RoundedWarn: Story = {
     label: 'Button Label',
     severity: 'warn',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -828,25 +515,13 @@ export const RoundedHelp: Story = {
     label: 'Button Label',
     severity: 'help',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -855,25 +530,13 @@ export const RoundedDanger: Story = {
     label: 'Button Label',
     severity: 'danger',
     rounded: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -884,25 +547,13 @@ export const RoundedOutlinedPrimary: Story = {
     severity: 'primary',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -912,25 +563,13 @@ export const RoundedOutlinedSecondary: Story = {
     severity: 'secondary',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -940,25 +579,14 @@ export const RoundedOutlinedSuccess: Story = {
     severity: 'success',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -968,25 +596,14 @@ export const RoundedOutlinedInfo: Story = {
     severity: 'info',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -996,25 +613,14 @@ export const RoundedOutlinedWarn: Story = {
     severity: 'warn',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1024,25 +630,14 @@ export const RoundedOutlinedHelp: Story = {
     severity: 'help',
     rounded: true,
     outlined: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1055,20 +650,9 @@ export const RoundedOutlinedDanger: Story = {
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [rounded]="rounded" [outlined]="outlined">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1078,25 +662,14 @@ export const RoundedTextPrimary: Story = {
     label: 'Button Label',
     severity: 'primary',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1105,25 +678,14 @@ export const RoundedTextSecondary: Story = {
     label: 'Button Label',
     severity: 'secondary',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1132,25 +694,14 @@ export const RoundedTextSuccess: Story = {
     label: 'Button Label',
     severity: 'success',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1159,25 +710,14 @@ export const RoundedTextInfo: Story = {
     label: 'Button Label',
     severity: 'info',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1186,25 +726,14 @@ export const RoundedTextWarn: Story = {
     label: 'Button Label',
     severity: 'warn',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1213,25 +742,14 @@ export const RoundedTextHelp: Story = {
     label: 'Button Label',
     severity: 'help',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos">
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1240,25 +758,14 @@ export const RoundedTextDanger: Story = {
     label: 'Button Label',
     severity: 'danger',
     text: true,
-    icon: 'fas fa-check',
+    icon: DEFAULT_ICON,
     iconPos: 'left',
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos" ></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [text]="text" [icon]="icon" [iconPos]="iconPos" >
+     <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1271,51 +778,10 @@ export const SmallButton: Story = {
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [size]="size"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [size]="size"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
-
-// export const NormalButton: Story = {
-//   args: {
-//     label: 'Normal Button',
-//     severity: 'primary',
-//   },
-//   render: (args) => ({
-//     props: args,
-//     template: `<p-button [label]="label" [severity]="severity"></p-button>`,
-//     size: 'normal',
-//   },
-//   render: (args) => ({
-//     props: args,
-//     template: `<p-button [label]="label" [severity]="severity" [size]="size"></p-button>`,
-//     moduleMetadata: {
-//       imports: [ButtonModule, FontAwesomeModule],
-//       providers: [
-//         {
-//           provide: FaIconLibrary,
-//           useFactory: () => {
-//             const library = new FaIconLibrary();
-//             library.addIcons(faCheck, faInfo, faStar);
-//             return library;
-//           }
-//         }
-//       ]
-//     },
-//   }),
-// };
 
 export const LargeButton: Story = {
   args: {
@@ -1325,20 +791,8 @@ export const LargeButton: Story = {
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [size]="size"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [size]="size"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
@@ -1351,83 +805,21 @@ export const Disabled: Story = {
   },
   render: (args) => ({
     props: args,
-    template: `<p-button [label]="label" [severity]="severity" [disabled]="disabled"></p-button>`,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+    template: `<p-button [label]="label" [severity]="severity" [disabled]="disabled"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
+   
   }),
 };
 
-// All variants showcase
-export const ContrastLight: Story = {
-  render: () => ({
-    template: `
-      <div class="p-4 space-y-4">
-        <h2 class="text-xl font-bold mb-4">Contrast Light Theme Buttons</h2>
-        <div class="flex flex-wrap gap-4">
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [text]="true" styleClass="contrast-light-text"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" styleClass="contrast-light"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-light-outlined"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-light-text"></p-button>
-        </div>
-      </div>
-    `,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
-  }),
-};
-
-export const ContrastDark: Story = {
-  render: () => ({
-    template: `
-      <div class="p-4 space-y-4 bg-gray-900">
-        <h2 class="text-xl font-bold mb-4 text-white">Contrast Dark Theme Buttons</h2>
-        <div class="flex flex-wrap gap-4">
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [text]="true" styleClass="contrast-dark-text"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" styleClass="contrast-dark"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [outlined]="true" styleClass="contrast-dark-outlined"></p-button>
-          <p-button label="Button label" [icon]="defaultIcon" iconPos="left" [rounded]="true" [text]="true" styleClass="contrast-dark-text"></p-button>
-        </div>
-      </div>
-    `,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+export const Contrast: Story = {
+  args: {
+    label: 'Button Label',
+    severity: 'contrast',
+    icon: DEFAULT_ICON,
+    iconPos: 'left'
+  },
+  render: (args) => ({
+    props: args,
+    template: `<p-button [label]="label" [severity]="severity"> <fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>`,
   }),
 };
 
@@ -1452,109 +844,97 @@ export const AllVariants: Story = {
           <!-- Primary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Primary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="primary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="primary" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Secondary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Secondary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="secondary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="secondary" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Success Row -->
-            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">green</div>
+            <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Sucess</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="success" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="success" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Info Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Info</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="info" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="info" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Warn Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Warn</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="warn" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="warn" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Help Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Help</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="help" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="help" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Danger Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" severity="danger" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" severity="danger" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Contrast Light Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
+            <p-button label="Button label" severity="contrast" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-outlined"></p-button>
+            <p-button label="Button label" severity="contrast" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-text"></p-button>
-          </div>
-          
-          <!-- Contrast Dark Row -->
-          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
-          </div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-outlined"></p-button>
-          </div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-text"></p-button>
+            <p-button label="Button label" severity="contrast" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
         </div>
@@ -1569,124 +949,101 @@ export const AllVariants: Story = {
           <!-- Primary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Primary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="primary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="primary" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Secondary Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Secondary</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="secondary" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="secondary" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Success Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Success</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="success" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="success" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Info Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Info</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="info" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="info" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Warn Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center bg-gray-200 p-2">Warn</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="warn" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="warn" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Help Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Help</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="help" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="help" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Danger Row -->
             <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Danger</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" [outlined]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" severity="danger" [text]="true" [icon]="defaultIcon" iconPos="left"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="danger" [text]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
           <!-- Contrast Light Row -->
           <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Light</div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="contrast" [icon]="defaultIcon"><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-outlined"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="contrast" [outlined]="true" ><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-light-text"></p-button>
+            <p-button label="Button label" [rounded]="true" severity="contrast" [text]="true"><fa-icon [icon]="['fas', 'check']"></fa-icon></p-button>
           </div>
           
-          <!-- Contrast Dark Row -->
-          <div class="text-center font-semibold text-gray-500 flex items-center p-2 bg-gray-200">Contrast Dark</div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark"></p-button>
-          </div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [outlined]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-outlined"></p-button>
-          </div>
-          <div class="flex justify-center">
-            <p-button label="Button label" [rounded]="true" [text]="true" [icon]="defaultIcon" iconPos="left" styleClass="contrast-dark-text"></p-button>
-          </div>
         
     `,
-    moduleMetadata: {
-      imports: [ButtonModule, FontAwesomeModule],
-      providers: [
-        {
-          provide: FaIconLibrary,
-          useFactory: () => {
-            const library = new FaIconLibrary();
-            library.addIcons(faCheck, faInfo, faStar);
-            return library;
-          }
-        }
-      ]
-    },
+   
   }),
 };

@@ -241,6 +241,15 @@ module.exports = {
       maxWidth: {
         "8xl": "88rem",
       },
+      padding:{
+        "presto-normal-padding-x": "12px" ,
+        "presto-normal-padding-y": "8px",
+        "presto-small-padding-x": "8px",
+        "presto-small-padding-y": "4px",
+        "presto-large-padding-x": "14px",
+        "presto-large-padding-y": "12px",
+
+      }
     },
   },
   plugins: [],
