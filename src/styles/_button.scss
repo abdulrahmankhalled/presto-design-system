@@ -1,0 +1,597 @@
+// :root{
+//    /* PrimeNG Button Variables - All Severities */
+  
+//   /* Primary Button */
+//   --p-button-primary-background: var(--presto-primary);
+//   --p-button-primary-border-color: var(--presto-primary);
+//   --p-button-primary-color: var(--presto-primary-contrast);
+//   --p-button-primary-hover-background: var(--presto-primary-hover);
+//   --p-button-primary-hover-border-color: var(--presto-primary-hover);
+//   --p-button-primary-hover-color: var(--presto-primary-contrast);
+//   --p-button-primary-active-background: var(--presto-primary-active);
+//   --p-button-primary-active-border-color: var(--presto-primary-active);
+//   --p-button-primary-active-color: var(--presto-primary-contrast);
+//   --p-button-primary-focus-ring-color: var(--presto-primary-200);
+
+//   /* Secondary Button */
+//   --p-button-secondary-background: var(--presto-secondary);
+//   --p-button-secondary-border-color: var(--presto-secondary);
+//   --p-button-secondary-color: var(--presto-secondary-contrast);
+//   --p-button-secondary-hover-background: var(--presto-secondary-hover);
+//   --p-button-secondary-hover-border-color: var(--presto-secondary-hover);
+//   --p-button-secondary-hover-color: var(--presto-secondary-contrast);
+//   --p-button-secondary-active-background: var(--presto-secondary-active);
+//   --p-button-secondary-active-border-color: var(--presto-secondary-active);
+//   --p-button-secondary-active-color: var(--presto-secondary-contrast);
+//   --p-button-secondary-focus-ring-color: var(--presto-secondary-200);
+
+//   /* Success Button (maps to green colors) */
+//   --p-button-success-background: var(--presto-green);
+//   --p-button-success-border-color: var(--presto-green);
+//   --p-button-success-color: var(--presto-green-contrast);
+//   --p-button-success-hover-background: var(--presto-green-hover);
+//   --p-button-success-hover-border-color: var(--presto-green-hover);
+//   --p-button-success-hover-color: var(--presto-green-contrast);
+//   --p-button-success-active-background: var(--presto-green-active);
+//   --p-button-success-active-border-color: var(--presto-green-active);
+//   --p-button-success-active-color: var(--presto-green-contrast);
+//   --p-button-success-focus-ring-color: var(--presto-green-200);
+
+//   /* Info Button */
+//   --p-button-info-background: var(--presto-info);
+//   --p-button-info-border-color: var(--presto-info);
+//   --p-button-info-color: var(--presto-info-contrast);
+//   --p-button-info-hover-background: var(--presto-info-hover);
+//   --p-button-info-hover-border-color: var(--presto-info-hover);
+//   --p-button-info-hover-color: var(--presto-info-contrast);
+//   --p-button-info-active-background: var(--presto-info-active);
+//   --p-button-info-active-border-color: var(--presto-info-active);
+//   --p-button-info-active-color: var(--presto-info-contrast);
+//   --p-button-info-focus-ring-color: var(--presto-sky-200);
+
+//   /* Warn Button */
+//   --p-button-warn-background: var(--presto-yellow);
+//   --p-button-warn-border-color: var(--presto-yellow);
+//   --p-button-warn-color: var(--presto-yellow-contrast);
+//   --p-button-warn-hover-background: var(--presto-yellow-hover);
+//   --p-button-warn-hover-border-color: var(--presto-yellow-hover);
+//   --p-button-warn-hover-color: var(--presto-yellow-contrast);
+//   --p-button-warn-active-background: var(--presto-yellow-active);
+//   --p-button-warn-active-border-color: var(--presto-yellow-active);
+//   --p-button-warn-active-color: var(--presto-yellow-contrast);
+//   --p-button-warn-focus-ring-color: var(--presto-yellow-200);
+
+//   /* Help Button */
+//   --p-button-help-background: var(--presto-help);
+//   --p-button-help-border-color: var(--presto-help);
+//   --p-button-help-color: var(--presto-help-contrast);
+//   --p-button-help-hover-background: var(--presto-help-hover);
+//   --p-button-help-hover-border-color: var(--presto-help-hover);
+//   --p-button-help-hover-color: var(--presto-help-contrast);
+//   --p-button-help-active-background: var(--presto-help-active);
+//   --p-button-help-active-border-color: var(--presto-help-active);
+//   --p-button-help-active-color: var(--presto-help-contrast);
+//   --p-button-help-focus-ring-color: var(--presto-fuchsia-200);
+
+//   /* Danger Button */
+//   --p-button-danger-background: var(--presto-rose);
+//   --p-button-danger-border-color: var(--presto-rose);
+//   --p-button-danger-color: var(--presto-rose-contrast);
+//   --p-button-danger-hover-background: var(--presto-rose-hover);
+//   --p-button-danger-hover-border-color: var(--presto-rose-hover);
+//   --p-button-danger-hover-color: var(--presto-rose-contrast);
+//   --p-button-danger-active-background: var(--presto-rose-active);
+//   --p-button-danger-active-border-color: var(--presto-rose-active);
+//   --p-button-danger-active-color: var(--presto-rose-contrast);
+//   --p-button-danger-focus-ring-color: var(--presto-rose-200);
+
+//   /* Contrast Light Button */
+//   --p-button-contrast-light-background: var(--presto-black);
+//   --p-button-contrast-light-border-color: var(--presto-black);
+//   --p-button-contrast-light-color: var(--presto-white);
+//   --p-button-contrast-light-hover-background: var(--presto-gray-800);
+//   --p-button-contrast-light-hover-border-color: var(--presto-gray-800);
+//   --p-button-contrast-light-hover-color: var(--presto-white);
+//   --p-button-contrast-light-active-background: var(--presto-gray-900);
+//   --p-button-contrast-light-active-border-color: var(--presto-gray-900);
+//   --p-button-contrast-light-active-color: var(--presto-white);
+//   --p-button-contrast-light-focus-ring-color: var(--presto-gray-200);
+
+//   /* Contrast Dark Button */
+//   --p-button-contrast-dark-background: var(--presto-white);
+//   --p-button-contrast-dark-border-color: var(--presto-black);
+//   --p-button-contrast-dark-color: var(--presto-black);
+//   --p-button-contrast-dark-hover-background: var(--presto-gray-700);
+//   --p-button-contrast-dark-hover-border-color: var(--presto-black);
+//   --p-button-contrast-dark-hover-color: var(--presto-black);
+//   --p-button-contrast-dark-active-background: var(--presto-gray-600);
+//   --p-button-contrast-dark-active-border-color: var(--presto-black);
+//   --p-button-contrast-dark-active-color: var(--presto-black);
+//   --p-button-contrast-dark-focus-ring-color: var(--presto-gray-300);
+
+//   /* Outlined Button Tokens */
+//   --p-button-outlined-primary-background: transparent;
+//   --p-button-outlined-primary-border-color: var(--presto-primary);
+//   --p-button-outlined-primary-color: var(--presto-primary);
+//   --p-button-outlined-primary-hover-background: var(--presto-primary-100);
+//   --p-button-outlined-primary-hover-border-color: var(--presto-primary);
+//   --p-button-outlined-primary-hover-color: var(--presto-primary);
+
+//   --p-button-outlined-secondary-background: transparent;
+//   --p-button-outlined-secondary-border-color: var(--presto-secondary);
+//   --p-button-outlined-secondary-color: var(--presto-secondary);
+//   --p-button-outlined-secondary-hover-background: var(--presto-secondary-100);
+//   --p-button-outlined-secondary-hover-border-color: var(--presto-secondary);
+//   --p-button-outlined-secondary-hover-color: var(--presto-secondary);
+
+//   --p-button-outlined-success-background: transparent;
+//   --p-button-outlined-success-border-color: var(--presto-green);
+//   --p-button-outlined-success-color: var(--presto-green);
+//   --p-button-outlined-success-hover-background: var(--presto-green-100);
+//   --p-button-outlined-success-hover-border-color: var(--presto-green);
+//   --p-button-outlined-success-hover-color: var(--presto-green);
+
+//   --p-button-outlined-info-background: transparent;
+//   --p-button-outlined-info-border-color: var(--presto-info);
+//   --p-button-outlined-info-color: var(--presto-info);
+//   --p-button-outlined-info-hover-background: var(--presto-sky-100);
+//   --p-button-outlined-info-hover-border-color: var(--presto-info);
+//   --p-button-outlined-info-hover-color: var(--presto-info);
+
+//   --p-button-outlined-warn-background: transparent;
+//   --p-button-outlined-warn-border-color: var(--presto-yellow);
+//   --p-button-outlined-warn-color: var(--presto-yellow);
+//   --p-button-outlined-warn-hover-background: var(--presto-yellow-100);
+//   --p-button-outlined-warn-hover-border-color: var(--presto-yellow);
+//   --p-button-outlined-warn-hover-color: var(--presto-yellow);
+
+//   --p-button-outlined-help-background: transparent;
+//   --p-button-outlined-help-border-color: var(--presto-help);
+//   --p-button-outlined-help-color: var(--presto-help);
+//   --p-button-outlined-help-hover-background: var(--presto-fuchsia-100);
+//   --p-button-outlined-help-hover-border-color: var(--presto-help);
+//   --p-button-outlined-help-hover-color: var(--presto-help);
+
+//   --p-button-outlined-danger-background: transparent;
+//   --p-button-outlined-danger-border-color: var(--presto-rose);
+//   --p-button-outlined-danger-color: var(--presto-rose);
+//   --p-button-outlined-danger-hover-background: var(--presto-rose-100);
+//   --p-button-outlined-danger-hover-border-color: var(--presto-rose);
+//   --p-button-outlined-danger-hover-color: var(--presto-rose);
+
+//   --p-button-outlined-contrast-light-background: transparent;
+//   --p-button-outlined-contrast-light-border-color: var(--presto-black);
+//   --p-button-outlined-contrast-light-color: var(--presto-black);
+//   --p-button-outlined-contrast-light-hover-background: var(--presto-gray-200);
+//   --p-button-outlined-contrast-light-hover-border-color: var(--presto-black);
+//   --p-button-outlined-contrast-light-hover-color: var(--presto-black);
+
+//   --p-button-outlined-contrast-dark-background: transparent;
+//   --p-button-outlined-contrast-dark-border-color: var(--presto-white);
+//   --p-button-outlined-contrast-dark-color: var(--presto-white);
+//   --p-button-outlined-contrast-dark-hover-background: var(--presto-gray-700);
+//   --p-button-outlined-contrast-dark-hover-border-color: var(--presto-white);
+//   --p-button-outlined-contrast-dark-hover-color: var(--presto-white);
+
+//   /* Text Button Tokens */
+//   --p-button-text-primary-background: transparent;
+//   --p-button-text-primary-border-color: transparent;
+//   --p-button-text-primary-color: var(--presto-primary);
+//   --p-button-text-primary-hover-background: var(--presto-primary-100);
+//   --p-button-text-primary-hover-border-color: transparent;
+//   --p-button-text-primary-hover-color: var(--presto-primary);
+
+//   --p-button-text-secondary-background: transparent;
+//   --p-button-text-secondary-border-color: transparent;
+//   --p-button-text-secondary-color: var(--presto-secondary);
+//   --p-button-text-secondary-hover-background: var(--presto-secondary-100);
+//   --p-button-text-secondary-hover-border-color: transparent;
+//   --p-button-text-secondary-hover-color: var(--presto-secondary);
+
+//   --p-button-text-success-background: transparent;
+//   --p-button-text-success-border-color: transparent;
+//   --p-button-text-success-color: var(--presto-green);
+//   --p-button-text-success-hover-background: var(--presto-green-100);
+//   --p-button-text-success-hover-border-color: transparent;
+//   --p-button-text-success-hover-color: var(--presto-green);
+
+//   --p-button-text-info-background: transparent;
+//   --p-button-text-info-border-color: transparent;
+//   --p-button-text-info-color: var(--presto-info);
+//   --p-button-text-info-hover-background: var(--presto-sky-100);
+//   --p-button-text-info-hover-border-color: transparent;
+//   --p-button-text-info-hover-color: var(--presto-info);
+
+//   --p-button-text-warn-background: transparent;
+//   --p-button-text-warn-border-color: transparent;
+//   --p-button-text-warn-color: var(--presto-yellow);
+//   --p-button-text-warn-hover-background: var(--presto-yellow-100);
+//   --p-button-text-warn-hover-border-color: transparent;
+//   --p-button-text-warn-hover-color: var(--presto-yellow);
+
+//   --p-button-text-help-background: transparent;
+//   --p-button-text-help-border-color: transparent;
+//   --p-button-text-help-color: var(--presto-help);
+//   --p-button-text-help-hover-background: var(--presto-fuchsia-100);
+//   --p-button-text-help-hover-border-color: transparent;
+//   --p-button-text-help-hover-color: var(--presto-help);
+
+//   --p-button-text-danger-background: transparent;
+//   --p-button-text-danger-border-color: transparent;
+//   --p-button-text-danger-color: var(--presto-rose);
+//   --p-button-text-danger-hover-background: var(--presto-rose-100);
+//   --p-button-text-danger-hover-border-color: transparent;
+//   --p-button-text-danger-hover-color: var(--presto-rose);
+
+//   --p-button-text-contrast-light-background: transparent;
+//   --p-button-text-contrast-light-border-color: transparent;
+//   --p-button-text-contrast-light-color: var(--presto-black);
+//   --p-button-text-contrast-light-hover-background: var(--presto-gray-200);
+//   --p-button-text-contrast-light-hover-border-color: transparent;
+//   --p-button-text-contrast-light-hover-color: var(--presto-black);
+
+//   --p-button-text-contrast-dark-background: transparent;
+//   --p-button-text-contrast-dark-border-color: transparent;
+//   --p-button-text-contrast-dark-color: var(--presto-white);
+//   --p-button-text-contrast-dark-hover-background: var(--presto-gray-700);
+//   --p-button-text-contrast-dark-hover-border-color: transparent;
+//   --p-button-text-contrast-dark-hover-color: var(--presto-white);
+
+//   /* Button Filled State Variants */
+  
+//   /* Primary Button Filled States */
+//   --presto-button-primary-filled-background-default: #00573D;
+//   --presto-button-primary-filled-background-hover: #004631;
+//   --presto-button-primary-filled-background-active: #003425;
+//   --presto-button-primary-filled-background-disabled: #00573D66;
+  
+//   --presto-button-primary-filled-text-default: #FFFFFF;
+//   --presto-button-primary-filled-text-hover: #FFFFFF;
+//   --presto-button-primary-filled-text-active: #FFFFFF;
+//   --presto-button-primary-filled-text-disabled: #FFFFFF66;
+
+//   /* Secondary Button Filled States */
+//   --presto-button-secondary-filled-background-default: #CCDDD8;
+//   --presto-button-secondary-filled-background-hover: #CCDDD8;
+//   --presto-button-secondary-filled-background-active: #CCDDD8;
+//   --presto-button-secondary-filled-background-disabled: #FFFFFF66;
+  
+//   --presto-button-secondary-filled-text-default: #00573D;
+//   --presto-button-secondary-filled-text-hover: #00573D;
+//   --presto-button-secondary-filled-text-active: #00573D;
+//   --presto-button-secondary-filled-text-disabled: #00573D66;
+
+//   /* Success Button Filled States */
+//   --presto-button-success-filled-background-default: #22C55E;
+//   --presto-button-success-filled-background-hover: #189E4B;
+//   --presto-button-success-filled-background-active: #147638;
+//   --presto-button-success-filled-background-disabled: #22C55E66;
+  
+//   --presto-button-success-filled-text-default: #FFFFFF;
+//   --presto-button-success-filled-text-hover: #FFFFFF;
+//   --presto-button-success-filled-text-active: #FFFFFF;
+//   --presto-button-success-filled-text-disabled: #FFFFFF66;
+
+//   /* Info Button Filled States */
+//   --presto-button-info-filled-background-default: #1DB7DF;
+//   --presto-button-info-filled-background-hover: #1792B2;
+//   --presto-button-info-filled-background-active: #116E86;
+//   --presto-button-info-filled-background-disabled: #1DB7DF66;
+  
+//   --presto-button-info-filled-text-default: #FFFFFF;
+//   --presto-button-info-filled-text-hover: #FFFFFF;
+//   --presto-button-info-filled-text-active: #FFFFFF;
+//   --presto-button-info-filled-text-disabled: #FFFFFF66;
+
+//   /* Warn Button Filled States */
+//   --presto-button-warn-filled-background-default: #F59E0B;
+//   --presto-button-warn-filled-background-hover: #C47E09;
+//   --presto-button-warn-filled-background-active: #935F07;
+//   --presto-button-warn-filled-background-disabled: #F59E0B66;
+  
+//   --presto-button-warn-filled-text-default: #FFFFFF;
+//   --presto-button-warn-filled-text-hover: #FFFFFF;
+//   --presto-button-warn-filled-text-active: #FFFFFF;
+//   --presto-button-warn-filled-text-disabled: #FFFFFF66;
+
+//   /* Help Button Filled States */
+//   --presto-button-help-filled-background-default: #A855F7;
+//   --presto-button-help-filled-background-hover: #8644C6;
+//   --presto-button-help-filled-background-active: #653394;
+//   --presto-button-help-filled-background-disabled: #A855F766;
+  
+//   --presto-button-help-filled-text-default: #FFFFFF;
+//   --presto-button-help-filled-text-hover: #FFFFFF;
+//   --presto-button-help-filled-text-active: #FFFFFF;
+//   --presto-button-help-filled-text-disabled: #FFFFFF66;
+
+//   /* Danger Button Filled States */
+//   --presto-button-danger-filled-background-default: #D31245;
+//   --presto-button-danger-filled-background-hover: #A90E37;
+//   --presto-button-danger-filled-background-active: #7F0B29;
+//   --presto-button-danger-filled-background-disabled: #D3124566;
+  
+//   --presto-button-danger-filled-text-default: #FFFFFF;
+//   --presto-button-danger-filled-text-hover: #FFFFFF;
+//   --presto-button-danger-filled-text-active: #FFFFFF;
+//   --presto-button-danger-filled-text-disabled: #FFFFFF66;
+
+//   /* Contrast White Theme Button Filled States */
+//   --presto-button-contrast-white-theme-filled-background-default: #15181C;
+//   --presto-button-contrast-white-theme-filled-background-hover: #404753;
+//   --presto-button-contrast-white-theme-filled-background-active: #404753;
+//   --presto-button-contrast-white-theme-filled-background-disabled: #15181C66;
+  
+//   --presto-button-contrast-white-theme-filled-text-default: #FFFFFF;
+//   --presto-button-contrast-white-theme-filled-text-hover: #FFFFFF;
+//   --presto-button-contrast-white-theme-filled-text-active: #FFFFFF;
+//   --presto-button-contrast-white-theme-filled-text-disabled: #FFFFFF66;
+
+//   /* Contrast Black Theme Button Filled States */
+//   --presto-button-contrast-black-theme-filled-background-default: #FFFFFF;
+//   --presto-button-contrast-black-theme-filled-background-hover: #E1E4E8;
+//   --presto-button-contrast-black-theme-filled-background-active: #E1E4E8;
+//   --presto-button-contrast-black-theme-filled-background-disabled: #FFFFFF66;
+  
+//   --presto-button-contrast-black-theme-filled-text-default: #15181C;
+//   --presto-button-contrast-black-theme-filled-text-hover: #15181C;
+//   --presto-button-contrast-black-theme-filled-text-active: #15181C;
+//   --presto-button-contrast-black-theme-filled-text-disabled: #15181C66;
+
+//   /* Button Outlined State Variants */
+  
+//   /* Primary Button Outlined States */
+//   --presto-button-primary-outlined-background-default: #FFFFFF00;
+//   --presto-button-primary-outlined-background-hover: #CCDDD8;
+//   --presto-button-primary-outlined-background-active: #99BCB1;
+//   --presto-button-primary-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-primary-outlined-border-default: #00573D;
+//   --presto-button-primary-outlined-border-hover: #004631;
+//   --presto-button-primary-outlined-border-active: #003425;
+//   --presto-button-primary-outlined-border-disabled: #00573D66;
+  
+//   --presto-button-primary-outlined-text-default: #00573D;
+//   --presto-button-primary-outlined-text-hover: #00573D;
+//   --presto-button-primary-outlined-text-active: #00573D;
+//   --presto-button-primary-outlined-text-disabled: #00573D66;
+
+//   /* Secondary Button Outlined States */
+//   --presto-button-secondary-outlined-background-default: #FFFFFF00;
+//   --presto-button-secondary-outlined-background-hover: #CCDDD8;
+//   --presto-button-secondary-outlined-background-active: #CCDDD8;
+//   --presto-button-secondary-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-secondary-outlined-border-default: #00573D;
+//   --presto-button-secondary-outlined-border-hover: #004631;
+//   --presto-button-secondary-outlined-border-active: #003425;
+//   --presto-button-secondary-outlined-border-disabled: #00573D66;
+  
+//   --presto-button-secondary-outlined-text-default: #00573D;
+//   --presto-button-secondary-outlined-text-hover: #00573D;
+//   --presto-button-secondary-outlined-text-active: #00573D;
+//   --presto-button-secondary-outlined-text-disabled: #00573D66;
+
+//   /* Success Button Outlined States */
+//   --presto-button-success-outlined-background-default: #FFFFFF00;
+//   --presto-button-success-outlined-background-hover: #D3F3DF;
+//   --presto-button-success-outlined-background-active: #D3F3DF;
+//   --presto-button-success-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-success-outlined-border-default: #22C55E;
+//   --presto-button-success-outlined-border-hover: #1B9E4B;
+//   --presto-button-success-outlined-border-active: #147638;
+//   --presto-button-success-outlined-border-disabled: #22C55E66;
+  
+//   --presto-button-success-outlined-text-default: #22C55E;
+//   --presto-button-success-outlined-text-hover: #22C55E;
+//   --presto-button-success-outlined-text-active: #22C55E;
+//   --presto-button-success-outlined-text-disabled: #22C55E66;
+
+//   /* Info Button Outlined States */
+//   --presto-button-info-outlined-background-default: #FFFFFF00;
+//   --presto-button-info-outlined-background-hover: #D2F1F9;
+//   --presto-button-info-outlined-background-active: #D2F1F9;
+//   --presto-button-info-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-info-outlined-border-default: #1DB7DF;
+//   --presto-button-info-outlined-border-hover: #1792B2;
+//   --presto-button-info-outlined-border-active: #116E86;
+//   --presto-button-info-outlined-border-disabled: #1DB7DF66;
+  
+//   --presto-button-info-outlined-text-default: #1DB7DF;
+//   --presto-button-info-outlined-text-hover: #1DB7DF;
+//   --presto-button-info-outlined-text-active: #1DB7DF;
+//   --presto-button-info-outlined-text-disabled: #1DB7DF66;
+
+//   /* Warn Button Outlined States */
+//   --presto-button-warn-outlined-background-default: #FFFFFF00;
+//   --presto-button-warn-outlined-background-hover: #FDECCE;
+//   --presto-button-warn-outlined-background-active: #FDECCE;
+//   --presto-button-warn-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-warn-outlined-border-default: #F59E0B;
+//   --presto-button-warn-outlined-border-hover: #C47E09;
+//   --presto-button-warn-outlined-border-active: #935F07;
+//   --presto-button-warn-outlined-border-disabled: #F59E0B66;
+  
+//   --presto-button-warn-outlined-text-default: #F59E0B;
+//   --presto-button-warn-outlined-text-hover: #F59E0B;
+//   --presto-button-warn-outlined-text-active: #F59E0B;
+//   --presto-button-warn-outlined-text-disabled: #F59E0B66;
+
+//   /* Help Button Outlined States */
+//   --presto-button-help-outlined-background-default: #FFFFFF00;
+//   --presto-button-help-outlined-background-hover: #EEDDFD;
+//   --presto-button-help-outlined-background-active: #EEDDFD;
+//   --presto-button-help-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-help-outlined-border-default: #A855F7;
+//   --presto-button-help-outlined-border-hover: #8644C6;
+//   --presto-button-help-outlined-border-active: #653394;
+//   --presto-button-help-outlined-border-disabled: #A855F766;
+  
+//   --presto-button-help-outlined-text-default: #A855F7;
+//   --presto-button-help-outlined-text-hover: #A855F7;
+//   --presto-button-help-outlined-text-active: #A855F7;
+//   --presto-button-help-outlined-text-disabled: #A855F766;
+
+//   /* Danger Button Outlined States */
+//   --presto-button-danger-outlined-background-default: #FFFFFF00;
+//   --presto-button-danger-outlined-background-hover: #F6D0DA;
+//   --presto-button-danger-outlined-background-active: #F6D0DA;
+//   --presto-button-danger-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-danger-outlined-border-default: #D31245;
+//   --presto-button-danger-outlined-border-hover: #A90E37;
+//   --presto-button-danger-outlined-border-active: #7F0B29;
+//   --presto-button-danger-outlined-border-disabled: #D3124566;
+  
+//   --presto-button-danger-outlined-text-default: #D31245;
+//   --presto-button-danger-outlined-text-hover: #D31245;
+//   --presto-button-danger-outlined-text-active: #D31245;
+//   --presto-button-danger-outlined-text-disabled: #D3124566;
+
+//   /* Contrast White Theme Button Outlined States */
+//   --presto-button-contrast-white-theme-outlined-background-default: #00000000;
+//   --presto-button-contrast-white-theme-outlined-background-hover: #E1E4E8;
+//   --presto-button-contrast-white-theme-outlined-background-active: #E1E4E8;
+//   --presto-button-contrast-white-theme-outlined-background-disabled: #00000000;
+  
+//   --presto-button-contrast-white-theme-outlined-border-default: #15181C;
+//   --presto-button-contrast-white-theme-outlined-border-hover: #2A3037;
+//   --presto-button-contrast-white-theme-outlined-border-active: #15181C;
+//   --presto-button-contrast-white-theme-outlined-border-disabled: #15181C66;
+  
+//   --presto-button-contrast-white-theme-outlined-text-default: #15181C;
+//   --presto-button-contrast-white-theme-outlined-text-hover: #15181C;
+//   --presto-button-contrast-white-theme-outlined-text-active: #15181C;
+//   --presto-button-contrast-white-theme-outlined-text-disabled: #15181C66;
+
+//   /* Contrast Black Theme Button Outlined States */
+//   --presto-button-contrast-black-theme-outlined-background-default: #FFFFFF00;
+//   --presto-button-contrast-black-theme-outlined-background-hover: #A6ADB9;
+//   --presto-button-contrast-black-theme-outlined-background-active: #A6ADB9;
+//   --presto-button-contrast-black-theme-outlined-background-disabled: #FFFFFF00;
+  
+//   --presto-button-contrast-black-theme-outlined-border-default: #FFFFFF;
+//   --presto-button-contrast-black-theme-outlined-border-hover: #E1E4E8;
+//   --presto-button-contrast-black-theme-outlined-border-active: #FFFFFF;
+//   --presto-button-contrast-black-theme-outlined-border-disabled: #FFFFFF66;
+  
+//   --presto-button-contrast-black-theme-outlined-text-default: #FFFFFF;
+//   --presto-button-contrast-black-theme-outlined-text-hover: #FFFFFF;
+//   --presto-button-contrast-black-theme-outlined-text-active: #FFFFFF;
+//   --presto-button-contrast-black-theme-outlined-text-disabled: #FFFFFF66;
+
+//   /* Button Text Only State Variants */
+  
+//   /* Primary Button Text Only States */
+//   --presto-button-primary-text-only-background-default: #FFFFFF00;
+//   --presto-button-primary-text-only-background-hover: #CCDDD8;
+//   --presto-button-primary-text-only-background-active: #99BCB1;
+//   --presto-button-primary-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-primary-text-only-text-default: #00573D;
+//   --presto-button-primary-text-only-text-hover: #00573D;
+//   --presto-button-primary-text-only-text-active: #00573D;
+//   --presto-button-primary-text-only-text-disabled: #00573D66;
+
+//   /* Secondary Button Text Only States */
+//   --presto-button-secondary-text-only-background-default: #FFFFFF00;
+//   --presto-button-secondary-text-only-background-hover: #CCDDD8;
+//   --presto-button-secondary-text-only-background-active: #CCDDD8;
+//   --presto-button-secondary-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-secondary-text-only-text-default: #00573D;
+//   --presto-button-secondary-text-only-text-hover: #00573D;
+//   --presto-button-secondary-text-only-text-active: #00573D;
+//   --presto-button-secondary-text-only-text-disabled: #00573D66;
+
+//   /* Success Button Text Only States */
+//   --presto-button-success-text-only-background-default: #FFFFFF00;
+//   --presto-button-success-text-only-background-hover: #D3F3DF;
+//   --presto-button-success-text-only-background-active: #D3F3DF;
+//   --presto-button-success-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-success-text-only-text-default: #22C55E;
+//   --presto-button-success-text-only-text-hover: #22C55E;
+//   --presto-button-success-text-only-text-active: #22C55E;
+//   --presto-button-success-text-only-text-disabled: #22C55E66;
+
+//   /* Info Button Text Only States */
+//   --presto-button-info-text-only-background-default: #FFFFFF00;
+//   --presto-button-info-text-only-background-hover: #D2F1F9;
+//   --presto-button-info-text-only-background-active: #D2F1F9;
+//   --presto-button-info-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-info-text-only-text-default: #1DB7DF;
+//   --presto-button-info-text-only-text-hover: #1DB7DF;
+//   --presto-button-info-text-only-text-active: #1DB7DF;
+//   --presto-button-info-text-only-text-disabled: #1DB7DF66;
+
+//   /* Warn Button Text Only States */
+//   --presto-button-warn-text-only-background-default: #FFFFFF00;
+//   --presto-button-warn-text-only-background-hover: #FDECCE;
+//   --presto-button-warn-text-only-background-active: #FDECCE;
+//   --presto-button-warn-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-warn-text-only-text-default: #F59E0B;
+//   --presto-button-warn-text-only-text-hover: #F59E0B;
+//   --presto-button-warn-text-only-text-active: #F59E0B;
+//   --presto-button-warn-text-only-text-disabled: #F59E0B66;
+
+//   /* Help Button Text Only States */
+//   --presto-button-help-text-only-background-default: #FFFFFF00;
+//   --presto-button-help-text-only-background-hover: #EEDDFD;
+//   --presto-button-help-text-only-background-active: #EEDDFD;
+//   --presto-button-help-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-help-text-only-text-default: #A855F7;
+//   --presto-button-help-text-only-text-hover: #A855F7;
+//   --presto-button-help-text-only-text-active: #A855F7;
+//   --presto-button-help-text-only-text-disabled: #A855F766;
+
+//   /* Danger Button Text Only States */
+//   --presto-button-danger-text-only-background-default: #FFFFFF00;
+//   --presto-button-danger-text-only-background-hover: #F6D0DA;
+//   --presto-button-danger-text-only-background-active: #F6D0DA;
+//   --presto-button-danger-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-danger-text-only-text-default: #D31245;
+//   --presto-button-danger-text-only-text-hover: #D31245;
+//   --presto-button-danger-text-only-text-active: #D31245;
+//   --presto-button-danger-text-only-text-disabled: #D3124566;
+
+//   /* Contrast White Theme Button Text Only States */
+//   --presto-button-contrast-white-theme-text-only-background-default: #00000000;
+//   --presto-button-contrast-white-theme-text-only-background-hover: #E1E4E8;
+//   --presto-button-contrast-white-theme-text-only-background-active: #E1E4E8;
+//   --presto-button-contrast-white-theme-text-only-background-disabled: #00000000;
+  
+//   --presto-button-contrast-white-theme-text-only-text-default: #15181C;
+//   --presto-button-contrast-white-theme-text-only-text-hover: #15181C;
+//   --presto-button-contrast-white-theme-text-only-text-active: #15181C;
+//   --presto-button-contrast-white-theme-text-only-text-disabled: #15181C66;
+
+//   /* Contrast Black Theme Button Text Only States */
+//   --presto-button-contrast-black-theme-text-only-background-default: #FFFFFF00;
+//   --presto-button-contrast-black-theme-text-only-background-hover: #E1E4E8;
+//   --presto-button-contrast-black-theme-text-only-background-active: #E1E4E8;
+//   --presto-button-contrast-black-theme-text-only-background-disabled: #FFFFFF00;
+  
+//   --presto-button-contrast-black-theme-text-only-text-default: #FFFFFF;
+//   --presto-button-contrast-black-theme-text-only-text-hover: #FFFFFF;
+//   --presto-button-contrast-black-theme-text-only-text-active: #FFFFFF;
+//   --presto-button-contrast-black-theme-text-only-text-disabled: #FFFFFF66;
+
+//   /* PrimeNG Button Common Variables */
+//   --p-button-padding-x: 1rem;
+//   --p-button-padding-y: 0.5rem;
+//   --p-button-border-radius: 0.375rem;
+//   --p-button-rounded-border-radius: 28px;
+//   --p-button-gap: 0.5rem;
+//   --p-button-transition-duration: 0.15s;
+//   --p-button-box-shadow: 0px 4px 4px 0px #00000040;
+// }
+
